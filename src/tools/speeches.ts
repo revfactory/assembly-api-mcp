@@ -21,9 +21,10 @@ export function registerSpeechTools(
 
   server.tool(
     "search_member_activity",
-    "국회의원의 의정활동을 검색합니다. 발의 법안 목록과 본회의 표결 참여 정보를 조합하여 반환합니다.",
+    "국회의원의 의정활동을 검색합니다. 이름으로 발의 법안 목록과 본회의 표결 참여 정보를 조합하여 반환하거나, 키워드로 관련 의안을 발의한 의원을 검색합니다.",
     {
-      name: z.string().describe("의원 이름 (정확한 이름)"),
+      name: z.string().optional().describe("의원 이름 (정확한 이름). name 또는 keyword 중 하나는 필수"),
+      keyword: z.string().optional().describe("검색 키워드 (의안명 검색). name 없이 사용 시 해당 키워드 관련 의안 발의자 요약을 반환"),
       age: z.number().optional().describe("대수 (기본: 22 = 제22대 국회)"),
       activity_type: z
         .enum(["all", "bills", "votes"])
@@ -37,9 +38,63 @@ export function registerSpeechTools(
         const activityType = params.activity_type ?? "all";
         const pageSize = Math.min(params.page_size ?? 10, config.apiResponse.maxPageSize);
 
+        // name과 keyword 둘 다 없으면 에러
+        if (!params.name && !params.keyword) {
+          return {
+            content: [{
+              type: "text" as const,
+              text: JSON.stringify({ error: "name 또는 keyword 중 하나는 필수입니다.", code: "INVALID_PARAMS" }),
+            }],
+            isError: true,
+          };
+        }
+
+        // 키워드만 제공된 경우: 해당 키워드로 의안 검색 후 발의자 요약 반환
+        if (!params.name && params.keyword) {
+          const billResult = await api.fetchOpenAssembly(API_CODES.MEMBER_BILLS, {
+            AGE: age,
+            BILL_NAME: params.keyword,
+            pSize: pageSize,
+          });
+
+          // 발의자별 의안 수 집계
+          const proposerMap = new Map<string, { count: number; bills: string[] }>();
+          for (const row of billResult.rows) {
+            const proposer = String(row.PROPOSER ?? "알수없음");
+            const entry = proposerMap.get(proposer) ?? { count: 0, bills: [] };
+            entry.count += 1;
+            if (entry.bills.length < 3) {
+              entry.bills.push(String(row.BILL_NAME ?? ""));
+            }
+            proposerMap.set(proposer, entry);
+          }
+
+          const items = Array.from(proposerMap.entries())
+            .sort((a, b) => b[1].count - a[1].count)
+            .slice(0, 10)
+            .map(([name, info]) => ({
+              type: "keyword_proposer" as const,
+              proposer: name,
+              billCount: info.count,
+              sampleBills: info.bills,
+            }));
+
+          return {
+            content: [{
+              type: "text" as const,
+              text: JSON.stringify({
+                total: items.length,
+                items,
+                member: null,
+                query: { keyword: params.keyword, age },
+              }),
+            }],
+          };
+        }
+
         // 의원 기본 정보
         const memberResult = await api.fetchOpenAssembly(API_CODES.MEMBER_INFO, {
-          HG_NM: params.name,
+          HG_NM: params.name!,
           pSize: 1,
         });
 
@@ -53,6 +108,13 @@ export function registerSpeechTools(
         }
 
         const member = memberResult.rows[0]!;
+        const memberInfo = {
+          name: member.HG_NM,
+          party: member.POLY_NM,
+          district: member.ORIG_NM,
+          reelection: member.REELE_GBN_NM,
+          committees: member.CMITS,
+        };
 
         // 발의 법안 + 본회의 표결을 병렬 조회 (Promise.all)
         const wantBills = activityType === "all" || activityType === "bills";
@@ -60,50 +122,46 @@ export function registerSpeechTools(
 
         const [billResult, voteResult] = await Promise.all([
           wantBills
-            ? api.fetchOpenAssembly(API_CODES.MEMBER_BILLS, { AGE: age, PROPOSER: params.name, pSize: pageSize })
+            ? api.fetchOpenAssembly(API_CODES.MEMBER_BILLS, { AGE: age, PROPOSER: params.name!, pSize: pageSize })
             : Promise.resolve(null),
           wantVotes
             ? api.fetchOpenAssembly(API_CODES.VOTE_PLENARY, { AGE: age, pSize: pageSize })
             : Promise.resolve(null),
         ]);
 
-        const result: Record<string, unknown> = {
-          member: {
-            name: member.HG_NM,
-            party: member.POLY_NM,
-            district: member.ORIG_NM,
-            reelection: member.REELE_GBN_NM,
-            committees: member.CMITS,
-          },
-        };
+        // 활동 항목을 단일 items 배열로 통합 (Issue 6)
+        const items: Record<string, unknown>[] = [];
 
         if (billResult) {
-          result.bills = {
-            total: billResult.totalCount,
-            items: billResult.rows.map((row) => ({
+          for (const row of billResult.rows) {
+            items.push({
+              type: "bill",
               billNo: row.BILL_NO,
               billName: row.BILL_NAME,
               status: row.PROC_RESULT ?? "계류",
-            })),
-          };
+            });
+          }
         }
 
         if (voteResult) {
-          result.votes = {
-            total: voteResult.totalCount,
-            age,
-            items: voteResult.rows.map((row) => ({
+          for (const row of voteResult.rows) {
+            items.push({
+              type: "vote",
               billNo: row.BILL_NO,
               billName: row.BILL_NM,
               result: row.PROC_RESULT_CD ?? row.BILL_KIND,
-            })),
-          };
+            });
+          }
         }
 
         return {
           content: [{
             type: "text" as const,
-            text: JSON.stringify(result),
+            text: JSON.stringify({
+              total: items.length,
+              items,
+              member: memberInfo,
+            }),
           }],
         };
       } catch (err: unknown) {

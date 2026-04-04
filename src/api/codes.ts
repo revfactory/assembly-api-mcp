@@ -96,6 +96,10 @@ export const API_CODES = {
   MEMBER_ALL: "ALLNAMEMBER",
   /** 회기정보 */
   SESSION_INFO: "BILLSESSPROD",
+
+  // ── 입법조사처 ─────────────────────────────────
+  /** 입법조사처 보고서 */
+  RESEARCH_REPORTS: "naaborihbkorknasp",
 } as const;
 
 export type ApiCode = (typeof API_CODES)[keyof typeof API_CODES];

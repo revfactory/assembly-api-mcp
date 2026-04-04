@@ -22,8 +22,7 @@ export function registerMeetingTools(
     {
       keyword: z.string().optional().describe("검색 키워드 (회의록 본문 내 검색)"),
       committee: z.string().optional().describe("위원회명"),
-      date_from: z.string().optional().describe("시작 날짜 (YYYY-MM-DD 형식)"),
-      date_to: z.string().optional().describe("종료 날짜 (YYYY-MM-DD 형식)"),
+      date_from: z.string().optional().describe("날짜 (YYYY-MM-DD 형식). 연도(YYYY) 부분만 사용됩니다 (회의록 API 제약)"),
       age: z.number().optional().describe("대수 (예: 22 = 제22대 국회)"),
       meeting_type: z
         .enum(["본회의", "위원회", "소위원회", "국정감사", "인사청문회", "공청회"])

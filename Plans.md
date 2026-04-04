@@ -28,7 +28,7 @@
 
 | Task | 내용 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
-| 9.1 | data.go.kr 국회 API 연동 | ServiceKey 기반 의원/의안/일정 API 추가 | 1.2 | cc:TODO |
+| 9.1 | data.go.kr 국회 API 연동 | REST API 4종이 open.assembly.go.kr과 완전 중복 확인 — 스킵 | 1.2 | cc:중복확인 |
 | 9.2 | 국회도서관 법률통계 API | argos.nanet.go.kr 연동 | Phase 1 | cc:TODO |
 | 9.3 | 국회예산정책처 통계 시스템 | nabostats.go.kr 연동 | Phase 1 | cc:TODO |
 

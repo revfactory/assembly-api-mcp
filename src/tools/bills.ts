@@ -110,7 +110,7 @@ export function registerBillTools(
         return {
           content: [{
             type: "text" as const,
-            text: JSON.stringify({ total: 1, item: result.rows[0] }),
+            text: JSON.stringify({ total: 1, items: [result.rows[0]] }),
           }],
         };
       } catch (err: unknown) {

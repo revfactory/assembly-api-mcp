@@ -225,7 +225,7 @@ export function registerLiteBillTools(
             content: [
               {
                 type: "text" as const,
-                text: JSON.stringify({ total: 1, item: detail }),
+                text: JSON.stringify({ total: 1, items: [detail] }),
               },
             ],
           };

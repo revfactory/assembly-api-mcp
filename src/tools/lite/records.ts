@@ -29,6 +29,7 @@ interface SearchParams {
   readonly keyword?: string;
   readonly committee?: string;
   readonly date_from?: string;
+  readonly date_to?: string;
   readonly bill_id?: string;
   readonly age?: number;
   readonly meeting_type?: MeetingType;
@@ -93,14 +94,21 @@ function buildScheduleQuery(
 ): { readonly apiCode: string; readonly queryParams: Record<string, string | number> } {
   const queryParams: Record<string, string | number> = {};
 
-  if (params.date_from) {
+  // date_from만 있으면 SCH_DT로 정확한 날짜 조회
+  // date_from + date_to 모두 있으면 SCH_DT 없이 조회 후 코드에서 필터링
+  const hasDateRange = params.date_from && params.date_to;
+  if (params.date_from && !hasDateRange) {
     queryParams.SCH_DT = params.date_from.replace(/-/g, "");
   }
   if (params.committee) {
     queryParams.CMIT_NM = params.committee;
   }
   if (params.page) queryParams.pIndex = params.page;
-  if (params.page_size) {
+
+  // 날짜 범위 필터링 시 더 많은 결과를 가져옴
+  if (hasDateRange) {
+    queryParams.pSize = Math.min(params.page_size ?? 100, maxPageSize);
+  } else if (params.page_size) {
     queryParams.pSize = Math.min(params.page_size, maxPageSize);
   }
 
@@ -122,6 +130,8 @@ function buildMeetingsQuery(
 
   let apiCode: string;
 
+  // 참고: 회의록 API의 CONF_DATE는 연도(YYYY) 단위만 지원합니다.
+  // date_from에서 연도 부분만 추출하여 사용합니다.
   switch (params.meeting_type) {
     case "본회의":
       apiCode = API_CODES.MEETING_PLENARY;
@@ -223,7 +233,11 @@ export function registerLiteRecordTools(
       date_from: z
         .string()
         .optional()
-        .describe("시작 날짜 (YYYY-MM-DD 형식)"),
+        .describe("시작 날짜 (YYYY-MM-DD 형식). 회의록은 연도(YYYY)만 지원"),
+      date_to: z
+        .string()
+        .optional()
+        .describe("종료 날짜 (YYYY-MM-DD 형식). type='schedule'에서 date_from과 함께 사용 시 날짜 범위 필터링"),
       bill_id: z
         .string()
         .optional()
@@ -255,14 +269,35 @@ export function registerLiteRecordTools(
 
         const result = await api.fetchOpenAssembly(apiCode, queryParams);
 
-        const formatted = result.rows.map(formatRow);
+        let rows = result.rows;
+
+        // 일정(schedule) 타입: 날짜 범위 + 키워드 post-fetch 필터링
+        if (recordType === "schedule") {
+          const sp = params as SearchParams;
+          if (sp.date_from && sp.date_to) {
+            const from = sp.date_from.replace(/-/g, "");
+            const to = sp.date_to.replace(/-/g, "");
+            rows = rows.filter((row) => {
+              const dt = String(row.SCH_DT ?? "");
+              return dt >= from && dt <= to;
+            });
+          }
+          if (sp.keyword) {
+            const kw = sp.keyword.toLowerCase();
+            rows = rows.filter((row) =>
+              String(row.SCH_CN ?? "").toLowerCase().includes(kw),
+            );
+          }
+        }
+
+        const formatted = rows.map(formatRow);
         const label = RESULT_LABELS[recordType];
 
         return {
           content: [
             {
               type: "text" as const,
-              text: JSON.stringify({ total: result.totalCount, items: formatted }),
+              text: JSON.stringify({ total: formatted.length, items: formatted }),
             },
           ],
         };

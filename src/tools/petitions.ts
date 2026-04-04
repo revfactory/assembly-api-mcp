@@ -37,7 +37,16 @@ export function registerPetitionTools(
           queryParams,
         );
 
-        const formatted = result.rows.map((row) => ({
+        // BILL_NAME은 정확 일치일 수 있으므로, 키워드가 있으면 제목 포함 여부로 추가 필터링
+        let rows = result.rows;
+        if (params.keyword) {
+          const kw = params.keyword.toLowerCase();
+          rows = rows.filter((row) =>
+            String(row.BILL_NAME ?? "").toLowerCase().includes(kw),
+          );
+        }
+
+        const formatted = rows.map((row) => ({
           청원번호: row.BILL_NO,
           청원명: row.BILL_NAME,
           청원인: row.PROPOSER,
@@ -50,7 +59,7 @@ export function registerPetitionTools(
         return {
           content: [{
             type: "text" as const,
-            text: JSON.stringify({ total: result.totalCount, items: formatted }),
+            text: JSON.stringify({ total: formatted.length, items: formatted }),
           }],
         };
       } catch (err: unknown) {

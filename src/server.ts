@@ -16,6 +16,8 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { type AppConfig } from "./config.js";
 import { registerLiteTools } from "./tools/lite/index.js";
+import { registerLiteRecordTools } from "./tools/lite/records.js";
+import { registerLiteChainTools } from "./tools/lite/chains.js";
 import { registerMemberTools } from "./tools/members.js";
 import { registerBillTools } from "./tools/bills.js";
 import { registerScheduleTools } from "./tools/schedule.js";
@@ -62,6 +64,11 @@ function buildMcpServer(config: AppConfig): McpServer {
     registerBillExtraTools(server, config);
     registerDiscoverTools(server, config);
     registerQueryTools(server, config);
+    // Full 프로필에 lite-only 도구 추가 (search_records, analyze_legislator, track_legislation)
+    // search_bills/search_members는 full에 이미 같은 이름으로 존재하므로 제외
+    // discover_apis/query_assembly도 이미 등록됨
+    registerLiteRecordTools(server, config);
+    registerLiteChainTools(server, config);
   } else {
     // Lite 프로필 (기본): 7개 도구
     registerLiteTools(server, config);
