@@ -270,13 +270,27 @@ open examples/api-tester.html
 
 ## 문제 해결
 
-### "ASSEMBLY_API_KEY가 설정되지 않았습니다"
+### Claude Desktop에서 "server disconnected" 오류
 
-→ `.env` 파일에 키를 입력했는지 확인하세요.
+프로젝트의 `.env` 파일에 `MCP_TRANSPORT=http`이 설정되어 있으면, Claude Desktop이 기대하는 stdio 모드 대신 HTTP 모드로 서버가 시작됩니다. 클라이언트 설정에서 `MCP_TRANSPORT`를 명시적으로 override하세요:
+
+```json
+"env": {
+  "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력",
+  "MCP_TRANSPORT": "stdio",
+  "MCP_PROFILE": "lite"
+}
+```
+
+> `.env` 파일의 값은 서버가 `dotenv`로 자동 로드합니다. 클라이언트 설정의 `env`에서 같은 변수를 지정하면 `.env`보다 우선 적용됩니다.
 
 ### Claude Desktop에서 도구가 보이지 않음
 
-→ Claude Desktop을 **완전히 종료** (macOS: Cmd+Q, 트레이 아이콘도 닫기) 후 재시작하세요.
+→ Claude Desktop을 **완전히 종료** (macOS: Cmd+Q, 트레이 아이콘도 닫기) 후 재시작하세요. 설정 파일 변경은 재시작 후에만 적용됩니다.
+
+### "ASSEMBLY_API_KEY가 설정되지 않았습니다"
+
+→ `.env` 파일에 키를 입력했는지 확인하세요. Claude Desktop 등 외부 클라이언트에서 실행할 때는 클라이언트 설정의 `env`에도 키를 지정해야 합니다.
 
 ### API 호출이 0건 반환
 
@@ -285,6 +299,16 @@ open examples/api-tester.html
 ### Rate Limit 초과
 
 → 개발계정은 월 10,000건 제한입니다. `npx tsx src/cli.ts test`로 현재 상태를 확인하세요.
+
+### 포트 충돌 (HTTP 모드)
+
+→ `EADDRINUSE` 오류가 발생하면 해당 포트를 사용 중인 프로세스를 확인하세요:
+
+```bash
+lsof -i :3000
+# 다른 포트로 변경
+MCP_PORT=3001 npm start
+```
 
 ---
 
