@@ -16,7 +16,9 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { type AppConfig } from "./config.js";
 import { registerLiteTools } from "./tools/lite/index.js";
-import { registerLiteRecordTools } from "./tools/lite/records.js";
+import { registerLiteScheduleTools } from "./tools/lite/schedule.js";
+import { registerLiteMeetingTools } from "./tools/lite/meetings.js";
+import { registerLiteVoteTools } from "./tools/lite/votes.js";
 import { registerLiteChainTools } from "./tools/lite/chains.js";
 import { registerLiteMemberTools } from "./tools/lite/members.js";
 import { registerMemberTools } from "./tools/members.js";
@@ -65,10 +67,12 @@ function buildMcpServer(config: AppConfig): McpServer {
     registerBillExtraTools(server, config);
     registerDiscoverTools(server, config);
     registerQueryTools(server, config);
-    // Full 프로필에 lite-only 도구 추가 (search_records, analyze_legislator, track_legislation)
+    // Full 프로필에 lite-only 도구 추가 (회의록/표결/체인/의원검색)
     // search_bills/search_members는 full에 이미 같은 이름으로 존재하므로 제외
+    // get_schedule은 full의 registerScheduleTools에서 이미 등록되므로 제외
     // discover_apis/query_assembly도 이미 등록됨
-    registerLiteRecordTools(server, config);
+    registerLiteMeetingTools(server, config);
+    registerLiteVoteTools(server, config);
     registerLiteChainTools(server, config);
     registerLiteMemberTools(server, config);
   } else {

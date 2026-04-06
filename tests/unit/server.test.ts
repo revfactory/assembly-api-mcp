@@ -45,7 +45,7 @@ function getRegisteredPrompts(
 // ---------------------------------------------------------------------------
 
 describe("buildMcpServer (프로필 분기)", () => {
-  it("Lite 프로필: 7개 도구를 등록한다", async () => {
+  it("Lite 프로필: 9개 도구를 등록한다", async () => {
     const { createServer } = await import("../../src/server.js");
 
     // createServer는 transport를 시작하므로 직접 호출 대신
@@ -184,11 +184,13 @@ describe("createServer (HTTP 통합)", () => {
     // mcpServer 자체에서 HTTP 서버 접근은 어려우므로
     // 등록된 도구 수로 buildMcpServer 동작을 검증
     const tools = getRegisteredTools(mcpServer);
-    // Lite 프로필: 7개 도구
-    expect(Object.keys(tools)).toHaveLength(7);
+    // Lite 프로필: 9개 도구
+    expect(Object.keys(tools)).toHaveLength(9);
     expect(tools["search_members"]).toBeDefined();
     expect(tools["search_bills"]).toBeDefined();
-    expect(tools["search_records"]).toBeDefined();
+    expect(tools["get_schedule"]).toBeDefined();
+    expect(tools["search_meetings"]).toBeDefined();
+    expect(tools["get_votes"]).toBeDefined();
     expect(tools["analyze_legislator"]).toBeDefined();
     expect(tools["track_legislation"]).toBeDefined();
     expect(tools["discover_apis"]).toBeDefined();
@@ -203,7 +205,7 @@ describe("createServer (HTTP 통합)", () => {
     expect(Object.keys(prompts)).toHaveLength(3);
   });
 
-  it("Full 프로필로 27개 도구를 등록한다", async () => {
+  it("Full 프로필로 28개 도구를 등록한다", async () => {
     const { createServer } = await import("../../src/server.js");
     const config = createTestConfig({
       server: { transport: "http", port: 0, logLevel: "info" },
@@ -213,8 +215,8 @@ describe("createServer (HTTP 통합)", () => {
     const mcpServer = await createServer(config);
     const tools = getRegisteredTools(mcpServer);
 
-    // Full 프로필: 27개 도구
-    expect(Object.keys(tools)).toHaveLength(27);
+    // Full 프로필: 28개 도구 (23 full + search_meetings + get_votes + analyze_legislator + track_legislation + search_members)
+    expect(Object.keys(tools)).toHaveLength(28);
     // Full 전용 도구 확인
     expect(tools["get_members"]).toBeDefined();
     expect(tools["get_member_detail"]).toBeDefined();
