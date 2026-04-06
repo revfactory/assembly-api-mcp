@@ -1,5 +1,26 @@
 # CHANGES.md
 
+## 2026-04-06 — v0.2.1 (품질 개선)
+
+### 의원 사진 URL 추가
+- `get_members`, `search_members`, `analyze_legislator` 응답에 `사진`(photo) 필드 추가
+- `https://www.assembly.go.kr/photo/{MONA_CD}.jpg` 형식
+- `의원코드`(memberCode) 필드도 함께 반환
+
+### 의안 상세 조회 보완
+- `get_bill_detail`: BILLINFODETAIL API가 주요 필드(PROPOSER, COMMITTEE 등)를 반환하지 않는 경우 MEMBER_BILLS API로 자동 보완 조회
+- 제안이유, 주요내용, 심사경과 등 원시(raw) 필드 전체 반환
+
+### 도구 응답 일관성 개선
+- `search_members` 단건 결과: `item` → `items` 배열로 통일
+- `get_bill_review`, `get_bill_history`: 클라이언트 측 필터링 추가 (API가 BILL_ID/BILL_NM 필터를 무시하는 경우 대응)
+
+### 검색 안정성 강화
+- `UNIT_CD` 파라미터 제거 — MEMBER_INFO API에서 형식 오류로 빈 결과가 반환되는 문제 수정
+- `search_members` Full 프로필 등록 누락 수정
+
+---
+
 ## 2026-04-04 — v0.2.0 (Lite 프로필)
 
 ### 프로필 기반 MCP 도구 통합

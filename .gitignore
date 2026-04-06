@@ -9,3 +9,5 @@ coverage/
 .DS_Store
 .claude/
 .mcp.json
+.playwright-mcp/
+_workspace/
