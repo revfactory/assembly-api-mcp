@@ -21,10 +21,10 @@ function formatVoteByBillRow(
   row: Readonly<Record<string, unknown>>,
 ): Record<string, unknown> {
   return {
-    의안ID: row.BILL_ID,
-    의안명: row.BILL_NAME,
-    의원명: row.HG_NM,
-    표결결과: row.VOTE_RESULT,
+    bill_id: row.BILL_ID,
+    bill_name: row.BILL_NAME,
+    member_name: row.HG_NM,
+    vote_result: row.VOTE_RESULT,
   };
 }
 
@@ -33,13 +33,13 @@ function formatVotePlenaryRow(
   row: Readonly<Record<string, unknown>>,
 ): Record<string, unknown> {
   return {
-    의안ID: row.BILL_ID,
-    의안명: row.BILL_NAME ?? row.BILL_NM,
-    표결일: row.VOTE_DATE,
-    찬성: row.YES_TCNT,
-    반대: row.NO_TCNT,
-    기권: row.BLANK_TCNT,
-    결과: row.RESULT ?? row.VOTE_RESULT,
+    bill_id: row.BILL_ID,
+    bill_name: row.BILL_NAME ?? row.BILL_NM,
+    vote_date: row.VOTE_DATE,
+    yes_count: row.YES_TCNT,
+    no_count: row.NO_TCNT,
+    abstain_count: row.BLANK_TCNT,
+    result: row.RESULT ?? row.VOTE_RESULT,
   };
 }
 

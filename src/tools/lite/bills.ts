@@ -52,17 +52,17 @@ function formatSearchRow(
   row: Readonly<Record<string, unknown>>,
 ): Record<string, unknown> {
   return {
-    의안ID: row.BILL_ID ?? null,
-    의안번호: row.BILL_NO ?? null,
-    의안명: row.BILL_NAME ?? null,
-    제안자: row.PROPOSER ?? null,
-    제안자구분: row.PROPOSER_KIND ?? null,
-    대수: row.AGE ?? null,
-    소관위원회: row.COMMITTEE ?? null,
-    제안일: row.PROPOSE_DT ?? null,
-    처리상태: row.PROC_RESULT ?? null,
-    처리일: row.PROC_DT ?? null,
-    상세링크: row.DETAIL_LINK ?? null,
+    bill_id: row.BILL_ID ?? null,
+    bill_no: row.BILL_NO ?? null,
+    bill_name: row.BILL_NAME ?? null,
+    proposer: row.PROPOSER ?? null,
+    proposer_kind: row.PROPOSER_KIND ?? null,
+    age: row.AGE ?? null,
+    committee: row.COMMITTEE ?? null,
+    propose_date: row.PROPOSE_DT ?? null,
+    status: row.PROC_RESULT ?? null,
+    process_date: row.PROC_DT ?? null,
+    detail_link: row.DETAIL_LINK ?? null,
   };
 }
 
@@ -70,19 +70,19 @@ function formatDetailRow(
   row: Readonly<Record<string, unknown>>,
 ): Record<string, unknown> {
   return {
-    의안ID: row.BILL_ID ?? null,
-    의안번호: row.BILL_NO ?? null,
-    의안명: row.BILL_NAME ?? row.BILL_NM ?? null,
-    제안자: row.PROPOSER ?? null,
-    제안자구분: row.PROPOSER_KIND ?? null,
-    대수: row.AGE ?? null,
-    소관위원회: row.COMMITTEE ?? row.COMMITTEE_NM ?? null,
-    제안일: row.PROPOSE_DT ?? null,
-    처리상태: row.PROC_RESULT ?? null,
-    처리일: row.PROC_DT ?? null,
-    제안이유: row.RSN ?? null,
-    주요내용: row.DETAIL_CONTENT ?? null,
-    상세링크: row.DETAIL_LINK ?? row.LINK_URL ?? null,
+    bill_id: row.BILL_ID ?? null,
+    bill_no: row.BILL_NO ?? null,
+    bill_name: row.BILL_NAME ?? row.BILL_NM ?? null,
+    proposer: row.PROPOSER ?? null,
+    proposer_kind: row.PROPOSER_KIND ?? null,
+    age: row.AGE ?? null,
+    committee: row.COMMITTEE ?? row.COMMITTEE_NM ?? null,
+    propose_date: row.PROPOSE_DT ?? null,
+    status: row.PROC_RESULT ?? null,
+    process_date: row.PROC_DT ?? null,
+    reason: row.RSN ?? null,
+    content: row.DETAIL_CONTENT ?? null,
+    detail_link: row.DETAIL_LINK ?? row.LINK_URL ?? null,
   };
 }
 

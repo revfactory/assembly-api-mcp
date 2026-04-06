@@ -19,12 +19,12 @@ function formatScheduleRow(
   row: Readonly<Record<string, unknown>>,
 ): Record<string, unknown> {
   return {
-    일정종류: row.SCH_KIND,
-    일자: row.SCH_DT,
-    시간: row.SCH_TM,
-    위원회: row.CMIT_NM,
-    내용: row.SCH_CN,
-    장소: row.EV_PLC,
+    schedule_type: row.SCH_KIND,
+    date: row.SCH_DT,
+    time: row.SCH_TM,
+    committee: row.CMIT_NM,
+    content: row.SCH_CN,
+    venue: row.EV_PLC,
   };
 }
 

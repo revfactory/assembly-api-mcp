@@ -215,15 +215,21 @@ describe("createServer (HTTP 통합)", () => {
     const mcpServer = await createServer(config);
     const tools = getRegisteredTools(mcpServer);
 
-    // Full 프로필: 28개 도구 (23 full + search_meetings + get_votes + analyze_legislator + track_legislation + search_members)
-    expect(Object.keys(tools)).toHaveLength(28);
+    // Full 프로필: Lite 9개 + Full 전용 8개 = 17개 도구
+    // Lite: search_members, search_bills, get_schedule, search_meetings, get_votes,
+    //        analyze_legislator, track_legislation, discover_apis, query_assembly
+    // Full: get_bill_detail, get_bill_review, get_bill_history, get_committees,
+    //       search_petitions, get_legislation_notices, search_library,
+    //       get_budget_analysis, search_research_reports
+    expect(Object.keys(tools)).toHaveLength(18);
+    // Lite 도구 확인
+    expect(tools["search_members"]).toBeDefined();
+    expect(tools["search_bills"]).toBeDefined();
+    expect(tools["analyze_legislator"]).toBeDefined();
     // Full 전용 도구 확인
-    expect(tools["get_members"]).toBeDefined();
-    expect(tools["get_member_detail"]).toBeDefined();
-    expect(tools["get_pending_bills"]).toBeDefined();
+    expect(tools["get_bill_detail"]).toBeDefined();
     expect(tools["get_committees"]).toBeDefined();
     expect(tools["search_petitions"]).toBeDefined();
-    expect(tools["search_member_activity"]).toBeDefined();
   });
 });
 

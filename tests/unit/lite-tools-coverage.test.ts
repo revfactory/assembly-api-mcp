@@ -156,20 +156,20 @@ describe("Lite search_members", () => {
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
     const detail = items[0];
-    expect(detail["이름"]).toBe("홍길동");
-    expect(detail["약력"]).toBe("변호사, 전 판사");
-    expect(detail["연락처"]).toBe("02-1234-5678");
-    expect(detail["한자"]).toBe("洪吉童");
-    expect(detail["영문"]).toBe("HONG Gil-dong");
-    expect(detail["이메일"]).toBe("hong@assembly.go.kr");
-    expect(detail["홈페이지"]).toBe("https://example.com");
-    expect(detail["사무실"]).toBe("101호");
-    expect(detail["보좌관"]).toBe("김비서");
-    expect(detail["비서관"]).toBe("이비서");
-    expect(detail["생년월일"]).toBe("1970-01-01");
-    expect(detail["음양력"]).toBe("양력");
-    expect(detail["직책"]).toBe("위원");
-    expect(detail["대수"]).toBe("22");
+    expect(detail["name"]).toBe("홍길동");
+    expect(detail["career"]).toBe("변호사, 전 판사");
+    expect(detail["phone"]).toBe("02-1234-5678");
+    expect(detail["name_hanja"]).toBe("洪吉童");
+    expect(detail["name_english"]).toBe("HONG Gil-dong");
+    expect(detail["email"]).toBe("hong@assembly.go.kr");
+    expect(detail["homepage"]).toBe("https://example.com");
+    expect(detail["office"]).toBe("101호");
+    expect(detail["secretary1"]).toBe("김비서");
+    expect(detail["secretary2"]).toBe("이비서");
+    expect(detail["birth_date"]).toBe("1970-01-01");
+    expect(detail["calendar_type"]).toBe("양력");
+    expect(detail["position"]).toBe("위원");
+    expect(detail["terms"]).toBe("22");
   });
 
   it("여러 결과 → 요약 목록(6개 필드) 반환", async () => {
@@ -206,11 +206,11 @@ describe("Lite search_members", () => {
     expect(parsed.returned).toBe(2);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(2);
-    expect(items[0]["이름"]).toBe("홍길동");
-    expect(items[1]["이름"]).toBe("홍길순");
+    expect(items[0]["name"]).toBe("홍길동");
+    expect(items[1]["name"]).toBe("홍길순");
     // 요약에는 상세 필드가 없어야 함
-    expect(items[0]).not.toHaveProperty("약력");
-    expect(items[0]).not.toHaveProperty("연락처");
+    expect(items[0]).not.toHaveProperty("career");
+    expect(items[0]).not.toHaveProperty("phone");
   });
 
   it("결과 없음 → 검색 결과가 없습니다 메시지", async () => {
@@ -263,7 +263,7 @@ describe("Lite search_members", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]["이름"]).toBe("김의원");
+    expect(items[0]["name"]).toBe("김의원");
 
     // pSize=300으로 전체 목록 가져오기
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
@@ -361,12 +361,12 @@ describe("Lite search_members", () => {
     );
 
     const text = getText(result);
-    expect(text).toContain("이름");
-    expect(text).toContain("정당");
+    expect(text).toContain("name");
+    expect(text).toContain("party");
     // 빈/null/undefined 필드는 포함되지 않아야 함
-    expect(text).not.toContain('"선거구"');
-    expect(text).not.toContain('"한자"');
-    expect(text).not.toContain('"영문"');
+    expect(text).not.toContain('"district"');
+    expect(text).not.toContain('"name_hanja"');
+    expect(text).not.toContain('"name_english"');
   });
 });
 
@@ -417,10 +417,10 @@ describe("Lite search_bills", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]["의안명"]).toBe("테스트법률안");
-    expect(items[0]["처리상태"]).toBe("계류");
-    expect(items[0]).toHaveProperty("의안ID");
-    expect(items[0]).toHaveProperty("의안번호");
+    expect(items[0]["bill_name"]).toBe("테스트법률안");
+    expect(items[0]["status"]).toBe("계류");
+    expect(items[0]).toHaveProperty("bill_id");
+    expect(items[0]).toHaveProperty("bill_no");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -459,8 +459,8 @@ describe("Lite search_bills", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]["제안이유"]).toBe("교육 환경 개선을 위해");
-    expect(items[0]["주요내용"]).toBe("학교 시설 확충 및 교사 인력 확대");
+    expect(items[0]["reason"]).toBe("교육 환경 개선을 위해");
+    expect(items[0]["content"]).toBe("학교 시설 확충 및 교사 인력 확대");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -508,7 +508,7 @@ describe("Lite search_bills", () => {
     const parsed = getParsed(result);
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
-    expect(items[0]["의안명"]).toBe("계류법안");
+    expect(items[0]["bill_name"]).toBe("계류법안");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -532,7 +532,7 @@ describe("Lite search_bills", () => {
     const parsed = getParsed(result);
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
-    expect(items[0]["의안명"]).toBe("처리법안");
+    expect(items[0]["bill_name"]).toBe("처리법안");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -556,7 +556,7 @@ describe("Lite search_bills", () => {
     const parsed = getParsed(result);
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
-    expect(items[0]["의안명"]).toBe("최근법안");
+    expect(items[0]["bill_name"]).toBe("최근법안");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -659,8 +659,8 @@ describe("Lite search_bills", () => {
 
     const parsed = getParsed(result);
     const items = parsed.items as Record<string, unknown>[];
-    expect(items[0]["의안ID"]).toBeNull();
-    expect(items[0]["의안명"]).toBe("테스트만있음");
+    expect(items[0]["bill_id"]).toBeNull();
+    expect(items[0]["bill_name"]).toBe("테스트만있음");
   });
 });
 
@@ -706,8 +706,8 @@ describe("Lite get_schedule", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]["위원회"]).toBe("법사위");
-    expect(items[0]["일정종류"]).toBe("위원회");
+    expect(items[0]["committee"]).toBe("법사위");
+    expect(items[0]["schedule_type"]).toBe("위원회");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -801,7 +801,7 @@ describe("Lite search_meetings", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]).toHaveProperty("회의명");
+    expect(items[0]).toHaveProperty("title");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -830,7 +830,7 @@ describe("Lite search_meetings", () => {
     const parsed = getParsed(result);
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
-    expect(items[0]["회의명"]).toBe("국정감사");
+    expect(items[0]["title"]).toBe("국정감사");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -858,7 +858,7 @@ describe("Lite search_meetings", () => {
     const parsed = getParsed(result);
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
-    expect(items[0]["회의명"]).toBe("본회의");
+    expect(items[0]["title"]).toBe("본회의");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -1034,9 +1034,9 @@ describe("Lite get_votes", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]).toHaveProperty("의안ID");
-    expect(items[0]).toHaveProperty("의원명");
-    expect(items[0]).toHaveProperty("표결결과");
+    expect(items[0]).toHaveProperty("bill_id");
+    expect(items[0]).toHaveProperty("member_name");
+    expect(items[0]).toHaveProperty("vote_result");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -1070,10 +1070,10 @@ describe("Lite get_votes", () => {
     expect(parsed.total).toBe(1);
     const items = parsed.items as Record<string, unknown>[];
     expect(items).toHaveLength(1);
-    expect(items[0]).toHaveProperty("의안ID");
-    expect(items[0]).toHaveProperty("표결일");
-    expect(items[0]).toHaveProperty("찬성");
-    expect(items[0]).toHaveProperty("결과");
+    expect(items[0]).toHaveProperty("bill_id");
+    expect(items[0]).toHaveProperty("vote_date");
+    expect(items[0]).toHaveProperty("yes_count");
+    expect(items[0]).toHaveProperty("result");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
