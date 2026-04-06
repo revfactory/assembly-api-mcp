@@ -1,0 +1,233 @@
+- generic [active] [ref=e1]:
+  - link "콘텐츠 바로가기" [ref=e3] [cursor=pointer]:
+    - /url: "#contents"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - img "eg(전자정부)" [ref=e10]
+            - text: 이 누리집은 대한민국 공식 전자정부 누리집입니다.
+        - generic [ref=e11]:
+          - searchbox "검색어를 입력해 주세요" [ref=e12]
+          - button "검색" [ref=e13] [cursor=pointer]
+      - generic [ref=e14]:
+        - heading "공공데이터포털" [level=1] [ref=e15]:
+          - link "공공데이터포털" [ref=e16] [cursor=pointer]:
+            - /url: /index.do
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - generic [ref=e20]:
+              - link "로그인" [ref=e21] [cursor=pointer]:
+                - /url: javascript:window.location.href='/uim/login/loginView.do';
+              - link "회원가입" [ref=e22] [cursor=pointer]:
+                - /url: javascript:window.location.href='/uim/login/signupView.do';
+            - generic [ref=e23]:
+              - link "사이트맵" [ref=e24] [cursor=pointer]:
+                - /url: javascript:window.location.href='/cmm/cmm/siteMap.do';
+              - link "ENGLISH" [ref=e25] [cursor=pointer]:
+                - /url: /en/index.do
+          - navigation [ref=e26]:
+            - list [ref=e27]:
+              - listitem [ref=e28]:
+                - link "데이터찾기" [ref=e29] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e30]:
+                - link "국가데이터맵" [ref=e31] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e32]:
+                - link "데이터요청" [ref=e33] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e34]:
+                - link "기업 공공데이터 문제해결 지원센터" [ref=e35] [cursor=pointer]:
+                  - /url: "#"
+                  - text: 기업 공공데이터
+                  - text: 문제해결 지원센터
+              - listitem [ref=e36]:
+                - link "데이터활용" [ref=e37] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e38]:
+                - link "정보공유" [ref=e39] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e40]:
+                - link "이용안내" [ref=e41] [cursor=pointer]:
+                  - /url: "#"
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - heading "오픈API 상세" [level=2] [ref=e46]
+        - generic [ref=e47]:
+          - link "페이스북" [ref=e49] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e50]: 페이스북
+          - button "트위터" [ref=e51] [cursor=pointer]:
+            - generic [ref=e52]: 트위터
+          - button "URL 복사" [ref=e53] [cursor=pointer]
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: XML
+            - paragraph [ref=e58]: 국회 국회사무처_의안정보 통합 API
+          - generic [ref=e59]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+          - button "좋아요 선택 안함, 좋아요 선택한 사람 수 0" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: 좋아요 선택 안함, 좋아요 선택한 사람 수
+            - text: "0"
+          - button "싫어요 선택 안함, 싫어요 선택한 사람 수 0" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]: 싫어요 선택 안함, 싫어요 선택한 사람 수
+            - text: "0"
+          - button "관심" [ref=e64] [cursor=pointer]: 관심
+          - generic [ref=e66]:
+            - link "데이터조회하기" [ref=e67] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - text: 데이터조회하기
+            - link "바로가기" [ref=e69] [cursor=pointer]:
+              - /url: https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OOWY4R001216HX11440
+              - text: 바로가기
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - generic [ref=e74]:
+              - heading "OpenAPI 정보" [level=3] [ref=e75]
+              - button " 메타데이터 다운로드" [ref=e77] [cursor=pointer]:
+                - generic [ref=e78]: 
+                - text: 메타데이터 다운로드
+              - button "오픈API 에러코드" [ref=e81] [cursor=pointer]:
+                - generic [ref=e82]: 
+                - text: 오픈API 에러코드
+            - generic [ref=e83]:
+              - link "데이터 개선요청" [ref=e84] [cursor=pointer]:
+                - /url: javascript:fn_callDataImproveReportPopup('', 'O', '15126134','uddi:e91d9297-1f07-4984-8979-d051a63d58ce_202407121723', '')
+              - link "오류신고 및 문의" [ref=e85] [cursor=pointer]:
+                - /url: javascript:fn_callErrorReportPopup('', 'O', '15126134','uddi:e91d9297-1f07-4984-8979-d051a63d58ce_202407121723', '');
+          - table "국회 국회사무처_의안정보 통합 API로 오픈 API 정보 표로 분류체계, 제공기관 등 정보를 나타냄" [ref=e86]:
+            - caption: 국회 국회사무처_의안정보 통합 API로 오픈 API 정보 표로 분류체계, 제공기관 등 정보를 나타냄
+            - rowgroup [ref=e87]:
+              - row "분류체계 일반공공행정 - 법제 제공기관 국회 국회사무처" [ref=e88]:
+                - rowheader "분류체계" [ref=e89]
+                - cell "일반공공행정 - 법제" [ref=e90]
+                - rowheader "제공기관" [ref=e91]
+                - cell "국회 국회사무처" [ref=e92]:
+                  - link "국회 국회사무처" [ref=e93] [cursor=pointer]:
+                    - /url: /tcs/dss/selectDataSetList.do?dType=&keyword=&org=국회%20국회사무처&orgFilter=국회%20국회사무처&orgFullName=국회%20국회사무처&conditionType=search
+              - row "관리부서명 기획조정실 디지털운영담당관실 관리부서 전화번호 02-6788-3056" [ref=e94]:
+                - rowheader "관리부서명" [ref=e95]
+                - cell "기획조정실 디지털운영담당관실" [ref=e96]
+                - rowheader "관리부서 전화번호" [ref=e97]
+                - cell "02-6788-3056" [ref=e98]:
+                  - strong [ref=e99]: 02-6788-3056
+              - row "API 유형 LINK 데이터포맷 XML" [ref=e100]:
+                - rowheader "API 유형" [ref=e101]
+                - cell "LINK" [ref=e102]
+                - rowheader "데이터포맷" [ref=e103]
+                - cell "XML" [ref=e104]
+              - row "활용신청 791 키워드 국회,입법,의안" [ref=e105]:
+                - rowheader "활용신청" [ref=e106]
+                - cell "791" [ref=e107]
+                - rowheader "키워드" [ref=e108]
+                - cell "국회,입법,의안" [ref=e109]
+              - row "등록일 2023-12-28 수정일 2024-07-12" [ref=e110]:
+                - rowheader "등록일" [ref=e111]
+                - cell "2023-12-28" [ref=e112]
+                - rowheader "수정일" [ref=e113]
+                - cell "2024-07-12" [ref=e114]
+              - row "URL https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OOWY4R001216HX11440" [ref=e115]:
+                - rowheader "URL" [ref=e116]
+                - cell "https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OOWY4R001216HX11440" [ref=e117]:
+                  - link "https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OOWY4R001216HX11440" [ref=e118] [cursor=pointer]:
+                    - /url: https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OOWY4R001216HX11440
+              - row "비용부과유무 무료 신청가능 트래픽 해당 기관의 정책에 따라 트래픽 수는 상이 할 수 있음" [ref=e119]:
+                - rowheader "비용부과유무" [ref=e120]
+                - cell "무료" [ref=e121]
+                - rowheader "신청가능 트래픽" [ref=e122]
+                - cell "해당 기관의 정책에 따라 트래픽 수는 상이 할 수 있음" [ref=e123]
+              - row "업데이트 주기 실시간" [ref=e124]:
+                - rowheader "업데이트 주기" [ref=e125]
+                - cell "실시간" [ref=e126]
+                - cell [ref=e127]
+              - row "공간범위 시간범위" [ref=e128]:
+                - columnheader "공간범위" [ref=e129]
+                - cell [ref=e130]
+                - columnheader "시간범위" [ref=e131]
+                - cell [ref=e132]
+              - row "이용허락범위 이용허락범위 제한 없음" [ref=e133]:
+                - rowheader "이용허락범위" [ref=e134]
+                - cell "이용허락범위 제한 없음" [ref=e135]:
+                  - link "이용허락범위 제한 없음" [ref=e137] [cursor=pointer]:
+                    - /url: /ugs/selectPortalPolicyView.do
+              - row "참고문서 오픈API활용가이드_국회사무처.pdf" [ref=e138]:
+                - rowheader "참고문서" [ref=e139]
+                - cell "오픈API활용가이드_국회사무처.pdf" [ref=e140]:
+                  - link "오픈API활용가이드_국회사무처.pdf" [ref=e141] [cursor=pointer]:
+                    - /url: javascript:void(0)
+        - text:  
+        - navigation [ref=e143]:
+          - list [ref=e144]:
+            - listitem [ref=e145]:
+              - link "추천데이터" [ref=e146] [cursor=pointer]:
+                - /url: "#tab_layer_recommend_data"
+        - generic [ref=e147]:
+          - generic [ref=e149]: 다른 사용자들이 활용한 데이터
+          - generic [ref=e151]:
+            - generic [ref=e152]: 로그인하셔서 다른 사용자들이 활용한 데이터를 추천받아 보세요
+            - link "로그인" [ref=e154] [cursor=pointer]:
+              - /url: /uim/login/loginView.do
+          - generic [ref=e156]: 이 데이터와 유사한 데이터
+        - link "목록" [ref=e158] [cursor=pointer]:
+          - /url: javascript:void(0)
+    - complementary [ref=e159]:
+      - link "상단가기" [ref=e160] [cursor=pointer]:
+        - /url: "#top"
+    - contentinfo [ref=e161]:
+      - generic [ref=e162]:
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - strong [ref=e166]: 공공데이터 개방문의
+            - link "1566-0025" [ref=e167] [cursor=pointer]:
+              - /url: tel:1566-0025
+          - link "운영자 메일상담" [ref=e169] [cursor=pointer]:
+            - /url: mailto:opendata_help@nia.or.kr
+            - text: 운영자 메일상담
+          - generic [ref=e171]:
+            - link "페이스북 공유" [ref=e172] [cursor=pointer]:
+              - /url: http://www.facebook.com/koreadataportal
+              - generic [ref=e173]: 페이스북 공유
+            - link "트위터 공유" [ref=e174] [cursor=pointer]:
+              - /url: https://twitter.com/koreadataportal
+              - generic [ref=e175]: 트위터 공유
+            - link "블로그 공유" [ref=e176] [cursor=pointer]:
+              - /url: http://blog.naver.com/nia_korea
+              - generic [ref=e177]: 블로그 공유
+        - generic [ref=e178]:
+          - list [ref=e179]:
+            - listitem [ref=e180]:
+              - link "이용약관" [ref=e181] [cursor=pointer]:
+                - /url: /ugs/selectPortalPolicyView.do#use_stplat
+            - listitem [ref=e182]:
+              - link "개인정보처리방침" [ref=e183] [cursor=pointer]:
+                - /url: /ugs/selectPortalPolicyView.do#indvdlinfo_process
+            - listitem [ref=e184]:
+              - link "공공데이터포털 소개" [ref=e185] [cursor=pointer]:
+                - /url: /ugs/selectPortalInfoView.do#portal_info
+            - listitem [ref=e186]:
+              - link "분쟁조정신청" [ref=e187] [cursor=pointer]:
+                - /url: /tcs/dor/insertTrublMdatReqstProcssView.do
+          - generic [ref=e188]:
+            - combobox "관련사이트 선택" [ref=e189]:
+              - option "행정안전부" [selected]
+              - option "공공데이터전략위원회"
+              - option "공공데이터분쟁조정위원회"
+              - option "오픈데이터포럼"
+              - option "오픈스퀘어-D"
+            - button "이동" [ref=e190] [cursor=pointer]
+        - generic:
+          - link "행정안전부" [ref=e192] [cursor=pointer]:
+            - /url: https://www.mois.go.kr/
+            - img "행정안전부" [ref=e193]
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - paragraph [ref=e196]: (30112) 세종특별자치시 도움6로 42(어진동)
+              - paragraph [ref=e197]:
+                - text: "대표번호 :"
+                - link "1566-0025" [ref=e198] [cursor=pointer]:
+                  - /url: tel:1566-0025
+              - paragraph [ref=e199]: "문의시간 : 09:00~18:00 (월~금)"
+            - paragraph [ref=e201]: ⓒ행정안전부. All rights reserved.
+  - log [ref=e202]

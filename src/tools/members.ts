@@ -34,7 +34,8 @@ export function registerMemberTools(
         if (params.name) queryParams.HG_NM = params.name;
         if (params.party) queryParams.POLY_NM = params.party;
         if (params.district) queryParams.ORIG_NM = params.district;
-        if (params.age) queryParams.UNIT_CD = `100${String(params.age).padStart(4, "0")}`;
+        // MEMBER_INFO API는 UNIT_CD가 아닌 AGE 불필요 (현재 의원만 반환)
+        // age 파라미터는 무시 — UNIT_CD 형식 오류로 빈 결과 반환 방지
         if (params.page) queryParams.pIndex = params.page;
         if (params.page_size) queryParams.pSize = Math.min(params.page_size, config.apiResponse.maxPageSize);
 
@@ -94,7 +95,8 @@ export function registerMemberTools(
         const queryParams: Record<string, string | number> = {
           HG_NM: params.name,
         };
-        if (params.age) queryParams.UNIT_CD = `100${String(params.age).padStart(4, "0")}`;
+        // MEMBER_INFO API는 UNIT_CD가 아닌 AGE 불필요 (현재 의원만 반환)
+        // age 파라미터는 무시 — UNIT_CD 형식 오류로 빈 결과 반환 방지
 
         const result = await api.fetchOpenAssembly(
           API_CODES.MEMBER_INFO,

@@ -88,9 +88,10 @@ export function registerBillTools(
     },
     async (params) => {
       try {
+        const age = params.age ?? CURRENT_AGE;
         const queryParams: Record<string, string | number> = {
           BILL_ID: params.bill_id,
-          AGE: params.age ?? CURRENT_AGE,
+          AGE: age,
         };
 
         const result = await api.fetchOpenAssembly(
@@ -109,7 +110,7 @@ export function registerBillTools(
 
         // 원시 필드 전체 반환 (제안이유, 주요내용, 심사경과 등 포함)
         const row = result.rows[0];
-        const detail = {
+        const detail: Record<string, unknown> = {
           BILL_ID: row.BILL_ID,
           BILL_NO: row.BILL_NO,
           BILL_NAME: row.BILL_NAME,
@@ -134,6 +135,32 @@ export function registerBillTools(
           // 모든 원시 필드도 포함
           ...row,
         };
+
+        // BILLINFODETAIL이 주요 필드(PROPOSER, COMMITTEE 등)를 반환하지 않는 경우
+        // MEMBER_BILLS API로 보완 조회
+        const missingKey = !detail.PROPOSER && !detail.COMMITTEE && !detail.PROPOSE_DT;
+        if (missingKey) {
+          try {
+            const supplementResult = await api.fetchOpenAssembly(
+              API_CODES.MEMBER_BILLS,
+              { BILL_ID: params.bill_id, AGE: age, pSize: 1 },
+            );
+            if (supplementResult.rows.length > 0) {
+              const sup = supplementResult.rows[0];
+              // 보완 필드를 병합 (기존 값이 없는 경우만 덮어씀)
+              if (!detail.PROPOSER) detail.PROPOSER = sup.PROPOSER;
+              if (!detail.COMMITTEE) detail.COMMITTEE = sup.COMMITTEE;
+              if (!detail.PROPOSE_DT) detail.PROPOSE_DT = sup.PROPOSE_DT;
+              if (!detail.PROC_RESULT_CD) detail.PROC_RESULT_CD = sup.PROC_RESULT;
+              if (!detail.PROC_DT) detail.PROC_DT = sup.PROC_DT;
+              if (!detail.DETAIL_LINK) detail.DETAIL_LINK = sup.DETAIL_LINK;
+              if (!detail.BILL_NO) detail.BILL_NO = sup.BILL_NO;
+              if (!detail.BILL_NAME) detail.BILL_NAME = sup.BILL_NAME;
+            }
+          } catch {
+            // 보완 조회 실패 시 BILLINFODETAIL 결과만 반환
+          }
+        }
 
         return {
           content: [{

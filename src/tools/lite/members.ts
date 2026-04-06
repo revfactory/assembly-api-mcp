@@ -80,7 +80,7 @@ function buildQueryParams(params: {
   if (params.name) queryParams.HG_NM = params.name;
   if (params.party) queryParams.POLY_NM = params.party;
   if (params.district) queryParams.ORIG_NM = params.district;
-  if (params.age) queryParams.UNIT_CD = `100${String(params.age).padStart(4, "0")}`;
+  // MEMBER_INFO API는 UNIT_CD 불필요 (현재 의원만 반환, 형식 오류로 빈 결과 방지)
   if (params.page) queryParams.pIndex = params.page;
   if (params.page_size) queryParams.pSize = Math.min(params.page_size, maxPageSize);
 
@@ -128,13 +128,13 @@ export function registerLiteMemberTools(
           };
         }
 
-        // 결과가 1건이면 상세 정보 반환
+        // 결과가 1건이면 상세 정보 반환 (items 배열로 통일)
         if (result.rows.length === 1) {
           const detail = formatRow(result.rows[0], DETAIL_FIELDS);
           return {
             content: [{
               type: "text" as const,
-              text: JSON.stringify({ total: 1, item: detail }),
+              text: JSON.stringify({ total: 1, items: [detail] }),
             }],
           };
         }

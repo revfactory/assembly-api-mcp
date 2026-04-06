@@ -1,0 +1,3787 @@
+- generic [active] [ref=e1]:
+  - link "콘텐츠 바로가기" [ref=e3] [cursor=pointer]:
+    - /url: "#contents"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - img "eg(전자정부)" [ref=e9]
+          - text: 이 누리집은 대한민국 공식 전자정부 누리집입니다.
+      - generic [ref=e10]:
+        - heading "공공데이터포털" [level=1] [ref=e11]:
+          - link "공공데이터포털" [ref=e12] [cursor=pointer]:
+            - /url: /index.do
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - generic [ref=e16]:
+              - link "로그인" [ref=e17] [cursor=pointer]:
+                - /url: javascript:window.location.href='/uim/login/loginView.do';
+              - link "회원가입" [ref=e18] [cursor=pointer]:
+                - /url: javascript:window.location.href='/uim/login/signupView.do';
+            - generic [ref=e19]:
+              - link "사이트맵" [ref=e20] [cursor=pointer]:
+                - /url: javascript:window.location.href='/cmm/cmm/siteMap.do';
+              - link "ENGLISH" [ref=e21] [cursor=pointer]:
+                - /url: /en/index.do
+          - navigation [ref=e22]:
+            - list [ref=e23]:
+              - listitem [ref=e24]:
+                - link "데이터찾기" [ref=e25] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e26]:
+                - link "국가데이터맵" [ref=e27] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e28]:
+                - link "데이터요청" [ref=e29] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e30]:
+                - link "기업 공공데이터 문제해결 지원센터" [ref=e31] [cursor=pointer]:
+                  - /url: "#"
+                  - text: 기업 공공데이터
+                  - text: 문제해결 지원센터
+              - listitem [ref=e32]:
+                - link "데이터활용" [ref=e33] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e34]:
+                - link "정보공유" [ref=e35] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e36]:
+                - link "이용안내" [ref=e37] [cursor=pointer]:
+                  - /url: "#"
+    - generic [ref=e40]:
+      - heading "데이터목록" [level=2] [ref=e42]
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - searchbox "검색어 입력" [ref=e45]: 국회사무처
+          - combobox "검색어 간 공백(사이띄기)를 기준으로 AND/OR 조건의 검색이 가능합니다." [ref=e46]:
+            - option "AND" [selected]
+            - option "OR"
+          - button "검색" [ref=e47] [cursor=pointer]:
+            - generic [ref=e48]: 검색
+        - generic [ref=e50]:
+          - generic [ref=e52]: 연관
+          - generic [ref=e53]:
+            - link "제공기관별 검색" [ref=e54] [cursor=pointer]:
+              - /url: "#"
+            - link "상세검색" [ref=e55] [cursor=pointer]:
+              - /url: "#layer_search_more"
+      - strong [ref=e56]: "\"국회사무처\"에 대해 총 278건이 검색되었습니다."
+      - generic [ref=e57]:
+        - heading "조건검색" [level=3] [ref=e58]
+        - button "초기화" [ref=e60] [cursor=pointer]: 초기화
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - button "분류체계" [disabled] [ref=e66]
+          - button "서비스유형" [disabled] [ref=e69]
+          - button "제공기관유형" [disabled] [ref=e72]
+          - button "확장자" [disabled] [ref=e75]
+        - generic [ref=e76]:
+          - button "조건열기" [ref=e78] [cursor=pointer]:
+            - generic [ref=e79]: 조건열기
+          - link "국가중점데이터 분류 조건 추가하기" [ref=e82] [cursor=pointer]:
+            - /url: "#layer_condition_add"
+            - text: 국가중점데이터 분류 조건 추가하기
+      - list [ref=e85]:
+        - listitem [ref=e86]:
+          - link "전체(278건)" [ref=e87] [cursor=pointer]:
+            - /url: "#tab_layer01"
+        - listitem [ref=e88]:
+          - link "파일데이터(0건)" [ref=e89] [cursor=pointer]:
+            - /url: "#tab_layer02"
+        - listitem [ref=e90]:
+          - link "오픈 API(277건)" [ref=e91] [cursor=pointer]:
+            - /url: "#tab_layer03"
+        - listitem [ref=e92]:
+          - link "표준데이터셋0개(0건)" [ref=e93] [cursor=pointer]:
+            - /url: "#tab_layer04"
+        - listitem [ref=e94]:
+          - link "연계데이터(1건)" [ref=e95] [cursor=pointer]:
+            - /url: "#tab_layer05"
+      - generic [ref=e96]:
+        - combobox "정렬 기준 선택" [ref=e97]:
+          - option "정확도순" [selected]
+          - option "조회많은순"
+          - option "활용많은순"
+          - option "수정일자순"
+        - combobox "노출 개수 선택" [ref=e98]:
+          - option "5개씩" [selected]
+          - option "10개씩"
+          - option "20개씩"
+          - option "30개씩"
+          - option "40개씩"
+        - button "정렬" [ref=e99] [cursor=pointer]
+      - generic [ref=e100]:
+        - heading "오픈 API (277건)" [level=3] [ref=e102]
+        - list [ref=e104]:
+          - listitem [ref=e105]:
+            - link "국회 국회사무처_의안정보 통합 API 미리보기" [ref=e106] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e107]: 국회 국회사무처_의안정보 통합 API
+              - text: 미리보기
+            - paragraph [ref=e108]:
+              - generic [ref=e109]: 공공행정
+              - generic [ref=e110]: 입법기관
+              - generic [ref=e111]: 국가중점
+            - generic [ref=e112]:
+              - term [ref=e113]:
+                - link "XML 국회 국회사무처_의안정보 통합 API" [ref=e114] [cursor=pointer]:
+                  - /url: /data/15126134/openapi.do
+                  - generic [ref=e115]: XML
+                  - generic [ref=e116]: 국회 국회사무처_의안정보 통합 API
+              - definition [ref=e117]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e118]:
+              - paragraph [ref=e119]:
+                - generic [ref=e120]: 제공기관
+                - generic [ref=e121]: 국회 국회사무처
+              - paragraph [ref=e122]:
+                - generic [ref=e123]: 수정일
+                - generic [ref=e124]: 2024-07-12
+              - paragraph [ref=e125]:
+                - generic [ref=e126]: 조회수
+                - generic [ref=e127]: "6419"
+              - paragraph [ref=e128]:
+                - generic [ref=e129]: 활용신청
+                - generic [ref=e130]: "791"
+              - paragraph [ref=e131]:
+                - generic [ref=e132]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의안정보 통합 API 바로가기" [ref=e134] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e135]: 국회 국회사무처_의안정보 통합 API
+              - text: 바로가기
+          - listitem [ref=e137]:
+            - link "국회 국회사무처_국회의원 발의법률안 미리보기" [ref=e138] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e139]: 국회 국회사무처_국회의원 발의법률안
+              - text: 미리보기
+            - paragraph [ref=e140]:
+              - generic [ref=e141]: 공공행정
+              - generic [ref=e142]: 입법기관
+              - generic [ref=e143]: 국가중점
+            - generic [ref=e144]:
+              - term [ref=e145]:
+                - link "XML 국회 국회사무처_국회의원 발의법률안" [ref=e146] [cursor=pointer]:
+                  - /url: /data/15125946/openapi.do
+                  - generic [ref=e147]: XML
+                  - generic [ref=e148]: 국회 국회사무처_국회의원 발의법률안
+              - definition [ref=e149]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e150]:
+              - paragraph [ref=e151]:
+                - generic [ref=e152]: 제공기관
+                - generic [ref=e153]: 국회 국회사무처
+              - paragraph [ref=e154]:
+                - generic [ref=e155]: 수정일
+                - generic [ref=e156]: 2024-07-12
+              - paragraph [ref=e157]:
+                - generic [ref=e158]: 조회수
+                - generic [ref=e159]: "4054"
+              - paragraph [ref=e160]:
+                - generic [ref=e161]: 활용신청
+                - generic [ref=e162]: "557"
+              - paragraph [ref=e163]:
+                - generic [ref=e164]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 발의법률안 바로가기" [ref=e166] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e167]: 국회 국회사무처_국회의원 발의법률안
+              - text: 바로가기
+          - listitem [ref=e169]:
+            - link "국회 국회사무처_OPEN API 전체 현황 미리보기" [ref=e170] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e171]: 국회 국회사무처_OPEN API 전체 현황
+              - text: 미리보기
+            - paragraph [ref=e172]:
+              - generic [ref=e173]: 공공행정
+              - generic [ref=e174]: 입법기관
+              - generic [ref=e175]: 국가중점
+            - generic [ref=e176]:
+              - term [ref=e177]:
+                - link "XML 국회 국회사무처_OPEN API 전체 현황" [ref=e178] [cursor=pointer]:
+                  - /url: /data/15125891/openapi.do
+                  - generic [ref=e179]: XML
+                  - generic [ref=e180]: 국회 국회사무처_OPEN API 전체 현황
+              - definition [ref=e181]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e182]:
+              - paragraph [ref=e183]:
+                - generic [ref=e184]: 제공기관
+                - generic [ref=e185]: 국회 국회사무처
+              - paragraph [ref=e186]:
+                - generic [ref=e187]: 수정일
+                - generic [ref=e188]: 2024-07-12
+              - paragraph [ref=e189]:
+                - generic [ref=e190]: 조회수
+                - generic [ref=e191]: "4777"
+              - paragraph [ref=e192]:
+                - generic [ref=e193]: 활용신청
+                - generic [ref=e194]: "457"
+              - paragraph [ref=e195]:
+                - generic [ref=e196]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_OPEN API 전체 현황 바로가기" [ref=e198] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e199]: 국회 국회사무처_OPEN API 전체 현황
+              - text: 바로가기
+          - listitem [ref=e201]:
+            - link "국회 국회사무처_국회의원 정보 통합 API 미리보기" [ref=e202] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e203]: 국회 국회사무처_국회의원 정보 통합 API
+              - text: 미리보기
+            - paragraph [ref=e204]:
+              - generic [ref=e205]: 공공행정
+              - generic [ref=e206]: 입법기관
+              - generic [ref=e207]: 국가중점
+            - generic [ref=e208]:
+              - term [ref=e209]:
+                - link "XML 국회 국회사무처_국회의원 정보 통합 API" [ref=e210] [cursor=pointer]:
+                  - /url: /data/15126133/openapi.do
+                  - generic [ref=e211]: XML
+                  - generic [ref=e212]: 국회 국회사무처_국회의원 정보 통합 API
+              - definition [ref=e213]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e214]:
+              - paragraph [ref=e215]:
+                - generic [ref=e216]: 제공기관
+                - generic [ref=e217]: 국회 국회사무처
+              - paragraph [ref=e218]:
+                - generic [ref=e219]: 수정일
+                - generic [ref=e220]: 2024-07-12
+              - paragraph [ref=e221]:
+                - generic [ref=e222]: 조회수
+                - generic [ref=e223]: "3801"
+              - paragraph [ref=e224]:
+                - generic [ref=e225]: 활용신청
+                - generic [ref=e226]: "409"
+              - paragraph [ref=e227]:
+                - generic [ref=e228]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 정보 통합 API 바로가기" [ref=e230] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e231]: 국회 국회사무처_국회의원 정보 통합 API
+              - text: 바로가기
+          - listitem [ref=e233]:
+            - link "국회 국회사무처_본회의 회의록 미리보기" [ref=e234] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e235]: 국회 국회사무처_본회의 회의록
+              - text: 미리보기
+            - paragraph [ref=e236]:
+              - generic [ref=e237]: 공공행정
+              - generic [ref=e238]: 입법기관
+              - generic [ref=e239]: 국가중점
+            - generic [ref=e240]:
+              - term [ref=e241]:
+                - link "XML 국회 국회사무처_본회의 회의록" [ref=e242] [cursor=pointer]:
+                  - /url: /data/15126007/openapi.do
+                  - generic [ref=e243]: XML
+                  - generic [ref=e244]: 국회 국회사무처_본회의 회의록
+              - definition [ref=e245]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e246]:
+              - paragraph [ref=e247]:
+                - generic [ref=e248]: 제공기관
+                - generic [ref=e249]: 국회 국회사무처
+              - paragraph [ref=e250]:
+                - generic [ref=e251]: 수정일
+                - generic [ref=e252]: 2024-07-12
+              - paragraph [ref=e253]:
+                - generic [ref=e254]: 조회수
+                - generic [ref=e255]: "2913"
+              - paragraph [ref=e256]:
+                - generic [ref=e257]: 활용신청
+                - generic [ref=e258]: "256"
+              - paragraph [ref=e259]:
+                - generic [ref=e260]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_본회의 회의록 바로가기" [ref=e262] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e263]: 국회 국회사무처_본회의 회의록
+              - text: 바로가기
+          - listitem [ref=e265]:
+            - link "국회 국회사무처_국회의원 인적사항 미리보기" [ref=e266] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e267]: 국회 국회사무처_국회의원 인적사항
+              - text: 미리보기
+            - paragraph [ref=e268]:
+              - generic [ref=e269]: 공공행정
+              - generic [ref=e270]: 입법기관
+              - generic [ref=e271]: 국가중점
+            - generic [ref=e272]:
+              - term [ref=e273]:
+                - link "XML 국회 국회사무처_국회의원 인적사항" [ref=e274] [cursor=pointer]:
+                  - /url: /data/15125958/openapi.do
+                  - generic [ref=e275]: XML
+                  - generic [ref=e276]: 국회 국회사무처_국회의원 인적사항
+              - definition [ref=e277]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e278]:
+              - paragraph [ref=e279]:
+                - generic [ref=e280]: 제공기관
+                - generic [ref=e281]: 국회 국회사무처
+              - paragraph [ref=e282]:
+                - generic [ref=e283]: 수정일
+                - generic [ref=e284]: 2024-07-12
+              - paragraph [ref=e285]:
+                - generic [ref=e286]: 조회수
+                - generic [ref=e287]: "2440"
+              - paragraph [ref=e288]:
+                - generic [ref=e289]: 활용신청
+                - generic [ref=e290]: "316"
+              - paragraph [ref=e291]:
+                - generic [ref=e292]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 인적사항 바로가기" [ref=e294] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e295]: 국회 국회사무처_국회의원 인적사항
+              - text: 바로가기
+          - listitem [ref=e297]:
+            - link "국회 국회사무처_위원회 회의록 미리보기" [ref=e298] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e299]: 국회 국회사무처_위원회 회의록
+              - text: 미리보기
+            - paragraph [ref=e300]:
+              - generic [ref=e301]: 공공행정
+              - generic [ref=e302]: 입법기관
+              - generic [ref=e303]: 국가중점
+            - generic [ref=e304]:
+              - term [ref=e305]:
+                - link "XML 국회 국회사무처_위원회 회의록" [ref=e306] [cursor=pointer]:
+                  - /url: /data/15126038/openapi.do
+                  - generic [ref=e307]: XML
+                  - generic [ref=e308]: 국회 국회사무처_위원회 회의록
+              - definition [ref=e309]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e310]:
+              - paragraph [ref=e311]:
+                - generic [ref=e312]: 제공기관
+                - generic [ref=e313]: 국회 국회사무처
+              - paragraph [ref=e314]:
+                - generic [ref=e315]: 수정일
+                - generic [ref=e316]: 2024-07-12
+              - paragraph [ref=e317]:
+                - generic [ref=e318]: 조회수
+                - generic [ref=e319]: "2672"
+              - paragraph [ref=e320]:
+                - generic [ref=e321]: 활용신청
+                - generic [ref=e322]: "234"
+              - paragraph [ref=e323]:
+                - generic [ref=e324]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_위원회 회의록 바로가기" [ref=e326] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e327]: 국회 국회사무처_위원회 회의록
+              - text: 바로가기
+          - listitem [ref=e329]:
+            - link "국회 국회사무처_국정감사결과보고서 미리보기" [ref=e330] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e331]: 국회 국회사무처_국정감사결과보고서
+              - text: 미리보기
+            - paragraph [ref=e332]:
+              - generic [ref=e333]: 공공행정
+              - generic [ref=e334]: 입법기관
+              - generic [ref=e335]: 국가중점
+            - generic [ref=e336]:
+              - term [ref=e337]:
+                - link "XML 국회 국회사무처_국정감사결과보고서" [ref=e338] [cursor=pointer]:
+                  - /url: /data/15126116/openapi.do
+                  - generic [ref=e339]: XML
+                  - generic [ref=e340]: 국회 국회사무처_국정감사결과보고서
+              - definition [ref=e341]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e342]:
+              - paragraph [ref=e343]:
+                - generic [ref=e344]: 제공기관
+                - generic [ref=e345]: 국회 국회사무처
+              - paragraph [ref=e346]:
+                - generic [ref=e347]: 수정일
+                - generic [ref=e348]: 2024-07-12
+              - paragraph [ref=e349]:
+                - generic [ref=e350]: 조회수
+                - generic [ref=e351]: "2273"
+              - paragraph [ref=e352]:
+                - generic [ref=e353]: 활용신청
+                - generic [ref=e354]: "281"
+              - paragraph [ref=e355]:
+                - generic [ref=e356]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국정감사결과보고서 바로가기" [ref=e358] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e359]: 국회 국회사무처_국정감사결과보고서
+              - text: 바로가기
+          - listitem [ref=e361]:
+            - link "국회 국회사무처_국회 및 국회사무처 소관 법인별 보조금 예산 미리보기" [ref=e362] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e363]: 국회 국회사무처_국회 및 국회사무처 소관 법인별 보조금 예산
+              - text: 미리보기
+            - paragraph [ref=e364]:
+              - generic [ref=e365]: 공공행정
+              - generic [ref=e366]: 입법기관
+              - generic [ref=e367]: 국가중점
+            - generic [ref=e368]:
+              - term [ref=e369]:
+                - link "XML 국회 국회사무처_국회 및 국회사무처 소관 법인별 보조금 예산" [ref=e370] [cursor=pointer]:
+                  - /url: /data/15125893/openapi.do
+                  - generic [ref=e371]: XML
+                  - generic [ref=e372]: 국회 국회사무처_국회 및 국회사무처 소관 법인별 보조금 예산
+              - definition [ref=e373]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e374]:
+              - paragraph [ref=e375]:
+                - generic [ref=e376]: 제공기관
+                - generic [ref=e377]: 국회 국회사무처
+              - paragraph [ref=e378]:
+                - generic [ref=e379]: 수정일
+                - generic [ref=e380]: 2024-07-12
+              - paragraph [ref=e381]:
+                - generic [ref=e382]: 조회수
+                - generic [ref=e383]: "1320"
+              - paragraph [ref=e384]:
+                - generic [ref=e385]: 활용신청
+                - generic [ref=e386]: "159"
+              - paragraph [ref=e387]:
+                - generic [ref=e388]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회 및 국회사무처 소관 법인별 보조금 예산 바로가기" [ref=e390] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e391]: 국회 국회사무처_국회 및 국회사무처 소관 법인별 보조금 예산
+              - text: 바로가기
+          - listitem [ref=e393]:
+            - link "국회 국회사무처_본회의 일정 미리보기" [ref=e394] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e395]: 국회 국회사무처_본회의 일정
+              - text: 미리보기
+            - paragraph [ref=e396]:
+              - generic [ref=e397]: 공공행정
+              - generic [ref=e398]: 입법기관
+              - generic [ref=e399]: 국가중점
+            - generic [ref=e400]:
+              - term [ref=e401]:
+                - link "XML 국회 국회사무처_본회의 일정" [ref=e402] [cursor=pointer]:
+                  - /url: /data/15126001/openapi.do
+                  - generic [ref=e403]: XML
+                  - generic [ref=e404]: 국회 국회사무처_본회의 일정
+              - definition [ref=e405]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e406]:
+              - paragraph [ref=e407]:
+                - generic [ref=e408]: 제공기관
+                - generic [ref=e409]: 국회 국회사무처
+              - paragraph [ref=e410]:
+                - generic [ref=e411]: 수정일
+                - generic [ref=e412]: 2024-07-12
+              - paragraph [ref=e413]:
+                - generic [ref=e414]: 조회수
+                - generic [ref=e415]: "3119"
+              - paragraph [ref=e416]:
+                - generic [ref=e417]: 활용신청
+                - generic [ref=e418]: "166"
+              - paragraph [ref=e419]:
+                - generic [ref=e420]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_본회의 일정 바로가기" [ref=e422] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e423]: 국회 국회사무처_본회의 일정
+              - text: 바로가기
+          - listitem [ref=e425]:
+            - link "국회 국회사무처_국회의원 본회의 표결정보 미리보기" [ref=e426] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e427]: 국회 국회사무처_국회의원 본회의 표결정보
+              - text: 미리보기
+            - paragraph [ref=e428]:
+              - generic [ref=e429]: 공공행정
+              - generic [ref=e430]: 입법기관
+              - generic [ref=e431]: 국가중점
+            - generic [ref=e432]:
+              - term [ref=e433]:
+                - link "XML 국회 국회사무처_국회의원 본회의 표결정보" [ref=e434] [cursor=pointer]:
+                  - /url: /data/15125948/openapi.do
+                  - generic [ref=e435]: XML
+                  - generic [ref=e436]: 국회 국회사무처_국회의원 본회의 표결정보
+              - definition [ref=e437]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e438]:
+              - paragraph [ref=e439]:
+                - generic [ref=e440]: 제공기관
+                - generic [ref=e441]: 국회 국회사무처
+              - paragraph [ref=e442]:
+                - generic [ref=e443]: 수정일
+                - generic [ref=e444]: 2024-07-12
+              - paragraph [ref=e445]:
+                - generic [ref=e446]: 조회수
+                - generic [ref=e447]: "1716"
+              - paragraph [ref=e448]:
+                - generic [ref=e449]: 활용신청
+                - generic [ref=e450]: "238"
+              - paragraph [ref=e451]:
+                - generic [ref=e452]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 본회의 표결정보 바로가기" [ref=e454] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e455]: 국회 국회사무처_국회의원 본회의 표결정보
+              - text: 바로가기
+          - listitem [ref=e457]:
+            - link "국회 국회사무처_국정감사 회의록 미리보기" [ref=e458] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e459]: 국회 국회사무처_국정감사 회의록
+              - text: 미리보기
+            - paragraph [ref=e460]:
+              - generic [ref=e461]: 공공행정
+              - generic [ref=e462]: 입법기관
+              - generic [ref=e463]: 국가중점
+            - generic [ref=e464]:
+              - term [ref=e465]:
+                - link "XML 국회 국회사무처_국정감사 회의록" [ref=e466] [cursor=pointer]:
+                  - /url: /data/15126142/openapi.do
+                  - generic [ref=e467]: XML
+                  - generic [ref=e468]: 국회 국회사무처_국정감사 회의록
+              - definition [ref=e469]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e470]:
+              - paragraph [ref=e471]:
+                - generic [ref=e472]: 제공기관
+                - generic [ref=e473]: 국회 국회사무처
+              - paragraph [ref=e474]:
+                - generic [ref=e475]: 수정일
+                - generic [ref=e476]: 2024-07-12
+              - paragraph [ref=e477]:
+                - generic [ref=e478]: 조회수
+                - generic [ref=e479]: "1723"
+              - paragraph [ref=e480]:
+                - generic [ref=e481]: 활용신청
+                - generic [ref=e482]: "183"
+              - paragraph [ref=e483]:
+                - generic [ref=e484]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국정감사 회의록 바로가기" [ref=e486] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e487]: 국회 국회사무처_국정감사 회의록
+              - text: 바로가기
+          - listitem [ref=e489]:
+            - link "국회 국회사무처_의안별 표결현황 미리보기" [ref=e490] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e491]: 국회 국회사무처_의안별 표결현황
+              - text: 미리보기
+            - paragraph [ref=e492]:
+              - generic [ref=e493]: 공공행정
+              - generic [ref=e494]: 입법기관
+              - generic [ref=e495]: 국가중점
+            - generic [ref=e496]:
+              - term [ref=e497]:
+                - link "XML 국회 국회사무처_의안별 표결현황" [ref=e498] [cursor=pointer]:
+                  - /url: /data/15126044/openapi.do
+                  - generic [ref=e499]: XML
+                  - generic [ref=e500]: 국회 국회사무처_의안별 표결현황
+              - definition [ref=e501]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e502]:
+              - paragraph [ref=e503]:
+                - generic [ref=e504]: 제공기관
+                - generic [ref=e505]: 국회 국회사무처
+              - paragraph [ref=e506]:
+                - generic [ref=e507]: 수정일
+                - generic [ref=e508]: 2024-07-12
+              - paragraph [ref=e509]:
+                - generic [ref=e510]: 조회수
+                - generic [ref=e511]: "1814"
+              - paragraph [ref=e512]:
+                - generic [ref=e513]: 활용신청
+                - generic [ref=e514]: "170"
+              - paragraph [ref=e515]:
+                - generic [ref=e516]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의안별 표결현황 바로가기" [ref=e518] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e519]: 국회 국회사무처_의안별 표결현황
+              - text: 바로가기
+          - listitem [ref=e521]:
+            - link "국회 국회사무처_진행중 입법예고 미리보기" [ref=e522] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e523]: 국회 국회사무처_진행중 입법예고
+              - text: 미리보기
+            - paragraph [ref=e524]:
+              - generic [ref=e525]: 공공행정
+              - generic [ref=e526]: 입법기관
+              - generic [ref=e527]: 국가중점
+            - generic [ref=e528]:
+              - term [ref=e529]:
+                - link "XML 국회 국회사무처_진행중 입법예고" [ref=e530] [cursor=pointer]:
+                  - /url: /data/15126069/openapi.do
+                  - generic [ref=e531]: XML
+                  - generic [ref=e532]: 국회 국회사무처_진행중 입법예고
+              - definition [ref=e533]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e534]:
+              - paragraph [ref=e535]:
+                - generic [ref=e536]: 제공기관
+                - generic [ref=e537]: 국회 국회사무처
+              - paragraph [ref=e538]:
+                - generic [ref=e539]: 수정일
+                - generic [ref=e540]: 2024-07-12
+              - paragraph [ref=e541]:
+                - generic [ref=e542]: 조회수
+                - generic [ref=e543]: "1327"
+              - paragraph [ref=e544]:
+                - generic [ref=e545]: 활용신청
+                - generic [ref=e546]: "143"
+              - paragraph [ref=e547]:
+                - generic [ref=e548]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_진행중 입법예고 바로가기" [ref=e550] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e551]: 국회 국회사무처_진행중 입법예고
+              - text: 바로가기
+          - listitem [ref=e553]:
+            - link "국회 국회사무처_의원친선협회 임·회원 명단 미리보기" [ref=e554] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e555]: 국회 국회사무처_의원친선협회 임·회원 명단
+              - text: 미리보기
+            - paragraph [ref=e556]:
+              - generic [ref=e557]: 공공행정
+              - generic [ref=e558]: 입법기관
+              - generic [ref=e559]: 국가중점
+            - generic [ref=e560]:
+              - term [ref=e561]:
+                - link "XML 국회 국회사무처_의원친선협회 임·회원 명단" [ref=e562] [cursor=pointer]:
+                  - /url: /data/15126048/openapi.do
+                  - generic [ref=e563]: XML
+                  - generic [ref=e564]: 국회 국회사무처_의원친선협회 임·회원 명단
+              - definition [ref=e565]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e566]:
+              - paragraph [ref=e567]:
+                - generic [ref=e568]: 제공기관
+                - generic [ref=e569]: 국회 국회사무처
+              - paragraph [ref=e570]:
+                - generic [ref=e571]: 수정일
+                - generic [ref=e572]: 2024-07-12
+              - paragraph [ref=e573]:
+                - generic [ref=e574]: 조회수
+                - generic [ref=e575]: "1512"
+              - paragraph [ref=e576]:
+                - generic [ref=e577]: 활용신청
+                - generic [ref=e578]: "198"
+              - paragraph [ref=e579]:
+                - generic [ref=e580]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의원친선협회 임·회원 명단 바로가기" [ref=e582] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e583]: 국회 국회사무처_의원친선협회 임·회원 명단
+              - text: 바로가기
+          - listitem [ref=e585]:
+            - link "국회 국회사무처_국회의원 의정보고서 미리보기" [ref=e586] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e587]: 국회 국회사무처_국회의원 의정보고서
+              - text: 미리보기
+            - paragraph [ref=e588]:
+              - generic [ref=e589]: 공공행정
+              - generic [ref=e590]: 입법기관
+              - generic [ref=e591]: 국가중점
+            - generic [ref=e592]:
+              - term [ref=e593]:
+                - link "XML 국회 국회사무처_국회의원 의정보고서" [ref=e594] [cursor=pointer]:
+                  - /url: /data/15125957/openapi.do
+                  - generic [ref=e595]: XML
+                  - generic [ref=e596]: 국회 국회사무처_국회의원 의정보고서
+              - definition [ref=e597]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e598]:
+              - paragraph [ref=e599]:
+                - generic [ref=e600]: 제공기관
+                - generic [ref=e601]: 국회 국회사무처
+              - paragraph [ref=e602]:
+                - generic [ref=e603]: 수정일
+                - generic [ref=e604]: 2024-07-12
+              - paragraph [ref=e605]:
+                - generic [ref=e606]: 조회수
+                - generic [ref=e607]: "2015"
+              - paragraph [ref=e608]:
+                - generic [ref=e609]: 활용신청
+                - generic [ref=e610]: "149"
+              - paragraph [ref=e611]:
+                - generic [ref=e612]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 의정보고서 바로가기" [ref=e614] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e615]: 국회 국회사무처_국회의원 의정보고서
+              - text: 바로가기
+          - listitem [ref=e617]:
+            - link "국회 국회사무처_국회의원 SNS정보 미리보기" [ref=e618] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e619]: 국회 국회사무처_국회의원 SNS정보
+              - text: 미리보기
+            - paragraph [ref=e620]:
+              - generic [ref=e621]: 공공행정
+              - generic [ref=e622]: 입법기관
+              - generic [ref=e623]: 국가중점
+            - generic [ref=e624]:
+              - term [ref=e625]:
+                - link "XML 국회 국회사무처_국회의원 SNS정보" [ref=e626] [cursor=pointer]:
+                  - /url: /data/15125942/openapi.do
+                  - generic [ref=e627]: XML
+                  - generic [ref=e628]: 국회 국회사무처_국회의원 SNS정보
+              - definition [ref=e629]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e630]:
+              - paragraph [ref=e631]:
+                - generic [ref=e632]: 제공기관
+                - generic [ref=e633]: 국회 국회사무처
+              - paragraph [ref=e634]:
+                - generic [ref=e635]: 수정일
+                - generic [ref=e636]: 2024-07-12
+              - paragraph [ref=e637]:
+                - generic [ref=e638]: 조회수
+                - generic [ref=e639]: "1568"
+              - paragraph [ref=e640]:
+                - generic [ref=e641]: 활용신청
+                - generic [ref=e642]: "148"
+              - paragraph [ref=e643]:
+                - generic [ref=e644]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 SNS정보 바로가기" [ref=e646] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e647]: 국회 국회사무처_국회의원 SNS정보
+              - text: 바로가기
+          - listitem [ref=e649]:
+            - link "국회 국회사무처_의회외교 영문의회용어검색 미리보기" [ref=e650] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e651]: 국회 국회사무처_의회외교 영문의회용어검색
+              - text: 미리보기
+            - paragraph [ref=e652]:
+              - generic [ref=e653]: 공공행정
+              - generic [ref=e654]: 입법기관
+              - generic [ref=e655]: 국가중점
+            - generic [ref=e656]:
+              - term [ref=e657]:
+                - link "XML 국회 국회사무처_의회외교 영문의회용어검색" [ref=e658] [cursor=pointer]:
+                  - /url: /data/15126083/openapi.do
+                  - generic [ref=e659]: XML
+                  - generic [ref=e660]: 국회 국회사무처_의회외교 영문의회용어검색
+              - definition [ref=e661]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e662]:
+              - paragraph [ref=e663]:
+                - generic [ref=e664]: 제공기관
+                - generic [ref=e665]: 국회 국회사무처
+              - paragraph [ref=e666]:
+                - generic [ref=e667]: 수정일
+                - generic [ref=e668]: 2024-07-12
+              - paragraph [ref=e669]:
+                - generic [ref=e670]: 조회수
+                - generic [ref=e671]: "1275"
+              - paragraph [ref=e672]:
+                - generic [ref=e673]: 활용신청
+                - generic [ref=e674]: "172"
+              - paragraph [ref=e675]:
+                - generic [ref=e676]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의회외교 영문의회용어검색 바로가기" [ref=e678] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e679]: 국회 국회사무처_의회외교 영문의회용어검색
+              - text: 바로가기
+          - listitem [ref=e681]:
+            - link "국회 국회사무처_국회의원 의원이력 미리보기" [ref=e682] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e683]: 국회 국회사무처_국회의원 의원이력
+              - text: 미리보기
+            - paragraph [ref=e684]:
+              - generic [ref=e685]: 공공행정
+              - generic [ref=e686]: 입법기관
+              - generic [ref=e687]: 국가중점
+            - generic [ref=e688]:
+              - term [ref=e689]:
+                - link "XML 국회 국회사무처_국회의원 의원이력" [ref=e690] [cursor=pointer]:
+                  - /url: /data/15125956/openapi.do
+                  - generic [ref=e691]: XML
+                  - generic [ref=e692]: 국회 국회사무처_국회의원 의원이력
+              - definition [ref=e693]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e694]:
+              - paragraph [ref=e695]:
+                - generic [ref=e696]: 제공기관
+                - generic [ref=e697]: 국회 국회사무처
+              - paragraph [ref=e698]:
+                - generic [ref=e699]: 수정일
+                - generic [ref=e700]: 2024-07-12
+              - paragraph [ref=e701]:
+                - generic [ref=e702]: 조회수
+                - generic [ref=e703]: "2705"
+              - paragraph [ref=e704]:
+                - generic [ref=e705]: 활용신청
+                - generic [ref=e706]: "134"
+              - paragraph [ref=e707]:
+                - generic [ref=e708]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 의원이력 바로가기" [ref=e710] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e711]: 국회 국회사무처_국회의원 의원이력
+              - text: 바로가기
+          - listitem [ref=e713]:
+            - link "국회 국회사무처_어린이국회 우수법률안 소개 미리보기" [ref=e714] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e715]: 국회 국회사무처_어린이국회 우수법률안 소개
+              - text: 미리보기
+            - paragraph [ref=e716]:
+              - generic [ref=e717]: 공공행정
+              - generic [ref=e718]: 입법기관
+              - generic [ref=e719]: 국가중점
+            - generic [ref=e720]:
+              - term [ref=e721]:
+                - link "XML 국회 국회사무처_어린이국회 우수법률안 소개" [ref=e722] [cursor=pointer]:
+                  - /url: /data/15126120/openapi.do
+                  - generic [ref=e723]: XML
+                  - generic [ref=e724]: 국회 국회사무처_어린이국회 우수법률안 소개
+              - definition [ref=e725]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e726]:
+              - paragraph [ref=e727]:
+                - generic [ref=e728]: 제공기관
+                - generic [ref=e729]: 국회 국회사무처
+              - paragraph [ref=e730]:
+                - generic [ref=e731]: 수정일
+                - generic [ref=e732]: 2024-07-12
+              - paragraph [ref=e733]:
+                - generic [ref=e734]: 조회수
+                - generic [ref=e735]: "1819"
+              - paragraph [ref=e736]:
+                - generic [ref=e737]: 활용신청
+                - generic [ref=e738]: "142"
+              - paragraph [ref=e739]:
+                - generic [ref=e740]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_어린이국회 우수법률안 소개 바로가기" [ref=e742] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e743]: 국회 국회사무처_어린이국회 우수법률안 소개
+              - text: 바로가기
+          - listitem [ref=e745]:
+            - link "국회 국회사무처_국회의원 연구단체 등록현황 미리보기" [ref=e746] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e747]: 국회 국회사무처_국회의원 연구단체 등록현황
+              - text: 미리보기
+            - paragraph [ref=e748]:
+              - generic [ref=e749]: 공공행정
+              - generic [ref=e750]: 입법기관
+              - generic [ref=e751]: 국가중점
+            - generic [ref=e752]:
+              - term [ref=e753]:
+                - link "XML 국회 국회사무처_국회의원 연구단체 등록현황" [ref=e754] [cursor=pointer]:
+                  - /url: /data/15125952/openapi.do
+                  - generic [ref=e755]: XML
+                  - generic [ref=e756]: 국회 국회사무처_국회의원 연구단체 등록현황
+              - definition [ref=e757]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e758]:
+              - paragraph [ref=e759]:
+                - generic [ref=e760]: 제공기관
+                - generic [ref=e761]: 국회 국회사무처
+              - paragraph [ref=e762]:
+                - generic [ref=e763]: 수정일
+                - generic [ref=e764]: 2024-07-12
+              - paragraph [ref=e765]:
+                - generic [ref=e766]: 조회수
+                - generic [ref=e767]: "1375"
+              - paragraph [ref=e768]:
+                - generic [ref=e769]: 활용신청
+                - generic [ref=e770]: "148"
+              - paragraph [ref=e771]:
+                - generic [ref=e772]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 연구단체 등록현황 바로가기" [ref=e774] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e775]: 국회 국회사무처_국회의원 연구단체 등록현황
+              - text: 바로가기
+          - listitem [ref=e777]:
+            - link "국회 국회사무처_회의별 의안목록 미리보기" [ref=e778] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e779]: 국회 국회사무처_회의별 의안목록
+              - text: 미리보기
+            - paragraph [ref=e780]:
+              - generic [ref=e781]: 공공행정
+              - generic [ref=e782]: 입법기관
+              - generic [ref=e783]: 국가중점
+            - generic [ref=e784]:
+              - term [ref=e785]:
+                - link "XML 국회 국회사무처_회의별 의안목록" [ref=e786] [cursor=pointer]:
+                  - /url: /data/15126161/openapi.do
+                  - generic [ref=e787]: XML
+                  - generic [ref=e788]: 국회 국회사무처_회의별 의안목록
+              - definition [ref=e789]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e790]:
+              - paragraph [ref=e791]:
+                - generic [ref=e792]: 제공기관
+                - generic [ref=e793]: 국회 국회사무처
+              - paragraph [ref=e794]:
+                - generic [ref=e795]: 수정일
+                - generic [ref=e796]: 2024-07-12
+              - paragraph [ref=e797]:
+                - generic [ref=e798]: 조회수
+                - generic [ref=e799]: "1084"
+              - paragraph [ref=e800]:
+                - generic [ref=e801]: 활용신청
+                - generic [ref=e802]: "97"
+              - paragraph [ref=e803]:
+                - generic [ref=e804]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_회의별 의안목록 바로가기" [ref=e806] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e807]: 국회 국회사무처_회의별 의안목록
+              - text: 바로가기
+          - listitem [ref=e809]:
+            - link "국회 국회사무처_소위원회 회의록 미리보기" [ref=e810] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e811]: 국회 국회사무처_소위원회 회의록
+              - text: 미리보기
+            - paragraph [ref=e812]:
+              - generic [ref=e813]: 공공행정
+              - generic [ref=e814]: 입법기관
+              - generic [ref=e815]: 국가중점
+            - generic [ref=e816]:
+              - term [ref=e817]:
+                - link "XML 국회 국회사무처_소위원회 회의록" [ref=e818] [cursor=pointer]:
+                  - /url: /data/15126154/openapi.do
+                  - generic [ref=e819]: XML
+                  - generic [ref=e820]: 국회 국회사무처_소위원회 회의록
+              - definition [ref=e821]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e822]:
+              - paragraph [ref=e823]:
+                - generic [ref=e824]: 제공기관
+                - generic [ref=e825]: 국회 국회사무처
+              - paragraph [ref=e826]:
+                - generic [ref=e827]: 수정일
+                - generic [ref=e828]: 2024-07-12
+              - paragraph [ref=e829]:
+                - generic [ref=e830]: 조회수
+                - generic [ref=e831]: "888"
+              - paragraph [ref=e832]:
+                - generic [ref=e833]: 활용신청
+                - generic [ref=e834]: "82"
+              - paragraph [ref=e835]:
+                - generic [ref=e836]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_소위원회 회의록 바로가기" [ref=e838] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e839]: 국회 국회사무처_소위원회 회의록
+              - text: 바로가기
+          - listitem [ref=e841]:
+            - link "국회 국회사무처_국회의원 소규모 연구용역 결과보고서 미리보기" [ref=e842] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e843]: 국회 국회사무처_국회의원 소규모 연구용역 결과보고서
+              - text: 미리보기
+            - paragraph [ref=e844]:
+              - generic [ref=e845]: 공공행정
+              - generic [ref=e846]: 입법기관
+              - generic [ref=e847]: 국가중점
+            - generic [ref=e848]:
+              - term [ref=e849]:
+                - link "XML 국회 국회사무처_국회의원 소규모 연구용역 결과보고서" [ref=e850] [cursor=pointer]:
+                  - /url: /data/15125951/openapi.do
+                  - generic [ref=e851]: XML
+                  - generic [ref=e852]: 국회 국회사무처_국회의원 소규모 연구용역 결과보고서
+              - definition [ref=e853]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e854]:
+              - paragraph [ref=e855]:
+                - generic [ref=e856]: 제공기관
+                - generic [ref=e857]: 국회 국회사무처
+              - paragraph [ref=e858]:
+                - generic [ref=e859]: 수정일
+                - generic [ref=e860]: 2024-07-12
+              - paragraph [ref=e861]:
+                - generic [ref=e862]: 조회수
+                - generic [ref=e863]: "1245"
+              - paragraph [ref=e864]:
+                - generic [ref=e865]: 활용신청
+                - generic [ref=e866]: "153"
+              - paragraph [ref=e867]:
+                - generic [ref=e868]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 소규모 연구용역 결과보고서 바로가기" [ref=e870] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e871]: 국회 국회사무처_국회의원 소규모 연구용역 결과보고서
+              - text: 바로가기
+          - listitem [ref=e873]:
+            - link "국회 국회사무처_아트갤러리 전시 일정 미리보기" [ref=e874] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e875]: 국회 국회사무처_아트갤러리 전시 일정
+              - text: 미리보기
+            - paragraph [ref=e876]:
+              - generic [ref=e877]: 공공행정
+              - generic [ref=e878]: 입법기관
+              - generic [ref=e879]: 국가중점
+            - generic [ref=e880]:
+              - term [ref=e881]:
+                - link "XML 국회 국회사무처_아트갤러리 전시 일정" [ref=e882] [cursor=pointer]:
+                  - /url: /data/15126012/openapi.do
+                  - generic [ref=e883]: XML
+                  - generic [ref=e884]: 국회 국회사무처_아트갤러리 전시 일정
+              - definition [ref=e885]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e886]:
+              - paragraph [ref=e887]:
+                - generic [ref=e888]: 제공기관
+                - generic [ref=e889]: 국회 국회사무처
+              - paragraph [ref=e890]:
+                - generic [ref=e891]: 수정일
+                - generic [ref=e892]: 2024-07-12
+              - paragraph [ref=e893]:
+                - generic [ref=e894]: 조회수
+                - generic [ref=e895]: "1009"
+              - paragraph [ref=e896]:
+                - generic [ref=e897]: 활용신청
+                - generic [ref=e898]: "103"
+              - paragraph [ref=e899]:
+                - generic [ref=e900]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_아트갤러리 전시 일정 바로가기" [ref=e902] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e903]: 국회 국회사무처_아트갤러리 전시 일정
+              - text: 바로가기
+          - listitem [ref=e905]:
+            - link "국회 국회사무처_국회사무처 업무추진비 집행현황 미리보기" [ref=e906] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e907]: 국회 국회사무처_국회사무처 업무추진비 집행현황
+              - text: 미리보기
+            - paragraph [ref=e908]:
+              - generic [ref=e909]: 공공행정
+              - generic [ref=e910]: 입법기관
+              - generic [ref=e911]: 국가중점
+            - generic [ref=e912]:
+              - term [ref=e913]:
+                - link "XML 국회 국회사무처_국회사무처 업무추진비 집행현황" [ref=e914] [cursor=pointer]:
+                  - /url: /data/15125933/openapi.do
+                  - generic [ref=e915]: XML
+                  - generic [ref=e916]: 국회 국회사무처_국회사무처 업무추진비 집행현황
+              - definition [ref=e917]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e918]:
+              - paragraph [ref=e919]:
+                - generic [ref=e920]: 제공기관
+                - generic [ref=e921]: 국회 국회사무처
+              - paragraph [ref=e922]:
+                - generic [ref=e923]: 수정일
+                - generic [ref=e924]: 2024-07-12
+              - paragraph [ref=e925]:
+                - generic [ref=e926]: 조회수
+                - generic [ref=e927]: "986"
+              - paragraph [ref=e928]:
+                - generic [ref=e929]: 활용신청
+                - generic [ref=e930]: "58"
+              - paragraph [ref=e931]:
+                - generic [ref=e932]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회사무처 업무추진비 집행현황 바로가기" [ref=e934] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e935]: 국회 국회사무처_국회사무처 업무추진비 집행현황
+              - text: 바로가기
+          - listitem [ref=e937]:
+            - link "국회 국회사무처_인사청문회 회의록 미리보기" [ref=e938] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e939]: 국회 국회사무처_인사청문회 회의록
+              - text: 미리보기
+            - paragraph [ref=e940]:
+              - generic [ref=e941]: 공공행정
+              - generic [ref=e942]: 입법기관
+              - generic [ref=e943]: 국가중점
+            - generic [ref=e944]:
+              - term [ref=e945]:
+                - link "XML 국회 국회사무처_인사청문회 회의록" [ref=e946] [cursor=pointer]:
+                  - /url: /data/15126144/openapi.do
+                  - generic [ref=e947]: XML
+                  - generic [ref=e948]: 국회 국회사무처_인사청문회 회의록
+              - definition [ref=e949]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e950]:
+              - paragraph [ref=e951]:
+                - generic [ref=e952]: 제공기관
+                - generic [ref=e953]: 국회 국회사무처
+              - paragraph [ref=e954]:
+                - generic [ref=e955]: 수정일
+                - generic [ref=e956]: 2024-07-12
+              - paragraph [ref=e957]:
+                - generic [ref=e958]: 조회수
+                - generic [ref=e959]: "962"
+              - paragraph [ref=e960]:
+                - generic [ref=e961]: 활용신청
+                - generic [ref=e962]: "87"
+              - paragraph [ref=e963]:
+                - generic [ref=e964]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_인사청문회 회의록 바로가기" [ref=e966] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e967]: 국회 국회사무처_인사청문회 회의록
+              - text: 바로가기
+          - listitem [ref=e969]:
+            - link "국회 국회사무처_국회입법조사처 연구보고서(이슈와 논점) 미리보기" [ref=e970] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e971]: 국회 국회사무처_국회입법조사처 연구보고서(이슈와 논점)
+              - text: 미리보기
+            - paragraph [ref=e972]:
+              - generic [ref=e973]: 공공행정
+              - generic [ref=e974]: 입법기관
+              - generic [ref=e975]: 국가중점
+            - generic [ref=e976]:
+              - term [ref=e977]:
+                - link "XML 국회 국회사무처_국회입법조사처 연구보고서(이슈와 논점)" [ref=e978] [cursor=pointer]:
+                  - /url: /data/15125975/openapi.do
+                  - generic [ref=e979]: XML
+                  - generic [ref=e980]: 국회 국회사무처_국회입법조사처 연구보고서(이슈와 논점)
+              - definition [ref=e981]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e982]:
+              - paragraph [ref=e983]:
+                - generic [ref=e984]: 제공기관
+                - generic [ref=e985]: 국회 국회사무처
+              - paragraph [ref=e986]:
+                - generic [ref=e987]: 수정일
+                - generic [ref=e988]: 2024-07-12
+              - paragraph [ref=e989]:
+                - generic [ref=e990]: 조회수
+                - generic [ref=e991]: "1372"
+              - paragraph [ref=e992]:
+                - generic [ref=e993]: 활용신청
+                - generic [ref=e994]: "113"
+              - paragraph [ref=e995]:
+                - generic [ref=e996]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회입법조사처 연구보고서(이슈와 논점) 바로가기" [ref=e998] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e999]: 국회 국회사무처_국회입법조사처 연구보고서(이슈와 논점)
+              - text: 바로가기
+          - listitem [ref=e1001]:
+            - link "국회 국회사무처_국정조사결과보고서 미리보기" [ref=e1002] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1003]: 국회 국회사무처_국정조사결과보고서
+              - text: 미리보기
+            - paragraph [ref=e1004]:
+              - generic [ref=e1005]: 공공행정
+              - generic [ref=e1006]: 입법기관
+              - generic [ref=e1007]: 국가중점
+            - generic [ref=e1008]:
+              - term [ref=e1009]:
+                - link "XML 국회 국회사무처_국정조사결과보고서" [ref=e1010] [cursor=pointer]:
+                  - /url: /data/15126118/openapi.do
+                  - generic [ref=e1011]: XML
+                  - generic [ref=e1012]: 국회 국회사무처_국정조사결과보고서
+              - definition [ref=e1013]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1014]:
+              - paragraph [ref=e1015]:
+                - generic [ref=e1016]: 제공기관
+                - generic [ref=e1017]: 국회 국회사무처
+              - paragraph [ref=e1018]:
+                - generic [ref=e1019]: 수정일
+                - generic [ref=e1020]: 2024-07-12
+              - paragraph [ref=e1021]:
+                - generic [ref=e1022]: 조회수
+                - generic [ref=e1023]: "908"
+              - paragraph [ref=e1024]:
+                - generic [ref=e1025]: 활용신청
+                - generic [ref=e1026]: "97"
+              - paragraph [ref=e1027]:
+                - generic [ref=e1028]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국정조사결과보고서 바로가기" [ref=e1030] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1031]: 국회 국회사무처_국정조사결과보고서
+              - text: 바로가기
+          - listitem [ref=e1033]:
+            - link "국회 국회사무처_정책연구용역 미리보기" [ref=e1034] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1035]: 국회 국회사무처_정책연구용역
+              - text: 미리보기
+            - paragraph [ref=e1036]:
+              - generic [ref=e1037]: 공공행정
+              - generic [ref=e1038]: 입법기관
+              - generic [ref=e1039]: 국가중점
+            - generic [ref=e1040]:
+              - term [ref=e1041]:
+                - link "XML 국회 국회사무처_정책연구용역" [ref=e1042] [cursor=pointer]:
+                  - /url: /data/15126059/openapi.do
+                  - generic [ref=e1043]: XML
+                  - generic [ref=e1044]: 국회 국회사무처_정책연구용역
+              - definition [ref=e1045]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1046]:
+              - paragraph [ref=e1047]:
+                - generic [ref=e1048]: 제공기관
+                - generic [ref=e1049]: 국회 국회사무처
+              - paragraph [ref=e1050]:
+                - generic [ref=e1051]: 수정일
+                - generic [ref=e1052]: 2024-07-12
+              - paragraph [ref=e1053]:
+                - generic [ref=e1054]: 조회수
+                - generic [ref=e1055]: "858"
+              - paragraph [ref=e1056]:
+                - generic [ref=e1057]: 활용신청
+                - generic [ref=e1058]: "82"
+              - paragraph [ref=e1059]:
+                - generic [ref=e1060]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_정책연구용역 바로가기" [ref=e1062] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1063]: 국회 국회사무처_정책연구용역
+              - text: 바로가기
+          - listitem [ref=e1065]:
+            - link "국회 국회사무처_보도자료 미리보기" [ref=e1066] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1067]: 국회 국회사무처_보도자료
+              - text: 미리보기
+            - paragraph [ref=e1068]:
+              - generic [ref=e1069]: 공공행정
+              - generic [ref=e1070]: 입법기관
+              - generic [ref=e1071]: 국가중점
+            - generic [ref=e1072]:
+              - term [ref=e1073]:
+                - link "XML 국회 국회사무처_보도자료" [ref=e1074] [cursor=pointer]:
+                  - /url: /data/15126000/openapi.do
+                  - generic [ref=e1075]: XML
+                  - generic [ref=e1076]: 국회 국회사무처_보도자료
+              - definition [ref=e1077]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1078]:
+              - paragraph [ref=e1079]:
+                - generic [ref=e1080]: 제공기관
+                - generic [ref=e1081]: 국회 국회사무처
+              - paragraph [ref=e1082]:
+                - generic [ref=e1083]: 수정일
+                - generic [ref=e1084]: 2024-07-12
+              - paragraph [ref=e1085]:
+                - generic [ref=e1086]: 조회수
+                - generic [ref=e1087]: "1082"
+              - paragraph [ref=e1088]:
+                - generic [ref=e1089]: 활용신청
+                - generic [ref=e1090]: "67"
+              - paragraph [ref=e1091]:
+                - generic [ref=e1092]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_보도자료 바로가기" [ref=e1094] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1095]: 국회 국회사무처_보도자료
+              - text: 바로가기
+          - listitem [ref=e1097]:
+            - link "국회 국회사무처_국회의원 본회의 의사일정 미리보기" [ref=e1098] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1099]: 국회 국회사무처_국회의원 본회의 의사일정
+              - text: 미리보기
+            - paragraph [ref=e1100]:
+              - generic [ref=e1101]: 공공행정
+              - generic [ref=e1102]: 입법기관
+              - generic [ref=e1103]: 국가중점
+            - generic [ref=e1104]:
+              - term [ref=e1105]:
+                - link "XML 국회 국회사무처_국회의원 본회의 의사일정" [ref=e1106] [cursor=pointer]:
+                  - /url: /data/15126075/openapi.do
+                  - generic [ref=e1107]: XML
+                  - generic [ref=e1108]: 국회 국회사무처_국회의원 본회의 의사일정
+              - definition [ref=e1109]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1110]:
+              - paragraph [ref=e1111]:
+                - generic [ref=e1112]: 제공기관
+                - generic [ref=e1113]: 국회 국회사무처
+              - paragraph [ref=e1114]:
+                - generic [ref=e1115]: 수정일
+                - generic [ref=e1116]: 2024-07-12
+              - paragraph [ref=e1117]:
+                - generic [ref=e1118]: 조회수
+                - generic [ref=e1119]: "2722"
+              - paragraph [ref=e1120]:
+                - generic [ref=e1121]: 활용신청
+                - generic [ref=e1122]: "98"
+              - paragraph [ref=e1123]:
+                - generic [ref=e1124]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 본회의 의사일정 바로가기" [ref=e1126] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1127]: 국회 국회사무처_국회의원 본회의 의사일정
+              - text: 바로가기
+          - listitem [ref=e1129]:
+            - link "국회 국회사무처_서면질의답변서 목록 미리보기" [ref=e1130] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1131]: 국회 국회사무처_서면질의답변서 목록
+              - text: 미리보기
+            - paragraph [ref=e1132]:
+              - generic [ref=e1133]: 공공행정
+              - generic [ref=e1134]: 입법기관
+              - generic [ref=e1135]: 국가중점
+            - generic [ref=e1136]:
+              - term [ref=e1137]:
+                - link "XML 국회 국회사무처_서면질의답변서 목록" [ref=e1138] [cursor=pointer]:
+                  - /url: /data/15126153/openapi.do
+                  - generic [ref=e1139]: XML
+                  - generic [ref=e1140]: 국회 국회사무처_서면질의답변서 목록
+              - definition [ref=e1141]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1142]:
+              - paragraph [ref=e1143]:
+                - generic [ref=e1144]: 제공기관
+                - generic [ref=e1145]: 국회 국회사무처
+              - paragraph [ref=e1146]:
+                - generic [ref=e1147]: 수정일
+                - generic [ref=e1148]: 2024-07-12
+              - paragraph [ref=e1149]:
+                - generic [ref=e1150]: 조회수
+                - generic [ref=e1151]: "857"
+              - paragraph [ref=e1152]:
+                - generic [ref=e1153]: 활용신청
+                - generic [ref=e1154]: "84"
+              - paragraph [ref=e1155]:
+                - generic [ref=e1156]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_서면질의답변서 목록 바로가기" [ref=e1158] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1159]: 국회 국회사무처_서면질의답변서 목록
+              - text: 바로가기
+          - listitem [ref=e1161]:
+            - link "국회 국회사무처_국회사무처 정보목록 미리보기" [ref=e1162] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1163]: 국회 국회사무처_국회사무처 정보목록
+              - text: 미리보기
+            - paragraph [ref=e1164]:
+              - generic [ref=e1165]: 공공행정
+              - generic [ref=e1166]: 입법기관
+              - generic [ref=e1167]: 국가중점
+            - generic [ref=e1168]:
+              - term [ref=e1169]:
+                - link "XML 국회 국회사무처_국회사무처 정보목록" [ref=e1170] [cursor=pointer]:
+                  - /url: /data/15125935/openapi.do
+                  - generic [ref=e1171]: XML
+                  - generic [ref=e1172]: 국회 국회사무처_국회사무처 정보목록
+              - definition [ref=e1173]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1174]:
+              - paragraph [ref=e1175]:
+                - generic [ref=e1176]: 제공기관
+                - generic [ref=e1177]: 국회 국회사무처
+              - paragraph [ref=e1178]:
+                - generic [ref=e1179]: 수정일
+                - generic [ref=e1180]: 2024-07-12
+              - paragraph [ref=e1181]:
+                - generic [ref=e1182]: 조회수
+                - generic [ref=e1183]: "1320"
+              - paragraph [ref=e1184]:
+                - generic [ref=e1185]: 활용신청
+                - generic [ref=e1186]: "38"
+              - paragraph [ref=e1187]:
+                - generic [ref=e1188]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회사무처 정보목록 바로가기" [ref=e1190] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1191]: 국회 국회사무처_국회사무처 정보목록
+              - text: 바로가기
+          - listitem [ref=e1193]:
+            - link "국회 국회사무처_법률안 심사 및 처리(의안검색) 미리보기" [ref=e1194] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1195]: 국회 국회사무처_법률안 심사 및 처리(의안검색)
+              - text: 미리보기
+            - paragraph [ref=e1196]:
+              - generic [ref=e1197]: 공공행정
+              - generic [ref=e1198]: 입법기관
+              - generic [ref=e1199]: 국가중점
+            - generic [ref=e1200]:
+              - term [ref=e1201]:
+                - link "XML 국회 국회사무처_법률안 심사 및 처리(의안검색)" [ref=e1202] [cursor=pointer]:
+                  - /url: /data/15125994/openapi.do
+                  - generic [ref=e1203]: XML
+                  - generic [ref=e1204]: 국회 국회사무처_법률안 심사 및 처리(의안검색)
+              - definition [ref=e1205]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1206]:
+              - paragraph [ref=e1207]:
+                - generic [ref=e1208]: 제공기관
+                - generic [ref=e1209]: 국회 국회사무처
+              - paragraph [ref=e1210]:
+                - generic [ref=e1211]: 수정일
+                - generic [ref=e1212]: 2024-07-12
+              - paragraph [ref=e1213]:
+                - generic [ref=e1214]: 조회수
+                - generic [ref=e1215]: "1830"
+              - paragraph [ref=e1216]:
+                - generic [ref=e1217]: 활용신청
+                - generic [ref=e1218]: "93"
+              - paragraph [ref=e1219]:
+                - generic [ref=e1220]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_법률안 심사 및 처리(의안검색) 바로가기" [ref=e1222] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1223]: 국회 국회사무처_법률안 심사 및 처리(의안검색)
+              - text: 바로가기
+          - listitem [ref=e1225]:
+            - link "국회 국회사무처_위원회별 공청회 일정 미리보기" [ref=e1226] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1227]: 국회 국회사무처_위원회별 공청회 일정
+              - text: 미리보기
+            - paragraph [ref=e1228]:
+              - generic [ref=e1229]: 공공행정
+              - generic [ref=e1230]: 입법기관
+              - generic [ref=e1231]: 국가중점
+            - generic [ref=e1232]:
+              - term [ref=e1233]:
+                - link "XML 국회 국회사무처_위원회별 공청회 일정" [ref=e1234] [cursor=pointer]:
+                  - /url: /data/15126039/openapi.do
+                  - generic [ref=e1235]: XML
+                  - generic [ref=e1236]: 국회 국회사무처_위원회별 공청회 일정
+              - definition [ref=e1237]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1238]:
+              - paragraph [ref=e1239]:
+                - generic [ref=e1240]: 제공기관
+                - generic [ref=e1241]: 국회 국회사무처
+              - paragraph [ref=e1242]:
+                - generic [ref=e1243]: 수정일
+                - generic [ref=e1244]: 2024-07-12
+              - paragraph [ref=e1245]:
+                - generic [ref=e1246]: 조회수
+                - generic [ref=e1247]: "909"
+              - paragraph [ref=e1248]:
+                - generic [ref=e1249]: 활용신청
+                - generic [ref=e1250]: "62"
+              - paragraph [ref=e1251]:
+                - generic [ref=e1252]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_위원회별 공청회 일정 바로가기" [ref=e1254] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1255]: 국회 국회사무처_위원회별 공청회 일정
+              - text: 바로가기
+          - listitem [ref=e1257]:
+            - link "국회 국회사무처_국회의원 정책자료실 미리보기" [ref=e1258] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1259]: 국회 국회사무처_국회의원 정책자료실
+              - text: 미리보기
+            - paragraph [ref=e1260]:
+              - generic [ref=e1261]: 공공행정
+              - generic [ref=e1262]: 입법기관
+              - generic [ref=e1263]: 국가중점
+            - generic [ref=e1264]:
+              - term [ref=e1265]:
+                - link "XML 국회 국회사무처_국회의원 정책자료실" [ref=e1266] [cursor=pointer]:
+                  - /url: /data/15125960/openapi.do
+                  - generic [ref=e1267]: XML
+                  - generic [ref=e1268]: 국회 국회사무처_국회의원 정책자료실
+              - definition [ref=e1269]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1270]:
+              - paragraph [ref=e1271]:
+                - generic [ref=e1272]: 제공기관
+                - generic [ref=e1273]: 국회 국회사무처
+              - paragraph [ref=e1274]:
+                - generic [ref=e1275]: 수정일
+                - generic [ref=e1276]: 2024-07-12
+              - paragraph [ref=e1277]:
+                - generic [ref=e1278]: 조회수
+                - generic [ref=e1279]: "1128"
+              - paragraph [ref=e1280]:
+                - generic [ref=e1281]: 활용신청
+                - generic [ref=e1282]: "71"
+              - paragraph [ref=e1283]:
+                - generic [ref=e1284]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 정책자료실 바로가기" [ref=e1286] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1287]: 국회 국회사무처_국회의원 정책자료실
+              - text: 바로가기
+          - listitem [ref=e1289]:
+            - link "국회 국회사무처_법제실 발간자료 미리보기" [ref=e1290] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1291]: 국회 국회사무처_법제실 발간자료
+              - text: 미리보기
+            - paragraph [ref=e1292]:
+              - generic [ref=e1293]: 공공행정
+              - generic [ref=e1294]: 입법기관
+              - generic [ref=e1295]: 국가중점
+            - generic [ref=e1296]:
+              - term [ref=e1297]:
+                - link "XML 국회 국회사무처_법제실 발간자료" [ref=e1298] [cursor=pointer]:
+                  - /url: /data/15125998/openapi.do
+                  - generic [ref=e1299]: XML
+                  - generic [ref=e1300]: 국회 국회사무처_법제실 발간자료
+              - definition [ref=e1301]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1302]:
+              - paragraph [ref=e1303]:
+                - generic [ref=e1304]: 제공기관
+                - generic [ref=e1305]: 국회 국회사무처
+              - paragraph [ref=e1306]:
+                - generic [ref=e1307]: 수정일
+                - generic [ref=e1308]: 2024-07-12
+              - paragraph [ref=e1309]:
+                - generic [ref=e1310]: 조회수
+                - generic [ref=e1311]: "1126"
+              - paragraph [ref=e1312]:
+                - generic [ref=e1313]: 활용신청
+                - generic [ref=e1314]: "66"
+              - paragraph [ref=e1315]:
+                - generic [ref=e1316]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_법제실 발간자료 바로가기" [ref=e1318] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1319]: 국회 국회사무처_법제실 발간자료
+              - text: 바로가기
+          - listitem [ref=e1321]:
+            - link "국회 국회사무처_역대 정당별 국회의원 선거결과 미리보기" [ref=e1322] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1323]: 국회 국회사무처_역대 정당별 국회의원 선거결과
+              - text: 미리보기
+            - paragraph [ref=e1324]:
+              - generic [ref=e1325]: 공공행정
+              - generic [ref=e1326]: 입법기관
+              - generic [ref=e1327]: 국가중점
+            - generic [ref=e1328]:
+              - term [ref=e1329]:
+                - link "XML 국회 국회사무처_역대 정당별 국회의원 선거결과" [ref=e1330] [cursor=pointer]:
+                  - /url: /data/15126024/openapi.do
+                  - generic [ref=e1331]: XML
+                  - generic [ref=e1332]: 국회 국회사무처_역대 정당별 국회의원 선거결과
+              - definition [ref=e1333]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1334]:
+              - paragraph [ref=e1335]:
+                - generic [ref=e1336]: 제공기관
+                - generic [ref=e1337]: 국회 국회사무처
+              - paragraph [ref=e1338]:
+                - generic [ref=e1339]: 수정일
+                - generic [ref=e1340]: 2024-07-12
+              - paragraph [ref=e1341]:
+                - generic [ref=e1342]: 조회수
+                - generic [ref=e1343]: "2222"
+              - paragraph [ref=e1344]:
+                - generic [ref=e1345]: 활용신청
+                - generic [ref=e1346]: "85"
+              - paragraph [ref=e1347]:
+                - generic [ref=e1348]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 정당별 국회의원 선거결과 바로가기" [ref=e1350] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1351]: 국회 국회사무처_역대 정당별 국회의원 선거결과
+              - text: 바로가기
+          - listitem [ref=e1353]:
+            - link "국회 국회사무처_역대 국회의원 의원이력 미리보기" [ref=e1354] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1355]: 국회 국회사무처_역대 국회의원 의원이력
+              - text: 미리보기
+            - paragraph [ref=e1356]:
+              - generic [ref=e1357]: 공공행정
+              - generic [ref=e1358]: 입법기관
+              - generic [ref=e1359]: 국가중점
+            - generic [ref=e1360]:
+              - term [ref=e1361]:
+                - link "XML 국회 국회사무처_역대 국회의원 의원이력" [ref=e1362] [cursor=pointer]:
+                  - /url: /data/15126017/openapi.do
+                  - generic [ref=e1363]: XML
+                  - generic [ref=e1364]: 국회 국회사무처_역대 국회의원 의원이력
+              - definition [ref=e1365]: https://open.assembly.go.kr/portal/data/service/selectServicePage.do?infId=O0MH4O001149BH11948
+            - generic [ref=e1366]:
+              - paragraph [ref=e1367]:
+                - generic [ref=e1368]: 제공기관
+                - generic [ref=e1369]: 국회 국회사무처
+              - paragraph [ref=e1370]:
+                - generic [ref=e1371]: 수정일
+                - generic [ref=e1372]: 2024-07-12
+              - paragraph [ref=e1373]:
+                - generic [ref=e1374]: 조회수
+                - generic [ref=e1375]: "2439"
+              - paragraph [ref=e1376]:
+                - generic [ref=e1377]: 활용신청
+                - generic [ref=e1378]: "75"
+              - paragraph [ref=e1379]:
+                - generic [ref=e1380]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 국회의원 의원이력 바로가기" [ref=e1382] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1383]: 국회 국회사무처_역대 국회의원 의원이력
+              - text: 바로가기
+          - listitem [ref=e1385]:
+            - link "국회 국회사무처_의안 상세정보 미리보기" [ref=e1386] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1387]: 국회 국회사무처_의안 상세정보
+              - text: 미리보기
+            - paragraph [ref=e1388]:
+              - generic [ref=e1389]: 공공행정
+              - generic [ref=e1390]: 입법기관
+              - generic [ref=e1391]: 국가중점
+            - generic [ref=e1392]:
+              - term [ref=e1393]:
+                - link "XML 국회 국회사무처_의안 상세정보" [ref=e1394] [cursor=pointer]:
+                  - /url: /data/15126096/openapi.do
+                  - generic [ref=e1395]: XML
+                  - generic [ref=e1396]: 국회 국회사무처_의안 상세정보
+              - definition [ref=e1397]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1398]:
+              - paragraph [ref=e1399]:
+                - generic [ref=e1400]: 제공기관
+                - generic [ref=e1401]: 국회 국회사무처
+              - paragraph [ref=e1402]:
+                - generic [ref=e1403]: 수정일
+                - generic [ref=e1404]: 2024-07-12
+              - paragraph [ref=e1405]:
+                - generic [ref=e1406]: 조회수
+                - generic [ref=e1407]: "639"
+              - paragraph [ref=e1408]:
+                - generic [ref=e1409]: 활용신청
+                - generic [ref=e1410]: "57"
+              - paragraph [ref=e1411]:
+                - generic [ref=e1412]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의안 상세정보 바로가기" [ref=e1414] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1415]: 국회 국회사무처_의안 상세정보
+              - text: 바로가기
+          - listitem [ref=e1417]:
+            - link "국회 국회사무처_국회일정 통합 API 미리보기" [ref=e1418] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1419]: 국회 국회사무처_국회일정 통합 API
+              - text: 미리보기
+            - paragraph [ref=e1420]:
+              - generic [ref=e1421]: 공공행정
+              - generic [ref=e1422]: 입법기관
+              - generic [ref=e1423]: 국가중점
+            - generic [ref=e1424]:
+              - term [ref=e1425]:
+                - link "XML 국회 국회사무처_국회일정 통합 API" [ref=e1426] [cursor=pointer]:
+                  - /url: /data/15126132/openapi.do
+                  - generic [ref=e1427]: XML
+                  - generic [ref=e1428]: 국회 국회사무처_국회일정 통합 API
+              - definition [ref=e1429]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1430]:
+              - paragraph [ref=e1431]:
+                - generic [ref=e1432]: 제공기관
+                - generic [ref=e1433]: 국회 국회사무처
+              - paragraph [ref=e1434]:
+                - generic [ref=e1435]: 수정일
+                - generic [ref=e1436]: 2024-07-12
+              - paragraph [ref=e1437]:
+                - generic [ref=e1438]: 조회수
+                - generic [ref=e1439]: "1310"
+              - paragraph [ref=e1440]:
+                - generic [ref=e1441]: 활용신청
+                - generic [ref=e1442]: "62"
+              - paragraph [ref=e1443]:
+                - generic [ref=e1444]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회일정 통합 API 바로가기" [ref=e1446] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1447]: 국회 국회사무처_국회일정 통합 API
+              - text: 바로가기
+          - listitem [ref=e1449]:
+            - link "국회 국회사무처_국정조사 회의록 미리보기" [ref=e1450] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1451]: 국회 국회사무처_국정조사 회의록
+              - text: 미리보기
+            - paragraph [ref=e1452]:
+              - generic [ref=e1453]: 공공행정
+              - generic [ref=e1454]: 입법기관
+              - generic [ref=e1455]: 국가중점
+            - generic [ref=e1456]:
+              - term [ref=e1457]:
+                - link "XML 국회 국회사무처_국정조사 회의록" [ref=e1458] [cursor=pointer]:
+                  - /url: /data/15126143/openapi.do
+                  - generic [ref=e1459]: XML
+                  - generic [ref=e1460]: 국회 국회사무처_국정조사 회의록
+              - definition [ref=e1461]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1462]:
+              - paragraph [ref=e1463]:
+                - generic [ref=e1464]: 제공기관
+                - generic [ref=e1465]: 국회 국회사무처
+              - paragraph [ref=e1466]:
+                - generic [ref=e1467]: 수정일
+                - generic [ref=e1468]: 2024-07-12
+              - paragraph [ref=e1469]:
+                - generic [ref=e1470]: 조회수
+                - generic [ref=e1471]: "813"
+              - paragraph [ref=e1472]:
+                - generic [ref=e1473]: 활용신청
+                - generic [ref=e1474]: "53"
+              - paragraph [ref=e1475]:
+                - generic [ref=e1476]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국정조사 회의록 바로가기" [ref=e1478] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1479]: 국회 국회사무처_국정조사 회의록
+              - text: 바로가기
+          - listitem [ref=e1481]:
+            - link "국회 국회사무처_국회의원 상임위 활동 미리보기" [ref=e1482] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1483]: 국회 국회사무처_국회의원 상임위 활동
+              - text: 미리보기
+            - paragraph [ref=e1484]:
+              - generic [ref=e1485]: 공공행정
+              - generic [ref=e1486]: 입법기관
+              - generic [ref=e1487]: 국가중점
+            - generic [ref=e1488]:
+              - term [ref=e1489]:
+                - link "XML 국회 국회사무처_국회의원 상임위 활동" [ref=e1490] [cursor=pointer]:
+                  - /url: /data/15125949/openapi.do
+                  - generic [ref=e1491]: XML
+                  - generic [ref=e1492]: 국회 국회사무처_국회의원 상임위 활동
+              - definition [ref=e1493]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1494]:
+              - paragraph [ref=e1495]:
+                - generic [ref=e1496]: 제공기관
+                - generic [ref=e1497]: 국회 국회사무처
+              - paragraph [ref=e1498]:
+                - generic [ref=e1499]: 수정일
+                - generic [ref=e1500]: 2024-07-12
+              - paragraph [ref=e1501]:
+                - generic [ref=e1502]: 조회수
+                - generic [ref=e1503]: "797"
+              - paragraph [ref=e1504]:
+                - generic [ref=e1505]: 활용신청
+                - generic [ref=e1506]: "59"
+              - paragraph [ref=e1507]:
+                - generic [ref=e1508]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 상임위 활동 바로가기" [ref=e1510] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1511]: 국회 국회사무처_국회의원 상임위 활동
+              - text: 바로가기
+          - listitem [ref=e1513]:
+            - link "국회 국회사무처_위원회 위원 명단 미리보기" [ref=e1514] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1515]: 국회 국회사무처_위원회 위원 명단
+              - text: 미리보기
+            - paragraph [ref=e1516]:
+              - generic [ref=e1517]: 공공행정
+              - generic [ref=e1518]: 입법기관
+              - generic [ref=e1519]: 국가중점
+            - generic [ref=e1520]:
+              - term [ref=e1521]:
+                - link "XML 국회 국회사무처_위원회 위원 명단" [ref=e1522] [cursor=pointer]:
+                  - /url: /data/15126035/openapi.do
+                  - generic [ref=e1523]: XML
+                  - generic [ref=e1524]: 국회 국회사무처_위원회 위원 명단
+              - definition [ref=e1525]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1526]:
+              - paragraph [ref=e1527]:
+                - generic [ref=e1528]: 제공기관
+                - generic [ref=e1529]: 국회 국회사무처
+              - paragraph [ref=e1530]:
+                - generic [ref=e1531]: 수정일
+                - generic [ref=e1532]: 2024-07-12
+              - paragraph [ref=e1533]:
+                - generic [ref=e1534]: 조회수
+                - generic [ref=e1535]: "1633"
+              - paragraph [ref=e1536]:
+                - generic [ref=e1537]: 활용신청
+                - generic [ref=e1538]: "51"
+              - paragraph [ref=e1539]:
+                - generic [ref=e1540]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_위원회 위원 명단 바로가기" [ref=e1542] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1543]: 국회 국회사무처_위원회 위원 명단
+              - text: 바로가기
+          - listitem [ref=e1545]:
+            - link "국회 국회사무처_국회의원 보좌직원 채용 미리보기" [ref=e1546] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1547]: 국회 국회사무처_국회의원 보좌직원 채용
+              - text: 미리보기
+            - paragraph [ref=e1548]:
+              - generic [ref=e1549]: 공공행정
+              - generic [ref=e1550]: 입법기관
+              - generic [ref=e1551]: 국가중점
+            - generic [ref=e1552]:
+              - term [ref=e1553]:
+                - link "XML 국회 국회사무처_국회의원 보좌직원 채용" [ref=e1554] [cursor=pointer]:
+                  - /url: /data/15125947/openapi.do
+                  - generic [ref=e1555]: XML
+                  - generic [ref=e1556]: 국회 국회사무처_국회의원 보좌직원 채용
+              - definition [ref=e1557]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1558]:
+              - paragraph [ref=e1559]:
+                - generic [ref=e1560]: 제공기관
+                - generic [ref=e1561]: 국회 국회사무처
+              - paragraph [ref=e1562]:
+                - generic [ref=e1563]: 수정일
+                - generic [ref=e1564]: 2024-07-12
+              - paragraph [ref=e1565]:
+                - generic [ref=e1566]: 조회수
+                - generic [ref=e1567]: "1310"
+              - paragraph [ref=e1568]:
+                - generic [ref=e1569]: 활용신청
+                - generic [ref=e1570]: "66"
+              - paragraph [ref=e1571]:
+                - generic [ref=e1572]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 보좌직원 채용 바로가기" [ref=e1574] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1575]: 국회 국회사무처_국회의원 보좌직원 채용
+              - text: 바로가기
+          - listitem [ref=e1577]:
+            - link "국회 국회사무처_국회 시설물 안내 미리보기" [ref=e1578] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1579]: 국회 국회사무처_국회 시설물 안내
+              - text: 미리보기
+            - paragraph [ref=e1580]:
+              - generic [ref=e1581]: 공공행정
+              - generic [ref=e1582]: 입법기관
+              - generic [ref=e1583]: 국가중점
+            - generic [ref=e1584]:
+              - term [ref=e1585]:
+                - link "XML 국회 국회사무처_국회 시설물 안내" [ref=e1586] [cursor=pointer]:
+                  - /url: /data/15125897/openapi.do
+                  - generic [ref=e1587]: XML
+                  - generic [ref=e1588]: 국회 국회사무처_국회 시설물 안내
+              - definition [ref=e1589]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1590]:
+              - paragraph [ref=e1591]:
+                - generic [ref=e1592]: 제공기관
+                - generic [ref=e1593]: 국회 국회사무처
+              - paragraph [ref=e1594]:
+                - generic [ref=e1595]: 수정일
+                - generic [ref=e1596]: 2024-07-12
+              - paragraph [ref=e1597]:
+                - generic [ref=e1598]: 조회수
+                - generic [ref=e1599]: "616"
+              - paragraph [ref=e1600]:
+                - generic [ref=e1601]: 활용신청
+                - generic [ref=e1602]: "50"
+              - paragraph [ref=e1603]:
+                - generic [ref=e1604]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회 시설물 안내 바로가기" [ref=e1606] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1607]: 국회 국회사무처_국회 시설물 안내
+              - text: 바로가기
+          - listitem [ref=e1609]:
+            - link "국회 국회사무처_지방의회 연수 교육일정 미리보기" [ref=e1610] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1611]: 국회 국회사무처_지방의회 연수 교육일정
+              - text: 미리보기
+            - paragraph [ref=e1612]:
+              - generic [ref=e1613]: 공공행정
+              - generic [ref=e1614]: 입법기관
+              - generic [ref=e1615]: 국가중점
+            - generic [ref=e1616]:
+              - term [ref=e1617]:
+                - link "XML 국회 국회사무처_지방의회 연수 교육일정" [ref=e1618] [cursor=pointer]:
+                  - /url: /data/15126064/openapi.do
+                  - generic [ref=e1619]: XML
+                  - generic [ref=e1620]: 국회 국회사무처_지방의회 연수 교육일정
+              - definition [ref=e1621]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1622]:
+              - paragraph [ref=e1623]:
+                - generic [ref=e1624]: 제공기관
+                - generic [ref=e1625]: 국회 국회사무처
+              - paragraph [ref=e1626]:
+                - generic [ref=e1627]: 수정일
+                - generic [ref=e1628]: 2024-07-12
+              - paragraph [ref=e1629]:
+                - generic [ref=e1630]: 조회수
+                - generic [ref=e1631]: "1063"
+              - paragraph [ref=e1632]:
+                - generic [ref=e1633]: 활용신청
+                - generic [ref=e1634]: "65"
+              - paragraph [ref=e1635]:
+                - generic [ref=e1636]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_지방의회 연수 교육일정 바로가기" [ref=e1638] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1639]: 국회 국회사무처_지방의회 연수 교육일정
+              - text: 바로가기
+          - listitem [ref=e1641]:
+            - link "국회 국회사무처_회의별 안건목록 미리보기" [ref=e1642] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1643]: 국회 국회사무처_회의별 안건목록
+              - text: 미리보기
+            - paragraph [ref=e1644]:
+              - generic [ref=e1645]: 공공행정
+              - generic [ref=e1646]: 입법기관
+              - generic [ref=e1647]: 국가중점
+            - generic [ref=e1648]:
+              - term [ref=e1649]:
+                - link "XML 국회 국회사무처_회의별 안건목록" [ref=e1650] [cursor=pointer]:
+                  - /url: /data/15126160/openapi.do
+                  - generic [ref=e1651]: XML
+                  - generic [ref=e1652]: 국회 국회사무처_회의별 안건목록
+              - definition [ref=e1653]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1654]:
+              - paragraph [ref=e1655]:
+                - generic [ref=e1656]: 제공기관
+                - generic [ref=e1657]: 국회 국회사무처
+              - paragraph [ref=e1658]:
+                - generic [ref=e1659]: 수정일
+                - generic [ref=e1660]: 2024-07-12
+              - paragraph [ref=e1661]:
+                - generic [ref=e1662]: 조회수
+                - generic [ref=e1663]: "962"
+              - paragraph [ref=e1664]:
+                - generic [ref=e1665]: 활용신청
+                - generic [ref=e1666]: "48"
+              - paragraph [ref=e1667]:
+                - generic [ref=e1668]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_회의별 안건목록 바로가기" [ref=e1670] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1671]: 국회 국회사무처_회의별 안건목록
+              - text: 바로가기
+          - listitem [ref=e1673]:
+            - link "국회 국회사무처_청원 통계 미리보기" [ref=e1674] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1675]: 국회 국회사무처_청원 통계
+              - text: 미리보기
+            - paragraph [ref=e1676]:
+              - generic [ref=e1677]: 공공행정
+              - generic [ref=e1678]: 입법기관
+              - generic [ref=e1679]: 국가중점
+            - generic [ref=e1680]:
+              - term [ref=e1681]:
+                - link "XML 국회 국회사무처_청원 통계" [ref=e1682] [cursor=pointer]:
+                  - /url: /data/15126115/openapi.do
+                  - generic [ref=e1683]: XML
+                  - generic [ref=e1684]: 국회 국회사무처_청원 통계
+              - definition [ref=e1685]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1686]:
+              - paragraph [ref=e1687]:
+                - generic [ref=e1688]: 제공기관
+                - generic [ref=e1689]: 국회 국회사무처
+              - paragraph [ref=e1690]:
+                - generic [ref=e1691]: 수정일
+                - generic [ref=e1692]: 2024-07-12
+              - paragraph [ref=e1693]:
+                - generic [ref=e1694]: 조회수
+                - generic [ref=e1695]: "1384"
+              - paragraph [ref=e1696]:
+                - generic [ref=e1697]: 활용신청
+                - generic [ref=e1698]: "40"
+              - paragraph [ref=e1699]:
+                - generic [ref=e1700]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_청원 통계 바로가기" [ref=e1702] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1703]: 국회 국회사무처_청원 통계
+              - text: 바로가기
+          - listitem [ref=e1705]:
+            - link "국회 국회사무처_청원 처리현황 미리보기" [ref=e1706] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1707]: 국회 국회사무처_청원 처리현황
+              - text: 미리보기
+            - paragraph [ref=e1708]:
+              - generic [ref=e1709]: 공공행정
+              - generic [ref=e1710]: 입법기관
+              - generic [ref=e1711]: 국가중점
+            - generic [ref=e1712]:
+              - term [ref=e1713]:
+                - link "XML 국회 국회사무처_청원 처리현황" [ref=e1714] [cursor=pointer]:
+                  - /url: /data/15126071/openapi.do
+                  - generic [ref=e1715]: XML
+                  - generic [ref=e1716]: 국회 국회사무처_청원 처리현황
+              - definition [ref=e1717]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1718]:
+              - paragraph [ref=e1719]:
+                - generic [ref=e1720]: 제공기관
+                - generic [ref=e1721]: 국회 국회사무처
+              - paragraph [ref=e1722]:
+                - generic [ref=e1723]: 수정일
+                - generic [ref=e1724]: 2024-07-12
+              - paragraph [ref=e1725]:
+                - generic [ref=e1726]: 조회수
+                - generic [ref=e1727]: "849"
+              - paragraph [ref=e1728]:
+                - generic [ref=e1729]: 활용신청
+                - generic [ref=e1730]: "44"
+              - paragraph [ref=e1731]:
+                - generic [ref=e1732]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_청원 처리현황 바로가기" [ref=e1734] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1735]: 국회 국회사무처_청원 처리현황
+              - text: 바로가기
+          - listitem [ref=e1737]:
+            - link "국회 국회사무처_본회의 처리안건_법률안 미리보기" [ref=e1738] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1739]: 국회 국회사무처_본회의 처리안건_법률안
+              - text: 미리보기
+            - paragraph [ref=e1740]:
+              - generic [ref=e1741]: 공공행정
+              - generic [ref=e1742]: 입법기관
+              - generic [ref=e1743]: 국가중점
+            - generic [ref=e1744]:
+              - term [ref=e1745]:
+                - link "XML 국회 국회사무처_본회의 처리안건_법률안" [ref=e1746] [cursor=pointer]:
+                  - /url: /data/15126004/openapi.do
+                  - generic [ref=e1747]: XML
+                  - generic [ref=e1748]: 국회 국회사무처_본회의 처리안건_법률안
+              - definition [ref=e1749]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1750]:
+              - paragraph [ref=e1751]:
+                - generic [ref=e1752]: 제공기관
+                - generic [ref=e1753]: 국회 국회사무처
+              - paragraph [ref=e1754]:
+                - generic [ref=e1755]: 수정일
+                - generic [ref=e1756]: 2024-07-12
+              - paragraph [ref=e1757]:
+                - generic [ref=e1758]: 조회수
+                - generic [ref=e1759]: "934"
+              - paragraph [ref=e1760]:
+                - generic [ref=e1761]: 활용신청
+                - generic [ref=e1762]: "50"
+              - paragraph [ref=e1763]:
+                - generic [ref=e1764]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_본회의 처리안건_법률안 바로가기" [ref=e1766] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1767]: 국회 국회사무처_본회의 처리안건_법률안
+              - text: 바로가기
+          - listitem [ref=e1769]:
+            - link "국회 국회사무처_공청회 회의록 미리보기" [ref=e1770] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1771]: 국회 국회사무처_공청회 회의록
+              - text: 미리보기
+            - paragraph [ref=e1772]:
+              - generic [ref=e1773]: 공공행정
+              - generic [ref=e1774]: 입법기관
+              - generic [ref=e1775]: 국가중점
+            - generic [ref=e1776]:
+              - term [ref=e1777]:
+                - link "XML 국회 국회사무처_공청회 회의록" [ref=e1778] [cursor=pointer]:
+                  - /url: /data/15126156/openapi.do
+                  - generic [ref=e1779]: XML
+                  - generic [ref=e1780]: 국회 국회사무처_공청회 회의록
+              - definition [ref=e1781]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1782]:
+              - paragraph [ref=e1783]:
+                - generic [ref=e1784]: 제공기관
+                - generic [ref=e1785]: 국회 국회사무처
+              - paragraph [ref=e1786]:
+                - generic [ref=e1787]: 수정일
+                - generic [ref=e1788]: 2024-07-12
+              - paragraph [ref=e1789]:
+                - generic [ref=e1790]: 조회수
+                - generic [ref=e1791]: "640"
+              - paragraph [ref=e1792]:
+                - generic [ref=e1793]: 활용신청
+                - generic [ref=e1794]: "37"
+              - paragraph [ref=e1795]:
+                - generic [ref=e1796]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_공청회 회의록 바로가기" [ref=e1798] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1799]: 국회 국회사무처_공청회 회의록
+              - text: 바로가기
+          - listitem [ref=e1801]:
+            - link "국회 국회사무처_역대 국회의원 현황 미리보기" [ref=e1802] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1803]: 국회 국회사무처_역대 국회의원 현황
+              - text: 미리보기
+            - paragraph [ref=e1804]:
+              - generic [ref=e1805]: 공공행정
+              - generic [ref=e1806]: 입법기관
+              - generic [ref=e1807]: 국가중점
+            - generic [ref=e1808]:
+              - term [ref=e1809]:
+                - link "XML 국회 국회사무처_역대 국회의원 현황" [ref=e1810] [cursor=pointer]:
+                  - /url: /data/15126020/openapi.do
+                  - generic [ref=e1811]: XML
+                  - generic [ref=e1812]: 국회 국회사무처_역대 국회의원 현황
+              - definition [ref=e1813]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1814]:
+              - paragraph [ref=e1815]:
+                - generic [ref=e1816]: 제공기관
+                - generic [ref=e1817]: 국회 국회사무처
+              - paragraph [ref=e1818]:
+                - generic [ref=e1819]: 수정일
+                - generic [ref=e1820]: 2024-07-12
+              - paragraph [ref=e1821]:
+                - generic [ref=e1822]: 조회수
+                - generic [ref=e1823]: "1544"
+              - paragraph [ref=e1824]:
+                - generic [ref=e1825]: 활용신청
+                - generic [ref=e1826]: "49"
+              - paragraph [ref=e1827]:
+                - generic [ref=e1828]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 국회의원 현황 바로가기" [ref=e1830] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1831]: 국회 국회사무처_역대 국회의원 현황
+              - text: 바로가기
+          - listitem [ref=e1833]:
+            - link "국회 국회사무처_국회입법조사처 연구보고서(NARS 현안분석) 미리보기" [ref=e1834] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1835]: 국회 국회사무처_국회입법조사처 연구보고서(NARS 현안분석)
+              - text: 미리보기
+            - paragraph [ref=e1836]:
+              - generic [ref=e1837]: 공공행정
+              - generic [ref=e1838]: 입법기관
+              - generic [ref=e1839]: 국가중점
+            - generic [ref=e1840]:
+              - term [ref=e1841]:
+                - link "XML 국회 국회사무처_국회입법조사처 연구보고서(NARS 현안분석)" [ref=e1842] [cursor=pointer]:
+                  - /url: /data/15125970/openapi.do
+                  - generic [ref=e1843]: XML
+                  - generic [ref=e1844]: 국회 국회사무처_국회입법조사처 연구보고서(NARS 현안분석)
+              - definition [ref=e1845]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1846]:
+              - paragraph [ref=e1847]:
+                - generic [ref=e1848]: 제공기관
+                - generic [ref=e1849]: 국회 국회사무처
+              - paragraph [ref=e1850]:
+                - generic [ref=e1851]: 수정일
+                - generic [ref=e1852]: 2024-07-12
+              - paragraph [ref=e1853]:
+                - generic [ref=e1854]: 조회수
+                - generic [ref=e1855]: "2589"
+              - paragraph [ref=e1856]:
+                - generic [ref=e1857]: 활용신청
+                - generic [ref=e1858]: "61"
+              - paragraph [ref=e1859]:
+                - generic [ref=e1860]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회입법조사처 연구보고서(NARS 현안분석) 바로가기" [ref=e1862] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1863]: 국회 국회사무처_국회입법조사처 연구보고서(NARS 현안분석)
+              - text: 바로가기
+          - listitem [ref=e1865]:
+            - link "국회 국회사무처_인사청문회 미리보기" [ref=e1866] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1867]: 국회 국회사무처_인사청문회
+              - text: 미리보기
+            - paragraph [ref=e1868]:
+              - generic [ref=e1869]: 공공행정
+              - generic [ref=e1870]: 입법기관
+              - generic [ref=e1871]: 국가중점
+            - generic [ref=e1872]:
+              - term [ref=e1873]:
+                - link "XML 국회 국회사무처_인사청문회" [ref=e1874] [cursor=pointer]:
+                  - /url: /data/15126052/openapi.do
+                  - generic [ref=e1875]: XML
+                  - generic [ref=e1876]: 국회 국회사무처_인사청문회
+              - definition [ref=e1877]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1878]:
+              - paragraph [ref=e1879]:
+                - generic [ref=e1880]: 제공기관
+                - generic [ref=e1881]: 국회 국회사무처
+              - paragraph [ref=e1882]:
+                - generic [ref=e1883]: 수정일
+                - generic [ref=e1884]: 2024-07-12
+              - paragraph [ref=e1885]:
+                - generic [ref=e1886]: 조회수
+                - generic [ref=e1887]: "545"
+              - paragraph [ref=e1888]:
+                - generic [ref=e1889]: 활용신청
+                - generic [ref=e1890]: "33"
+              - paragraph [ref=e1891]:
+                - generic [ref=e1892]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_인사청문회 바로가기" [ref=e1894] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1895]: 국회 국회사무처_인사청문회
+              - text: 바로가기
+          - listitem [ref=e1897]:
+            - link "국회 국회사무처_토론회 결과보고서 미리보기" [ref=e1898] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1899]: 국회 국회사무처_토론회 결과보고서
+              - text: 미리보기
+            - paragraph [ref=e1900]:
+              - generic [ref=e1901]: 공공행정
+              - generic [ref=e1902]: 입법기관
+              - generic [ref=e1903]: 국가중점
+            - generic [ref=e1904]:
+              - term [ref=e1905]:
+                - link "XML 국회 국회사무처_토론회 결과보고서" [ref=e1906] [cursor=pointer]:
+                  - /url: /data/15126129/openapi.do
+                  - generic [ref=e1907]: XML
+                  - generic [ref=e1908]: 국회 국회사무처_토론회 결과보고서
+              - definition [ref=e1909]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1910]:
+              - paragraph [ref=e1911]:
+                - generic [ref=e1912]: 제공기관
+                - generic [ref=e1913]: 국회 국회사무처
+              - paragraph [ref=e1914]:
+                - generic [ref=e1915]: 수정일
+                - generic [ref=e1916]: 2024-07-12
+              - paragraph [ref=e1917]:
+                - generic [ref=e1918]: 조회수
+                - generic [ref=e1919]: "532"
+              - paragraph [ref=e1920]:
+                - generic [ref=e1921]: 활용신청
+                - generic [ref=e1922]: "37"
+              - paragraph [ref=e1923]:
+                - generic [ref=e1924]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_토론회 결과보고서 바로가기" [ref=e1926] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1927]: 국회 국회사무처_토론회 결과보고서
+              - text: 바로가기
+          - listitem [ref=e1929]:
+            - link "국회 국회사무처_국회입법조사처 연구보고서(입법·정책보고서) 미리보기" [ref=e1930] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1931]: 국회 국회사무처_국회입법조사처 연구보고서(입법·정책보고서)
+              - text: 미리보기
+            - paragraph [ref=e1932]:
+              - generic [ref=e1933]: 공공행정
+              - generic [ref=e1934]: 입법기관
+              - generic [ref=e1935]: 국가중점
+            - generic [ref=e1936]:
+              - term [ref=e1937]:
+                - link "XML 국회 국회사무처_국회입법조사처 연구보고서(입법·정책보고서)" [ref=e1938] [cursor=pointer]:
+                  - /url: /data/15125976/openapi.do
+                  - generic [ref=e1939]: XML
+                  - generic [ref=e1940]: 국회 국회사무처_국회입법조사처 연구보고서(입법·정책보고서)
+              - definition [ref=e1941]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e1942]:
+              - paragraph [ref=e1943]:
+                - generic [ref=e1944]: 제공기관
+                - generic [ref=e1945]: 국회 국회사무처
+              - paragraph [ref=e1946]:
+                - generic [ref=e1947]: 수정일
+                - generic [ref=e1948]: 2024-07-12
+              - paragraph [ref=e1949]:
+                - generic [ref=e1950]: 조회수
+                - generic [ref=e1951]: "1162"
+              - paragraph [ref=e1952]:
+                - generic [ref=e1953]: 활용신청
+                - generic [ref=e1954]: "55"
+              - paragraph [ref=e1955]:
+                - generic [ref=e1956]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회입법조사처 연구보고서(입법·정책보고서) 바로가기" [ref=e1958] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1959]: 국회 국회사무처_국회입법조사처 연구보고서(입법·정책보고서)
+              - text: 바로가기
+          - listitem [ref=e1961]:
+            - link "국회 국회사무처_회의록 대별 위원회 목록 미리보기" [ref=e1962] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1963]: 국회 국회사무처_회의록 대별 위원회 목록
+              - text: 미리보기
+            - paragraph [ref=e1964]:
+              - generic [ref=e1965]: 공공행정
+              - generic [ref=e1966]: 입법기관
+            - generic [ref=e1967]:
+              - term [ref=e1968]:
+                - link "XML 국회 국회사무처_회의록 대별 위원회 목록" [ref=e1969] [cursor=pointer]:
+                  - /url: /data/15142964/openapi.do
+                  - generic [ref=e1970]: XML
+                  - generic [ref=e1971]: 국회 국회사무처_회의록 대별 위원회 목록
+              - definition [ref=e1972]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다.
+            - generic [ref=e1973]:
+              - paragraph [ref=e1974]:
+                - generic [ref=e1975]: 제공기관
+                - generic [ref=e1976]: 국회 국회사무처
+              - paragraph [ref=e1977]:
+                - generic [ref=e1978]: 수정일
+                - generic [ref=e1979]: 2025-04-10
+              - paragraph [ref=e1980]:
+                - generic [ref=e1981]: 조회수
+                - generic [ref=e1982]: "1504"
+              - paragraph [ref=e1983]:
+                - generic [ref=e1984]: 활용신청
+                - generic [ref=e1985]: "42"
+              - paragraph [ref=e1986]:
+                - generic [ref=e1987]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_회의록 대별 위원회 목록 바로가기" [ref=e1989] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e1990]: 국회 국회사무처_회의록 대별 위원회 목록
+              - text: 바로가기
+          - listitem [ref=e1992]:
+            - link "국회 국회사무처_퇴직 공직자 취업이력 공시 미리보기" [ref=e1993] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e1994]: 국회 국회사무처_퇴직 공직자 취업이력 공시
+              - text: 미리보기
+            - paragraph [ref=e1995]:
+              - generic [ref=e1996]: 공공행정
+              - generic [ref=e1997]: 입법기관
+              - generic [ref=e1998]: 국가중점
+            - generic [ref=e1999]:
+              - term [ref=e2000]:
+                - link "XML 국회 국회사무처_퇴직 공직자 취업이력 공시" [ref=e2001] [cursor=pointer]:
+                  - /url: /data/15126072/openapi.do
+                  - generic [ref=e2002]: XML
+                  - generic [ref=e2003]: 국회 국회사무처_퇴직 공직자 취업이력 공시
+              - definition [ref=e2004]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2005]:
+              - paragraph [ref=e2006]:
+                - generic [ref=e2007]: 제공기관
+                - generic [ref=e2008]: 국회 국회사무처
+              - paragraph [ref=e2009]:
+                - generic [ref=e2010]: 수정일
+                - generic [ref=e2011]: 2024-07-12
+              - paragraph [ref=e2012]:
+                - generic [ref=e2013]: 조회수
+                - generic [ref=e2014]: "753"
+              - paragraph [ref=e2015]:
+                - generic [ref=e2016]: 활용신청
+                - generic [ref=e2017]: "47"
+              - paragraph [ref=e2018]:
+                - generic [ref=e2019]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_퇴직 공직자 취업이력 공시 바로가기" [ref=e2021] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2022]: 국회 국회사무처_퇴직 공직자 취업이력 공시
+              - text: 바로가기
+          - listitem [ref=e2024]:
+            - link "국회 국회사무처_국회입법조사처 제공 자료 통합 API 미리보기" [ref=e2025] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2026]: 국회 국회사무처_국회입법조사처 제공 자료 통합 API
+              - text: 미리보기
+            - paragraph [ref=e2027]:
+              - generic [ref=e2028]: 공공행정
+              - generic [ref=e2029]: 입법기관
+              - generic [ref=e2030]: 국가중점
+            - generic [ref=e2031]:
+              - term [ref=e2032]:
+                - link "XML 국회 국회사무처_국회입법조사처 제공 자료 통합 API" [ref=e2033] [cursor=pointer]:
+                  - /url: /data/15126137/openapi.do
+                  - generic [ref=e2034]: XML
+                  - generic [ref=e2035]: 국회 국회사무처_국회입법조사처 제공 자료 통합 API
+              - definition [ref=e2036]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2037]:
+              - paragraph [ref=e2038]:
+                - generic [ref=e2039]: 제공기관
+                - generic [ref=e2040]: 국회 국회사무처
+              - paragraph [ref=e2041]:
+                - generic [ref=e2042]: 수정일
+                - generic [ref=e2043]: 2024-07-12
+              - paragraph [ref=e2044]:
+                - generic [ref=e2045]: 조회수
+                - generic [ref=e2046]: "1478"
+              - paragraph [ref=e2047]:
+                - generic [ref=e2048]: 활용신청
+                - generic [ref=e2049]: "47"
+              - paragraph [ref=e2050]:
+                - generic [ref=e2051]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회입법조사처 제공 자료 통합 API 바로가기" [ref=e2053] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2054]: 국회 국회사무처_국회입법조사처 제공 자료 통합 API
+              - text: 바로가기
+          - listitem [ref=e2056]:
+            - link "국회 국회사무처_주요정치일정 미리보기" [ref=e2057] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2058]: 국회 국회사무처_주요정치일정
+              - text: 미리보기
+            - paragraph [ref=e2059]:
+              - generic [ref=e2060]: 공공행정
+              - generic [ref=e2061]: 입법기관
+              - generic [ref=e2062]: 국가중점
+            - generic [ref=e2063]:
+              - term [ref=e2064]:
+                - link "XML 국회 국회사무처_주요정치일정" [ref=e2065] [cursor=pointer]:
+                  - /url: /data/15126063/openapi.do
+                  - generic [ref=e2066]: XML
+                  - generic [ref=e2067]: 국회 국회사무처_주요정치일정
+              - definition [ref=e2068]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2069]:
+              - paragraph [ref=e2070]:
+                - generic [ref=e2071]: 제공기관
+                - generic [ref=e2072]: 국회 국회사무처
+              - paragraph [ref=e2073]:
+                - generic [ref=e2074]: 수정일
+                - generic [ref=e2075]: 2024-07-12
+              - paragraph [ref=e2076]:
+                - generic [ref=e2077]: 조회수
+                - generic [ref=e2078]: "685"
+              - paragraph [ref=e2079]:
+                - generic [ref=e2080]: 활용신청
+                - generic [ref=e2081]: "35"
+              - paragraph [ref=e2082]:
+                - generic [ref=e2083]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_주요정치일정 바로가기" [ref=e2085] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2086]: 국회 국회사무처_주요정치일정
+              - text: 바로가기
+          - listitem [ref=e2088]:
+            - link "국회 국회사무처_국회문화극장 영화 일정 미리보기" [ref=e2089] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2090]: 국회 국회사무처_국회문화극장 영화 일정
+              - text: 미리보기
+            - paragraph [ref=e2091]:
+              - generic [ref=e2092]: 공공행정
+              - generic [ref=e2093]: 입법기관
+              - generic [ref=e2094]: 국가중점
+            - generic [ref=e2095]:
+              - term [ref=e2096]:
+                - link "XML 국회 국회사무처_국회문화극장 영화 일정" [ref=e2097] [cursor=pointer]:
+                  - /url: /data/15125922/openapi.do
+                  - generic [ref=e2098]: XML
+                  - generic [ref=e2099]: 국회 국회사무처_국회문화극장 영화 일정
+              - definition [ref=e2100]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2101]:
+              - paragraph [ref=e2102]:
+                - generic [ref=e2103]: 제공기관
+                - generic [ref=e2104]: 국회 국회사무처
+              - paragraph [ref=e2105]:
+                - generic [ref=e2106]: 수정일
+                - generic [ref=e2107]: 2024-07-12
+              - paragraph [ref=e2108]:
+                - generic [ref=e2109]: 조회수
+                - generic [ref=e2110]: "788"
+              - paragraph [ref=e2111]:
+                - generic [ref=e2112]: 활용신청
+                - generic [ref=e2113]: "45"
+              - paragraph [ref=e2114]:
+                - generic [ref=e2115]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회문화극장 영화 일정 바로가기" [ref=e2117] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2118]: 국회 국회사무처_국회문화극장 영화 일정
+              - text: 바로가기
+          - listitem [ref=e2120]:
+            - link "국회 국회사무처_사업별 예산 편성 규모 미리보기" [ref=e2121] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2122]: 국회 국회사무처_사업별 예산 편성 규모
+              - text: 미리보기
+            - paragraph [ref=e2123]:
+              - generic [ref=e2124]: 공공행정
+              - generic [ref=e2125]: 입법기관
+              - generic [ref=e2126]: 국가중점
+            - generic [ref=e2127]:
+              - term [ref=e2128]:
+                - link "XML 국회 국회사무처_사업별 예산 편성 규모" [ref=e2129] [cursor=pointer]:
+                  - /url: /data/15126008/openapi.do
+                  - generic [ref=e2130]: XML
+                  - generic [ref=e2131]: 국회 국회사무처_사업별 예산 편성 규모
+              - definition [ref=e2132]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2133]:
+              - paragraph [ref=e2134]:
+                - generic [ref=e2135]: 제공기관
+                - generic [ref=e2136]: 국회 국회사무처
+              - paragraph [ref=e2137]:
+                - generic [ref=e2138]: 수정일
+                - generic [ref=e2139]: 2024-07-12
+              - paragraph [ref=e2140]:
+                - generic [ref=e2141]: 조회수
+                - generic [ref=e2142]: "655"
+              - paragraph [ref=e2143]:
+                - generic [ref=e2144]: 활용신청
+                - generic [ref=e2145]: "39"
+              - paragraph [ref=e2146]:
+                - generic [ref=e2147]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_사업별 예산 편성 규모 바로가기" [ref=e2149] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2150]: 국회 국회사무처_사업별 예산 편성 규모
+              - text: 바로가기
+          - listitem [ref=e2152]:
+            - link "국회 국회사무처_국회의원 영상회의록(발언영상) 미리보기" [ref=e2153] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2154]: 국회 국회사무처_국회의원 영상회의록(발언영상)
+              - text: 미리보기
+            - paragraph [ref=e2155]:
+              - generic [ref=e2156]: 공공행정
+              - generic [ref=e2157]: 입법기관
+              - generic [ref=e2158]: 국가중점
+            - generic [ref=e2159]:
+              - term [ref=e2160]:
+                - link "XML 국회 국회사무처_국회의원 영상회의록(발언영상)" [ref=e2161] [cursor=pointer]:
+                  - /url: /data/15125953/openapi.do
+                  - generic [ref=e2162]: XML
+                  - generic [ref=e2163]: 국회 국회사무처_국회의원 영상회의록(발언영상)
+              - definition [ref=e2164]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2165]:
+              - paragraph [ref=e2166]:
+                - generic [ref=e2167]: 제공기관
+                - generic [ref=e2168]: 국회 국회사무처
+              - paragraph [ref=e2169]:
+                - generic [ref=e2170]: 수정일
+                - generic [ref=e2171]: 2024-07-12
+              - paragraph [ref=e2172]:
+                - generic [ref=e2173]: 조회수
+                - generic [ref=e2174]: "1282"
+              - paragraph [ref=e2175]:
+                - generic [ref=e2176]: 활용신청
+                - generic [ref=e2177]: "50"
+              - paragraph [ref=e2178]:
+                - generic [ref=e2179]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 영상회의록(발언영상) 바로가기" [ref=e2181] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2182]: 국회 국회사무처_국회의원 영상회의록(발언영상)
+              - text: 바로가기
+          - listitem [ref=e2184]:
+            - link "국회 국회사무처_의안별 회의록 목록 미리보기" [ref=e2185] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2186]: 국회 국회사무처_의안별 회의록 목록
+              - text: 미리보기
+            - paragraph [ref=e2187]:
+              - generic [ref=e2188]: 공공행정
+              - generic [ref=e2189]: 입법기관
+              - generic [ref=e2190]: 국가중점
+            - generic [ref=e2191]:
+              - term [ref=e2192]:
+                - link "XML 국회 국회사무처_의안별 회의록 목록" [ref=e2193] [cursor=pointer]:
+                  - /url: /data/15126150/openapi.do
+                  - generic [ref=e2194]: XML
+                  - generic [ref=e2195]: 국회 국회사무처_의안별 회의록 목록
+              - definition [ref=e2196]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2197]:
+              - paragraph [ref=e2198]:
+                - generic [ref=e2199]: 제공기관
+                - generic [ref=e2200]: 국회 국회사무처
+              - paragraph [ref=e2201]:
+                - generic [ref=e2202]: 수정일
+                - generic [ref=e2203]: 2024-07-12
+              - paragraph [ref=e2204]:
+                - generic [ref=e2205]: 조회수
+                - generic [ref=e2206]: "1159"
+              - paragraph [ref=e2207]:
+                - generic [ref=e2208]: 활용신청
+                - generic [ref=e2209]: "33"
+              - paragraph [ref=e2210]:
+                - generic [ref=e2211]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의안별 회의록 목록 바로가기" [ref=e2213] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2214]: 국회 국회사무처_의안별 회의록 목록
+              - text: 바로가기
+          - listitem [ref=e2216]:
+            - link "국회 국회사무처_법률안 심사 및 처리(계류의안) 미리보기" [ref=e2217] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2218]: 국회 국회사무처_법률안 심사 및 처리(계류의안)
+              - text: 미리보기
+            - paragraph [ref=e2219]:
+              - generic [ref=e2220]: 공공행정
+              - generic [ref=e2221]: 입법기관
+              - generic [ref=e2222]: 국가중점
+            - generic [ref=e2223]:
+              - term [ref=e2224]:
+                - link "XML 국회 국회사무처_법률안 심사 및 처리(계류의안)" [ref=e2225] [cursor=pointer]:
+                  - /url: /data/15125990/openapi.do
+                  - generic [ref=e2226]: XML
+                  - generic [ref=e2227]: 국회 국회사무처_법률안 심사 및 처리(계류의안)
+              - definition [ref=e2228]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2229]:
+              - paragraph [ref=e2230]:
+                - generic [ref=e2231]: 제공기관
+                - generic [ref=e2232]: 국회 국회사무처
+              - paragraph [ref=e2233]:
+                - generic [ref=e2234]: 수정일
+                - generic [ref=e2235]: 2024-07-12
+              - paragraph [ref=e2236]:
+                - generic [ref=e2237]: 조회수
+                - generic [ref=e2238]: "935"
+              - paragraph [ref=e2239]:
+                - generic [ref=e2240]: 활용신청
+                - generic [ref=e2241]: "48"
+              - paragraph [ref=e2242]:
+                - generic [ref=e2243]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_법률안 심사 및 처리(계류의안) 바로가기" [ref=e2245] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2246]: 국회 국회사무처_법률안 심사 및 처리(계류의안)
+              - text: 바로가기
+          - listitem [ref=e2248]:
+            - link "국회 국회사무처_국회의원 정책 세미나 개최 현황 미리보기" [ref=e2249] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2250]: 국회 국회사무처_국회의원 정책 세미나 개최 현황
+              - text: 미리보기
+            - paragraph [ref=e2251]:
+              - generic [ref=e2252]: 공공행정
+              - generic [ref=e2253]: 입법기관
+              - generic [ref=e2254]: 국가중점
+            - generic [ref=e2255]:
+              - term [ref=e2256]:
+                - link "XML 국회 국회사무처_국회의원 정책 세미나 개최 현황" [ref=e2257] [cursor=pointer]:
+                  - /url: /data/15125959/openapi.do
+                  - generic [ref=e2258]: XML
+                  - generic [ref=e2259]: 국회 국회사무처_국회의원 정책 세미나 개최 현황
+              - definition [ref=e2260]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2261]:
+              - paragraph [ref=e2262]:
+                - generic [ref=e2263]: 제공기관
+                - generic [ref=e2264]: 국회 국회사무처
+              - paragraph [ref=e2265]:
+                - generic [ref=e2266]: 수정일
+                - generic [ref=e2267]: 2024-07-12
+              - paragraph [ref=e2268]:
+                - generic [ref=e2269]: 조회수
+                - generic [ref=e2270]: "1574"
+              - paragraph [ref=e2271]:
+                - generic [ref=e2272]: 활용신청
+                - generic [ref=e2273]: "48"
+              - paragraph [ref=e2274]:
+                - generic [ref=e2275]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 정책 세미나 개최 현황 바로가기" [ref=e2277] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2278]: 국회 국회사무처_국회의원 정책 세미나 개최 현황
+              - text: 바로가기
+          - listitem [ref=e2280]:
+            - link "국회 국회사무처_법률안 제안이유 및 주요내용 미리보기" [ref=e2281] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2282]: 국회 국회사무처_법률안 제안이유 및 주요내용
+              - text: 미리보기
+            - paragraph [ref=e2283]:
+              - generic [ref=e2284]: 공공행정
+              - generic [ref=e2285]: 입법기관
+            - generic [ref=e2286]:
+              - term [ref=e2287]:
+                - link "XML 국회 국회사무처_법률안 제안이유 및 주요내용" [ref=e2288] [cursor=pointer]:
+                  - /url: /data/15152558/openapi.do
+                  - generic [ref=e2289]: XML
+                  - generic [ref=e2290]: 국회 국회사무처_법률안 제안이유 및 주요내용
+              - definition [ref=e2291]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2292]:
+              - paragraph [ref=e2293]:
+                - generic [ref=e2294]: 제공기관
+                - generic [ref=e2295]: 국회 국회사무처
+              - paragraph [ref=e2296]:
+                - generic [ref=e2297]: 수정일
+                - generic [ref=e2298]: 2025-11-17
+              - paragraph [ref=e2299]:
+                - generic [ref=e2300]: 조회수
+                - generic [ref=e2301]: "129"
+              - paragraph [ref=e2302]:
+                - generic [ref=e2303]: 활용신청
+                - generic [ref=e2304]: "47"
+              - paragraph [ref=e2305]:
+                - generic [ref=e2306]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_법률안 제안이유 및 주요내용 바로가기" [ref=e2308] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2309]: 국회 국회사무처_법률안 제안이유 및 주요내용
+              - text: 바로가기
+          - listitem [ref=e2311]:
+            - link "국회 국회사무처_역대 국회의원 인적사항 미리보기" [ref=e2312] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2313]: 국회 국회사무처_역대 국회의원 인적사항
+              - text: 미리보기
+            - paragraph [ref=e2314]:
+              - generic [ref=e2315]: 공공행정
+              - generic [ref=e2316]: 입법기관
+              - generic [ref=e2317]: 국가중점
+            - generic [ref=e2318]:
+              - term [ref=e2319]:
+                - link "XML 국회 국회사무처_역대 국회의원 인적사항" [ref=e2320] [cursor=pointer]:
+                  - /url: /data/15126018/openapi.do
+                  - generic [ref=e2321]: XML
+                  - generic [ref=e2322]: 국회 국회사무처_역대 국회의원 인적사항
+              - definition [ref=e2323]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2324]:
+              - paragraph [ref=e2325]:
+                - generic [ref=e2326]: 제공기관
+                - generic [ref=e2327]: 국회 국회사무처
+              - paragraph [ref=e2328]:
+                - generic [ref=e2329]: 수정일
+                - generic [ref=e2330]: 2024-07-12
+              - paragraph [ref=e2331]:
+                - generic [ref=e2332]: 조회수
+                - generic [ref=e2333]: "851"
+              - paragraph [ref=e2334]:
+                - generic [ref=e2335]: 활용신청
+                - generic [ref=e2336]: "41"
+              - paragraph [ref=e2337]:
+                - generic [ref=e2338]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 국회의원 인적사항 바로가기" [ref=e2340] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2341]: 국회 국회사무처_역대 국회의원 인적사항
+              - text: 바로가기
+          - listitem [ref=e2343]:
+            - link "국회 국회사무처_국회의원 위원회 의사일정 미리보기" [ref=e2344] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2345]: 국회 국회사무처_국회의원 위원회 의사일정
+              - text: 미리보기
+            - paragraph [ref=e2346]:
+              - generic [ref=e2347]: 공공행정
+              - generic [ref=e2348]: 입법기관
+              - generic [ref=e2349]: 국가중점
+            - generic [ref=e2350]:
+              - term [ref=e2351]:
+                - link "XML 국회 국회사무처_국회의원 위원회 의사일정" [ref=e2352] [cursor=pointer]:
+                  - /url: /data/15126076/openapi.do
+                  - generic [ref=e2353]: XML
+                  - generic [ref=e2354]: 국회 국회사무처_국회의원 위원회 의사일정
+              - definition [ref=e2355]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2356]:
+              - paragraph [ref=e2357]:
+                - generic [ref=e2358]: 제공기관
+                - generic [ref=e2359]: 국회 국회사무처
+              - paragraph [ref=e2360]:
+                - generic [ref=e2361]: 수정일
+                - generic [ref=e2362]: 2024-07-12
+              - paragraph [ref=e2363]:
+                - generic [ref=e2364]: 조회수
+                - generic [ref=e2365]: "1722"
+              - paragraph [ref=e2366]:
+                - generic [ref=e2367]: 활용신청
+                - generic [ref=e2368]: "41"
+              - paragraph [ref=e2369]:
+                - generic [ref=e2370]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 위원회 의사일정 바로가기" [ref=e2372] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2373]: 국회 국회사무처_국회의원 위원회 의사일정
+              - text: 바로가기
+          - listitem [ref=e2375]:
+            - link "국회 국회사무처_연차보고서 미리보기" [ref=e2376] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2377]: 국회 국회사무처_연차보고서
+              - text: 미리보기
+            - paragraph [ref=e2378]:
+              - generic [ref=e2379]: 공공행정
+              - generic [ref=e2380]: 입법기관
+              - generic [ref=e2381]: 국가중점
+            - generic [ref=e2382]:
+              - term [ref=e2383]:
+                - link "XML 국회 국회사무처_연차보고서" [ref=e2384] [cursor=pointer]:
+                  - /url: /data/15126106/openapi.do
+                  - generic [ref=e2385]: XML
+                  - generic [ref=e2386]: 국회 국회사무처_연차보고서
+              - definition [ref=e2387]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2388]:
+              - paragraph [ref=e2389]:
+                - generic [ref=e2390]: 제공기관
+                - generic [ref=e2391]: 국회 국회사무처
+              - paragraph [ref=e2392]:
+                - generic [ref=e2393]: 수정일
+                - generic [ref=e2394]: 2024-07-12
+              - paragraph [ref=e2395]:
+                - generic [ref=e2396]: 조회수
+                - generic [ref=e2397]: "850"
+              - paragraph [ref=e2398]:
+                - generic [ref=e2399]: 활용신청
+                - generic [ref=e2400]: "26"
+              - paragraph [ref=e2401]:
+                - generic [ref=e2402]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_연차보고서 바로가기" [ref=e2404] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2405]: 국회 국회사무처_연차보고서
+              - text: 바로가기
+          - listitem [ref=e2407]:
+            - link "국회 국회사무처_대한민국 경제 미리보기" [ref=e2408] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2409]: 국회 국회사무처_대한민국 경제
+              - text: 미리보기
+            - paragraph [ref=e2410]:
+              - generic [ref=e2411]: 공공행정
+              - generic [ref=e2412]: 입법기관
+              - generic [ref=e2413]: 국가중점
+            - generic [ref=e2414]:
+              - term [ref=e2415]:
+                - link "XML 국회 국회사무처_대한민국 경제" [ref=e2416] [cursor=pointer]:
+                  - /url: /data/15126131/openapi.do
+                  - generic [ref=e2417]: XML
+                  - generic [ref=e2418]: 국회 국회사무처_대한민국 경제
+              - definition [ref=e2419]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2420]:
+              - paragraph [ref=e2421]:
+                - generic [ref=e2422]: 제공기관
+                - generic [ref=e2423]: 국회 국회사무처
+              - paragraph [ref=e2424]:
+                - generic [ref=e2425]: 수정일
+                - generic [ref=e2426]: 2024-07-12
+              - paragraph [ref=e2427]:
+                - generic [ref=e2428]: 조회수
+                - generic [ref=e2429]: "628"
+              - paragraph [ref=e2430]:
+                - generic [ref=e2431]: 활용신청
+                - generic [ref=e2432]: "30"
+              - paragraph [ref=e2433]:
+                - generic [ref=e2434]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_대한민국 경제 바로가기" [ref=e2436] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2437]: 국회 국회사무처_대한민국 경제
+              - text: 바로가기
+          - listitem [ref=e2439]:
+            - link "국회 국회사무처_회의록별 부록 정보 미리보기" [ref=e2440] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2441]: 국회 국회사무처_회의록별 부록 정보
+              - text: 미리보기
+            - paragraph [ref=e2442]:
+              - generic [ref=e2443]: 공공행정
+              - generic [ref=e2444]: 입법기관
+              - generic [ref=e2445]: 국가중점
+            - generic [ref=e2446]:
+              - term [ref=e2447]:
+                - link "XML 국회 국회사무처_회의록별 부록 정보" [ref=e2448] [cursor=pointer]:
+                  - /url: /data/15126151/openapi.do
+                  - generic [ref=e2449]: XML
+                  - generic [ref=e2450]: 국회 국회사무처_회의록별 부록 정보
+              - definition [ref=e2451]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2452]:
+              - paragraph [ref=e2453]:
+                - generic [ref=e2454]: 제공기관
+                - generic [ref=e2455]: 국회 국회사무처
+              - paragraph [ref=e2456]:
+                - generic [ref=e2457]: 수정일
+                - generic [ref=e2458]: 2024-07-12
+              - paragraph [ref=e2459]:
+                - generic [ref=e2460]: 조회수
+                - generic [ref=e2461]: "1699"
+              - paragraph [ref=e2462]:
+                - generic [ref=e2463]: 활용신청
+                - generic [ref=e2464]: "30"
+              - paragraph [ref=e2465]:
+                - generic [ref=e2466]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_회의록별 부록 정보 바로가기" [ref=e2468] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2469]: 국회 국회사무처_회의록별 부록 정보
+              - text: 바로가기
+          - listitem [ref=e2471]:
+            - link "국회 국회사무처_역대 의안 통계 미리보기" [ref=e2472] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2473]: 국회 국회사무처_역대 의안 통계
+              - text: 미리보기
+            - paragraph [ref=e2474]:
+              - generic [ref=e2475]: 공공행정
+              - generic [ref=e2476]: 입법기관
+              - generic [ref=e2477]: 국가중점
+            - generic [ref=e2478]:
+              - term [ref=e2479]:
+                - link "XML 국회 국회사무처_역대 의안 통계" [ref=e2480] [cursor=pointer]:
+                  - /url: /data/15126023/openapi.do
+                  - generic [ref=e2481]: XML
+                  - generic [ref=e2482]: 국회 국회사무처_역대 의안 통계
+              - definition [ref=e2483]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2484]:
+              - paragraph [ref=e2485]:
+                - generic [ref=e2486]: 제공기관
+                - generic [ref=e2487]: 국회 국회사무처
+              - paragraph [ref=e2488]:
+                - generic [ref=e2489]: 수정일
+                - generic [ref=e2490]: 2024-07-12
+              - paragraph [ref=e2491]:
+                - generic [ref=e2492]: 조회수
+                - generic [ref=e2493]: "622"
+              - paragraph [ref=e2494]:
+                - generic [ref=e2495]: 활용신청
+                - generic [ref=e2496]: "28"
+              - paragraph [ref=e2497]:
+                - generic [ref=e2498]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 의안 통계 바로가기" [ref=e2500] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2501]: 국회 국회사무처_역대 의안 통계
+              - text: 바로가기
+          - listitem [ref=e2503]:
+            - link "국회 국회사무처_국회의장 주요일정 미리보기" [ref=e2504] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2505]: 국회 국회사무처_국회의장 주요일정
+              - text: 미리보기
+            - paragraph [ref=e2506]:
+              - generic [ref=e2507]: 공공행정
+              - generic [ref=e2508]: 입법기관
+              - generic [ref=e2509]: 국가중점
+            - generic [ref=e2510]:
+              - term [ref=e2511]:
+                - link "XML 국회 국회사무처_국회의장 주요일정" [ref=e2512] [cursor=pointer]:
+                  - /url: /data/15125962/openapi.do
+                  - generic [ref=e2513]: XML
+                  - generic [ref=e2514]: 국회 국회사무처_국회의장 주요일정
+              - definition [ref=e2515]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2516]:
+              - paragraph [ref=e2517]:
+                - generic [ref=e2518]: 제공기관
+                - generic [ref=e2519]: 국회 국회사무처
+              - paragraph [ref=e2520]:
+                - generic [ref=e2521]: 수정일
+                - generic [ref=e2522]: 2024-07-12
+              - paragraph [ref=e2523]:
+                - generic [ref=e2524]: 조회수
+                - generic [ref=e2525]: "753"
+              - paragraph [ref=e2526]:
+                - generic [ref=e2527]: 활용신청
+                - generic [ref=e2528]: "32"
+              - paragraph [ref=e2529]:
+                - generic [ref=e2530]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의장 주요일정 바로가기" [ref=e2532] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2533]: 국회 국회사무처_국회의장 주요일정
+              - text: 바로가기
+          - listitem [ref=e2535]:
+            - link "국회 국회사무처_국회사무처 2천만원 이상 수의계약 현황 미리보기" [ref=e2536] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2537]: 국회 국회사무처_국회사무처 2천만원 이상 수의계약 현황
+              - text: 미리보기
+            - paragraph [ref=e2538]:
+              - generic [ref=e2539]: 공공행정
+              - generic [ref=e2540]: 입법기관
+              - generic [ref=e2541]: 국가중점
+            - generic [ref=e2542]:
+              - term [ref=e2543]:
+                - link "XML 국회 국회사무처_국회사무처 2천만원 이상 수의계약 현황" [ref=e2544] [cursor=pointer]:
+                  - /url: /data/15125932/openapi.do
+                  - generic [ref=e2545]: XML
+                  - generic [ref=e2546]: 국회 국회사무처_국회사무처 2천만원 이상 수의계약 현황
+              - definition [ref=e2547]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2548]:
+              - paragraph [ref=e2549]:
+                - generic [ref=e2550]: 제공기관
+                - generic [ref=e2551]: 국회 국회사무처
+              - paragraph [ref=e2552]:
+                - generic [ref=e2553]: 수정일
+                - generic [ref=e2554]: 2024-07-12
+              - paragraph [ref=e2555]:
+                - generic [ref=e2556]: 조회수
+                - generic [ref=e2557]: "646"
+              - paragraph [ref=e2558]:
+                - generic [ref=e2559]: 활용신청
+                - generic [ref=e2560]: "19"
+              - paragraph [ref=e2561]:
+                - generic [ref=e2562]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회사무처 2천만원 이상 수의계약 현황 바로가기" [ref=e2564] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2565]: 국회 국회사무처_국회사무처 2천만원 이상 수의계약 현황
+              - text: 바로가기
+          - listitem [ref=e2567]:
+            - link "국회 국회사무처_법률안 심사 및 처리(처리의안) 미리보기" [ref=e2568] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2569]: 국회 국회사무처_법률안 심사 및 처리(처리의안)
+              - text: 미리보기
+            - paragraph [ref=e2570]:
+              - generic [ref=e2571]: 공공행정
+              - generic [ref=e2572]: 입법기관
+              - generic [ref=e2573]: 국가중점
+            - generic [ref=e2574]:
+              - term [ref=e2575]:
+                - link "XML 국회 국회사무처_법률안 심사 및 처리(처리의안)" [ref=e2576] [cursor=pointer]:
+                  - /url: /data/15125995/openapi.do
+                  - generic [ref=e2577]: XML
+                  - generic [ref=e2578]: 국회 국회사무처_법률안 심사 및 처리(처리의안)
+              - definition [ref=e2579]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2580]:
+              - paragraph [ref=e2581]:
+                - generic [ref=e2582]: 제공기관
+                - generic [ref=e2583]: 국회 국회사무처
+              - paragraph [ref=e2584]:
+                - generic [ref=e2585]: 수정일
+                - generic [ref=e2586]: 2024-07-12
+              - paragraph [ref=e2587]:
+                - generic [ref=e2588]: 조회수
+                - generic [ref=e2589]: "1413"
+              - paragraph [ref=e2590]:
+                - generic [ref=e2591]: 활용신청
+                - generic [ref=e2592]: "41"
+              - paragraph [ref=e2593]:
+                - generic [ref=e2594]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_법률안 심사 및 처리(처리의안) 바로가기" [ref=e2596] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2597]: 국회 국회사무처_법률안 심사 및 처리(처리의안)
+              - text: 바로가기
+          - listitem [ref=e2599]:
+            - link "국회 국회사무처_NABO Focus 미리보기" [ref=e2600] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2601]: 국회 국회사무처_NABO Focus
+              - text: 미리보기
+            - paragraph [ref=e2602]:
+              - generic [ref=e2603]: 공공행정
+              - generic [ref=e2604]: 입법기관
+              - generic [ref=e2605]: 국가중점
+            - generic [ref=e2606]:
+              - term [ref=e2607]:
+                - link "XML 국회 국회사무처_NABO Focus" [ref=e2608] [cursor=pointer]:
+                  - /url: /data/15125867/openapi.do
+                  - generic [ref=e2609]: XML
+                  - generic [ref=e2610]: 국회 국회사무처_NABO Focus
+              - definition [ref=e2611]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2612]:
+              - paragraph [ref=e2613]:
+                - generic [ref=e2614]: 제공기관
+                - generic [ref=e2615]: 국회 국회사무처
+              - paragraph [ref=e2616]:
+                - generic [ref=e2617]: 수정일
+                - generic [ref=e2618]: 2024-07-12
+              - paragraph [ref=e2619]:
+                - generic [ref=e2620]: 조회수
+                - generic [ref=e2621]: "658"
+              - paragraph [ref=e2622]:
+                - generic [ref=e2623]: 활용신청
+                - generic [ref=e2624]: "23"
+              - paragraph [ref=e2625]:
+                - generic [ref=e2626]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_NABO Focus 바로가기" [ref=e2628] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2629]: 국회 국회사무처_NABO Focus
+              - text: 바로가기
+          - listitem [ref=e2631]:
+            - link "국회 국회사무처_(영문) 국회의원 정보 미리보기" [ref=e2632] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2633]: 국회 국회사무처_(영문) 국회의원 정보
+              - text: 미리보기
+            - paragraph [ref=e2634]:
+              - generic [ref=e2635]: 공공행정
+              - generic [ref=e2636]: 입법기관
+              - generic [ref=e2637]: 국가중점
+            - generic [ref=e2638]:
+              - term [ref=e2639]:
+                - link "XML 국회 국회사무처_(영문) 국회의원 정보" [ref=e2640] [cursor=pointer]:
+                  - /url: /data/15126089/openapi.do
+                  - generic [ref=e2641]: XML
+                  - generic [ref=e2642]: 국회 국회사무처_(영문) 국회의원 정보
+              - definition [ref=e2643]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2644]:
+              - paragraph [ref=e2645]:
+                - generic [ref=e2646]: 제공기관
+                - generic [ref=e2647]: 국회 국회사무처
+              - paragraph [ref=e2648]:
+                - generic [ref=e2649]: 수정일
+                - generic [ref=e2650]: 2024-07-12
+              - paragraph [ref=e2651]:
+                - generic [ref=e2652]: 조회수
+                - generic [ref=e2653]: "1382"
+              - paragraph [ref=e2654]:
+                - generic [ref=e2655]: 활용신청
+                - generic [ref=e2656]: "31"
+              - paragraph [ref=e2657]:
+                - generic [ref=e2658]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_(영문) 국회의원 정보 바로가기" [ref=e2660] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2661]: 국회 국회사무처_(영문) 국회의원 정보
+              - text: 바로가기
+          - listitem [ref=e2663]:
+            - link "국회 국회사무처_법률안 심사 및 처리(위원회안, 대안) 미리보기" [ref=e2664] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2665]: 국회 국회사무처_법률안 심사 및 처리(위원회안, 대안)
+              - text: 미리보기
+            - paragraph [ref=e2666]:
+              - generic [ref=e2667]: 공공행정
+              - generic [ref=e2668]: 입법기관
+              - generic [ref=e2669]: 국가중점
+            - generic [ref=e2670]:
+              - term [ref=e2671]:
+                - link "XML 국회 국회사무처_법률안 심사 및 처리(위원회안, 대안)" [ref=e2672] [cursor=pointer]:
+                  - /url: /data/15125992/openapi.do
+                  - generic [ref=e2673]: XML
+                  - generic [ref=e2674]: 국회 국회사무처_법률안 심사 및 처리(위원회안, 대안)
+              - definition [ref=e2675]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2676]:
+              - paragraph [ref=e2677]:
+                - generic [ref=e2678]: 제공기관
+                - generic [ref=e2679]: 국회 국회사무처
+              - paragraph [ref=e2680]:
+                - generic [ref=e2681]: 수정일
+                - generic [ref=e2682]: 2024-07-12
+              - paragraph [ref=e2683]:
+                - generic [ref=e2684]: 조회수
+                - generic [ref=e2685]: "812"
+              - paragraph [ref=e2686]:
+                - generic [ref=e2687]: 활용신청
+                - generic [ref=e2688]: "40"
+              - paragraph [ref=e2689]:
+                - generic [ref=e2690]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_법률안 심사 및 처리(위원회안, 대안) 바로가기" [ref=e2692] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2693]: 국회 국회사무처_법률안 심사 및 처리(위원회안, 대안)
+              - text: 바로가기
+          - listitem [ref=e2695]:
+            - link "국회 국회사무처_입법고시(5급) 채용현황 미리보기" [ref=e2696] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2697]: 국회 국회사무처_입법고시(5급) 채용현황
+              - text: 미리보기
+            - paragraph [ref=e2698]:
+              - generic [ref=e2699]: 공공행정
+              - generic [ref=e2700]: 입법기관
+              - generic [ref=e2701]: 국가중점
+            - generic [ref=e2702]:
+              - term [ref=e2703]:
+                - link "XML 국회 국회사무처_입법고시(5급) 채용현황" [ref=e2704] [cursor=pointer]:
+                  - /url: /data/15126053/openapi.do
+                  - generic [ref=e2705]: XML
+                  - generic [ref=e2706]: 국회 국회사무처_입법고시(5급) 채용현황
+              - definition [ref=e2707]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2708]:
+              - paragraph [ref=e2709]:
+                - generic [ref=e2710]: 제공기관
+                - generic [ref=e2711]: 국회 국회사무처
+              - paragraph [ref=e2712]:
+                - generic [ref=e2713]: 수정일
+                - generic [ref=e2714]: 2024-07-12
+              - paragraph [ref=e2715]:
+                - generic [ref=e2716]: 조회수
+                - generic [ref=e2717]: "1220"
+              - paragraph [ref=e2718]:
+                - generic [ref=e2719]: 활용신청
+                - generic [ref=e2720]: "35"
+              - paragraph [ref=e2721]:
+                - generic [ref=e2722]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_입법고시(5급) 채용현황 바로가기" [ref=e2724] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2725]: 국회 국회사무처_입법고시(5급) 채용현황
+              - text: 바로가기
+          - listitem [ref=e2727]:
+            - link "국회 국회사무처_위원회 현황 정보 미리보기" [ref=e2728] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2729]: 국회 국회사무처_위원회 현황 정보
+              - text: 미리보기
+            - paragraph [ref=e2730]:
+              - generic [ref=e2731]: 공공행정
+              - generic [ref=e2732]: 입법기관
+              - generic [ref=e2733]: 국가중점
+            - generic [ref=e2734]:
+              - term [ref=e2735]:
+                - link "XML 국회 국회사무처_위원회 현황 정보" [ref=e2736] [cursor=pointer]:
+                  - /url: /data/15126037/openapi.do
+                  - generic [ref=e2737]: XML
+                  - generic [ref=e2738]: 국회 국회사무처_위원회 현황 정보
+              - definition [ref=e2739]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2740]:
+              - paragraph [ref=e2741]:
+                - generic [ref=e2742]: 제공기관
+                - generic [ref=e2743]: 국회 국회사무처
+              - paragraph [ref=e2744]:
+                - generic [ref=e2745]: 수정일
+                - generic [ref=e2746]: 2024-07-12
+              - paragraph [ref=e2747]:
+                - generic [ref=e2748]: 조회수
+                - generic [ref=e2749]: "921"
+              - paragraph [ref=e2750]:
+                - generic [ref=e2751]: 활용신청
+                - generic [ref=e2752]: "26"
+              - paragraph [ref=e2753]:
+                - generic [ref=e2754]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_위원회 현황 정보 바로가기" [ref=e2756] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2757]: 국회 국회사무처_위원회 현황 정보
+              - text: 바로가기
+          - listitem [ref=e2759]:
+            - link "국회 국회사무처_위원회별 소위원회 일정 미리보기" [ref=e2760] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2761]: 국회 국회사무처_위원회별 소위원회 일정
+              - text: 미리보기
+            - paragraph [ref=e2762]:
+              - generic [ref=e2763]: 공공행정
+              - generic [ref=e2764]: 입법기관
+              - generic [ref=e2765]: 국가중점
+            - generic [ref=e2766]:
+              - term [ref=e2767]:
+                - link "XML 국회 국회사무처_위원회별 소위원회 일정" [ref=e2768] [cursor=pointer]:
+                  - /url: /data/15126040/openapi.do
+                  - generic [ref=e2769]: XML
+                  - generic [ref=e2770]: 국회 국회사무처_위원회별 소위원회 일정
+              - definition [ref=e2771]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2772]:
+              - paragraph [ref=e2773]:
+                - generic [ref=e2774]: 제공기관
+                - generic [ref=e2775]: 국회 국회사무처
+              - paragraph [ref=e2776]:
+                - generic [ref=e2777]: 수정일
+                - generic [ref=e2778]: 2024-07-12
+              - paragraph [ref=e2779]:
+                - generic [ref=e2780]: 조회수
+                - generic [ref=e2781]: "964"
+              - paragraph [ref=e2782]:
+                - generic [ref=e2783]: 활용신청
+                - generic [ref=e2784]: "29"
+              - paragraph [ref=e2785]:
+                - generic [ref=e2786]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_위원회별 소위원회 일정 바로가기" [ref=e2788] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2789]: 국회 국회사무처_위원회별 소위원회 일정
+              - text: 바로가기
+          - listitem [ref=e2791]:
+            - link "국회 국회사무처_국회의원 세미나 일정 미리보기" [ref=e2792] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2793]: 국회 국회사무처_국회의원 세미나 일정
+              - text: 미리보기
+            - paragraph [ref=e2794]:
+              - generic [ref=e2795]: 공공행정
+              - generic [ref=e2796]: 입법기관
+              - generic [ref=e2797]: 국가중점
+            - generic [ref=e2798]:
+              - term [ref=e2799]:
+                - link "XML 국회 국회사무처_국회의원 세미나 일정" [ref=e2800] [cursor=pointer]:
+                  - /url: /data/15125950/openapi.do
+                  - generic [ref=e2801]: XML
+                  - generic [ref=e2802]: 국회 국회사무처_국회의원 세미나 일정
+              - definition [ref=e2803]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2804]:
+              - paragraph [ref=e2805]:
+                - generic [ref=e2806]: 제공기관
+                - generic [ref=e2807]: 국회 국회사무처
+              - paragraph [ref=e2808]:
+                - generic [ref=e2809]: 수정일
+                - generic [ref=e2810]: 2024-07-12
+              - paragraph [ref=e2811]:
+                - generic [ref=e2812]: 조회수
+                - generic [ref=e2813]: "1162"
+              - paragraph [ref=e2814]:
+                - generic [ref=e2815]: 활용신청
+                - generic [ref=e2816]: "28"
+              - paragraph [ref=e2817]:
+                - generic [ref=e2818]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 세미나 일정 바로가기" [ref=e2820] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2821]: 국회 국회사무처_국회의원 세미나 일정
+              - text: 바로가기
+          - listitem [ref=e2823]:
+            - link "국회 국회사무처_국회사무처 1억원 이상 계약 현황 미리보기" [ref=e2824] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2825]: 국회 국회사무처_국회사무처 1억원 이상 계약 현황
+              - text: 미리보기
+            - paragraph [ref=e2826]:
+              - generic [ref=e2827]: 공공행정
+              - generic [ref=e2828]: 입법기관
+              - generic [ref=e2829]: 국가중점
+            - generic [ref=e2830]:
+              - term [ref=e2831]:
+                - link "XML 국회 국회사무처_국회사무처 1억원 이상 계약 현황" [ref=e2832] [cursor=pointer]:
+                  - /url: /data/15125931/openapi.do
+                  - generic [ref=e2833]: XML
+                  - generic [ref=e2834]: 국회 국회사무처_국회사무처 1억원 이상 계약 현황
+              - definition [ref=e2835]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2836]:
+              - paragraph [ref=e2837]:
+                - generic [ref=e2838]: 제공기관
+                - generic [ref=e2839]: 국회 국회사무처
+              - paragraph [ref=e2840]:
+                - generic [ref=e2841]: 수정일
+                - generic [ref=e2842]: 2024-07-12
+              - paragraph [ref=e2843]:
+                - generic [ref=e2844]: 조회수
+                - generic [ref=e2845]: "853"
+              - paragraph [ref=e2846]:
+                - generic [ref=e2847]: 활용신청
+                - generic [ref=e2848]: "15"
+              - paragraph [ref=e2849]:
+                - generic [ref=e2850]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회사무처 1억원 이상 계약 현황 바로가기" [ref=e2852] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2853]: 국회 국회사무처_국회사무처 1억원 이상 계약 현황
+              - text: 바로가기
+          - listitem [ref=e2855]:
+            - link "국회 국회사무처_청원 접수목록 미리보기" [ref=e2856] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2857]: 국회 국회사무처_청원 접수목록
+              - text: 미리보기
+            - paragraph [ref=e2858]:
+              - generic [ref=e2859]: 공공행정
+              - generic [ref=e2860]: 입법기관
+              - generic [ref=e2861]: 국가중점
+            - generic [ref=e2862]:
+              - term [ref=e2863]:
+                - link "XML 국회 국회사무처_청원 접수목록" [ref=e2864] [cursor=pointer]:
+                  - /url: /data/15126111/openapi.do
+                  - generic [ref=e2865]: XML
+                  - generic [ref=e2866]: 국회 국회사무처_청원 접수목록
+              - definition [ref=e2867]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2868]:
+              - paragraph [ref=e2869]:
+                - generic [ref=e2870]: 제공기관
+                - generic [ref=e2871]: 국회 국회사무처
+              - paragraph [ref=e2872]:
+                - generic [ref=e2873]: 수정일
+                - generic [ref=e2874]: 2024-07-12
+              - paragraph [ref=e2875]:
+                - generic [ref=e2876]: 조회수
+                - generic [ref=e2877]: "278"
+              - paragraph [ref=e2878]:
+                - generic [ref=e2879]: 활용신청
+                - generic [ref=e2880]: "23"
+              - paragraph [ref=e2881]:
+                - generic [ref=e2882]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_청원 접수목록 바로가기" [ref=e2884] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2885]: 국회 국회사무처_청원 접수목록
+              - text: 바로가기
+          - listitem [ref=e2887]:
+            - link "국회 국회사무처_시정조치 결과보고서 목록 미리보기" [ref=e2888] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2889]: 국회 국회사무처_시정조치 결과보고서 목록
+              - text: 미리보기
+            - paragraph [ref=e2890]:
+              - generic [ref=e2891]: 공공행정
+              - generic [ref=e2892]: 입법기관
+              - generic [ref=e2893]: 국가중점
+            - generic [ref=e2894]:
+              - term [ref=e2895]:
+                - link "XML 국회 국회사무처_시정조치 결과보고서 목록" [ref=e2896] [cursor=pointer]:
+                  - /url: /data/15126159/openapi.do
+                  - generic [ref=e2897]: XML
+                  - generic [ref=e2898]: 국회 국회사무처_시정조치 결과보고서 목록
+              - definition [ref=e2899]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2900]:
+              - paragraph [ref=e2901]:
+                - generic [ref=e2902]: 제공기관
+                - generic [ref=e2903]: 국회 국회사무처
+              - paragraph [ref=e2904]:
+                - generic [ref=e2905]: 수정일
+                - generic [ref=e2906]: 2024-07-12
+              - paragraph [ref=e2907]:
+                - generic [ref=e2908]: 조회수
+                - generic [ref=e2909]: "724"
+              - paragraph [ref=e2910]:
+                - generic [ref=e2911]: 활용신청
+                - generic [ref=e2912]: "30"
+              - paragraph [ref=e2913]:
+                - generic [ref=e2914]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_시정조치 결과보고서 목록 바로가기" [ref=e2916] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2917]: 국회 국회사무처_시정조치 결과보고서 목록
+              - text: 바로가기
+          - listitem [ref=e2919]:
+            - link "국회 국회사무처_본회의 처리안건_예산안 미리보기" [ref=e2920] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2921]: 국회 국회사무처_본회의 처리안건_예산안
+              - text: 미리보기
+            - paragraph [ref=e2922]:
+              - generic [ref=e2923]: 공공행정
+              - generic [ref=e2924]: 입법기관
+              - generic [ref=e2925]: 국가중점
+            - generic [ref=e2926]:
+              - term [ref=e2927]:
+                - link "XML 국회 국회사무처_본회의 처리안건_예산안" [ref=e2928] [cursor=pointer]:
+                  - /url: /data/15126005/openapi.do
+                  - generic [ref=e2929]: XML
+                  - generic [ref=e2930]: 국회 국회사무처_본회의 처리안건_예산안
+              - definition [ref=e2931]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2932]:
+              - paragraph [ref=e2933]:
+                - generic [ref=e2934]: 제공기관
+                - generic [ref=e2935]: 국회 국회사무처
+              - paragraph [ref=e2936]:
+                - generic [ref=e2937]: 수정일
+                - generic [ref=e2938]: 2024-07-12
+              - paragraph [ref=e2939]:
+                - generic [ref=e2940]: 조회수
+                - generic [ref=e2941]: "511"
+              - paragraph [ref=e2942]:
+                - generic [ref=e2943]: 활용신청
+                - generic [ref=e2944]: "25"
+              - paragraph [ref=e2945]:
+                - generic [ref=e2946]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_본회의 처리안건_예산안 바로가기" [ref=e2948] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2949]: 국회 국회사무처_본회의 처리안건_예산안
+              - text: 바로가기
+          - listitem [ref=e2951]:
+            - link "국회 국회사무처_국회의원 기자회견 미리보기" [ref=e2952] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2953]: 국회 국회사무처_국회의원 기자회견
+              - text: 미리보기
+            - paragraph [ref=e2954]:
+              - generic [ref=e2955]: 공공행정
+              - generic [ref=e2956]: 입법기관
+              - generic [ref=e2957]: 국가중점
+            - generic [ref=e2958]:
+              - term [ref=e2959]:
+                - link "XML 국회 국회사무처_국회의원 기자회견" [ref=e2960] [cursor=pointer]:
+                  - /url: /data/15125944/openapi.do
+                  - generic [ref=e2961]: XML
+                  - generic [ref=e2962]: 국회 국회사무처_국회의원 기자회견
+              - definition [ref=e2963]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2964]:
+              - paragraph [ref=e2965]:
+                - generic [ref=e2966]: 제공기관
+                - generic [ref=e2967]: 국회 국회사무처
+              - paragraph [ref=e2968]:
+                - generic [ref=e2969]: 수정일
+                - generic [ref=e2970]: 2024-07-12
+              - paragraph [ref=e2971]:
+                - generic [ref=e2972]: 조회수
+                - generic [ref=e2973]: "734"
+              - paragraph [ref=e2974]:
+                - generic [ref=e2975]: 활용신청
+                - generic [ref=e2976]: "25"
+              - paragraph [ref=e2977]:
+                - generic [ref=e2978]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_국회의원 기자회견 바로가기" [ref=e2980] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e2981]: 국회 국회사무처_국회의원 기자회견
+              - text: 바로가기
+          - listitem [ref=e2983]:
+            - link "국회 국회사무처_정당 및 교섭단체 의석수 현황 미리보기" [ref=e2984] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e2985]: 국회 국회사무처_정당 및 교섭단체 의석수 현황
+              - text: 미리보기
+            - paragraph [ref=e2986]:
+              - generic [ref=e2987]: 공공행정
+              - generic [ref=e2988]: 입법기관
+              - generic [ref=e2989]: 국가중점
+            - generic [ref=e2990]:
+              - term [ref=e2991]:
+                - link "XML 국회 국회사무처_정당 및 교섭단체 의석수 현황" [ref=e2992] [cursor=pointer]:
+                  - /url: /data/15125862/openapi.do
+                  - generic [ref=e2993]: XML
+                  - generic [ref=e2994]: 국회 국회사무처_정당 및 교섭단체 의석수 현황
+              - definition [ref=e2995]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e2996]:
+              - paragraph [ref=e2997]:
+                - generic [ref=e2998]: 제공기관
+                - generic [ref=e2999]: 국회 국회사무처
+              - paragraph [ref=e3000]:
+                - generic [ref=e3001]: 수정일
+                - generic [ref=e3002]: 2024-07-12
+              - paragraph [ref=e3003]:
+                - generic [ref=e3004]: 조회수
+                - generic [ref=e3005]: "1414"
+              - paragraph [ref=e3006]:
+                - generic [ref=e3007]: 활용신청
+                - generic [ref=e3008]: "37"
+              - paragraph [ref=e3009]:
+                - generic [ref=e3010]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_정당 및 교섭단체 의석수 현황 바로가기" [ref=e3012] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3013]: 국회 국회사무처_정당 및 교섭단체 의석수 현황
+              - text: 바로가기
+          - listitem [ref=e3015]:
+            - link "국회 국회사무처_청원 심사정보 미리보기" [ref=e3016] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3017]: 국회 국회사무처_청원 심사정보
+              - text: 미리보기
+            - paragraph [ref=e3018]:
+              - generic [ref=e3019]: 공공행정
+              - generic [ref=e3020]: 입법기관
+              - generic [ref=e3021]: 국가중점
+            - generic [ref=e3022]:
+              - term [ref=e3023]:
+                - link "XML 국회 국회사무처_청원 심사정보" [ref=e3024] [cursor=pointer]:
+                  - /url: /data/15126114/openapi.do
+                  - generic [ref=e3025]: XML
+                  - generic [ref=e3026]: 국회 국회사무처_청원 심사정보
+              - definition [ref=e3027]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3028]:
+              - paragraph [ref=e3029]:
+                - generic [ref=e3030]: 제공기관
+                - generic [ref=e3031]: 국회 국회사무처
+              - paragraph [ref=e3032]:
+                - generic [ref=e3033]: 수정일
+                - generic [ref=e3034]: 2024-07-12
+              - paragraph [ref=e3035]:
+                - generic [ref=e3036]: 조회수
+                - generic [ref=e3037]: "911"
+              - paragraph [ref=e3038]:
+                - generic [ref=e3039]: 활용신청
+                - generic [ref=e3040]: "21"
+              - paragraph [ref=e3041]:
+                - generic [ref=e3042]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_청원 심사정보 바로가기" [ref=e3044] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3045]: 국회 국회사무처_청원 심사정보
+              - text: 바로가기
+          - listitem [ref=e3047]:
+            - link "국회 국회사무처_역대 국회 정당별 국회의원 지역분포 미리보기" [ref=e3048] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3049]: 국회 국회사무처_역대 국회 정당별 국회의원 지역분포
+              - text: 미리보기
+            - paragraph [ref=e3050]:
+              - generic [ref=e3051]: 공공행정
+              - generic [ref=e3052]: 입법기관
+              - generic [ref=e3053]: 국가중점
+            - generic [ref=e3054]:
+              - term [ref=e3055]:
+                - link "XML 국회 국회사무처_역대 국회 정당별 국회의원 지역분포" [ref=e3056] [cursor=pointer]:
+                  - /url: /data/15126014/openapi.do
+                  - generic [ref=e3057]: XML
+                  - generic [ref=e3058]: 국회 국회사무처_역대 국회 정당별 국회의원 지역분포
+              - definition [ref=e3059]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3060]:
+              - paragraph [ref=e3061]:
+                - generic [ref=e3062]: 제공기관
+                - generic [ref=e3063]: 국회 국회사무처
+              - paragraph [ref=e3064]:
+                - generic [ref=e3065]: 수정일
+                - generic [ref=e3066]: 2024-07-12
+              - paragraph [ref=e3067]:
+                - generic [ref=e3068]: 조회수
+                - generic [ref=e3069]: "1270"
+              - paragraph [ref=e3070]:
+                - generic [ref=e3071]: 활용신청
+                - generic [ref=e3072]: "35"
+              - paragraph [ref=e3073]:
+                - generic [ref=e3074]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 국회 정당별 국회의원 지역분포 바로가기" [ref=e3076] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3077]: 국회 국회사무처_역대 국회 정당별 국회의원 지역분포
+              - text: 바로가기
+          - listitem [ref=e3079]:
+            - link "국회 국회사무처_9급 공개경쟁 채용현황 미리보기" [ref=e3080] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3081]: 국회 국회사무처_9급 공개경쟁 채용현황
+              - text: 미리보기
+            - paragraph [ref=e3082]:
+              - generic [ref=e3083]: 공공행정
+              - generic [ref=e3084]: 입법기관
+              - generic [ref=e3085]: 국가중점
+            - generic [ref=e3086]:
+              - term [ref=e3087]:
+                - link "XML 국회 국회사무처_9급 공개경쟁 채용현황" [ref=e3088] [cursor=pointer]:
+                  - /url: /data/15125866/openapi.do
+                  - generic [ref=e3089]: XML
+                  - generic [ref=e3090]: 국회 국회사무처_9급 공개경쟁 채용현황
+              - definition [ref=e3091]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3092]:
+              - paragraph [ref=e3093]:
+                - generic [ref=e3094]: 제공기관
+                - generic [ref=e3095]: 국회 국회사무처
+              - paragraph [ref=e3096]:
+                - generic [ref=e3097]: 수정일
+                - generic [ref=e3098]: 2024-07-12
+              - paragraph [ref=e3099]:
+                - generic [ref=e3100]: 조회수
+                - generic [ref=e3101]: "785"
+              - paragraph [ref=e3102]:
+                - generic [ref=e3103]: 활용신청
+                - generic [ref=e3104]: "27"
+              - paragraph [ref=e3105]:
+                - generic [ref=e3106]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_9급 공개경쟁 채용현황 바로가기" [ref=e3108] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3109]: 국회 국회사무처_9급 공개경쟁 채용현황
+              - text: 바로가기
+          - listitem [ref=e3111]:
+            - link "국회 국회사무처_역대 여성 국회의원 현황 미리보기" [ref=e3112] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3113]: 국회 국회사무처_역대 여성 국회의원 현황
+              - text: 미리보기
+            - paragraph [ref=e3114]:
+              - generic [ref=e3115]: 공공행정
+              - generic [ref=e3116]: 입법기관
+              - generic [ref=e3117]: 국가중점
+            - generic [ref=e3118]:
+              - term [ref=e3119]:
+                - link "XML 국회 국회사무처_역대 여성 국회의원 현황" [ref=e3120] [cursor=pointer]:
+                  - /url: /data/15126022/openapi.do
+                  - generic [ref=e3121]: XML
+                  - generic [ref=e3122]: 국회 국회사무처_역대 여성 국회의원 현황
+              - definition [ref=e3123]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3124]:
+              - paragraph [ref=e3125]:
+                - generic [ref=e3126]: 제공기관
+                - generic [ref=e3127]: 국회 국회사무처
+              - paragraph [ref=e3128]:
+                - generic [ref=e3129]: 수정일
+                - generic [ref=e3130]: 2024-07-12
+              - paragraph [ref=e3131]:
+                - generic [ref=e3132]: 조회수
+                - generic [ref=e3133]: "688"
+              - paragraph [ref=e3134]:
+                - generic [ref=e3135]: 활용신청
+                - generic [ref=e3136]: "27"
+              - paragraph [ref=e3137]:
+                - generic [ref=e3138]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_역대 여성 국회의원 현황 바로가기" [ref=e3140] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3141]: 국회 국회사무처_역대 여성 국회의원 현황
+              - text: 바로가기
+          - listitem [ref=e3143]:
+            - link "국회 국회사무처_회기정보 미리보기" [ref=e3144] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3145]: 국회 국회사무처_회기정보
+              - text: 미리보기
+            - paragraph [ref=e3146]:
+              - generic [ref=e3147]: 공공행정
+              - generic [ref=e3148]: 입법기관
+              - generic [ref=e3149]: 국가중점
+            - generic [ref=e3150]:
+              - term [ref=e3151]:
+                - link "XML 국회 국회사무처_회기정보" [ref=e3152] [cursor=pointer]:
+                  - /url: /data/15126099/openapi.do
+                  - generic [ref=e3153]: XML
+                  - generic [ref=e3154]: 국회 국회사무처_회기정보
+              - definition [ref=e3155]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3156]:
+              - paragraph [ref=e3157]:
+                - generic [ref=e3158]: 제공기관
+                - generic [ref=e3159]: 국회 국회사무처
+              - paragraph [ref=e3160]:
+                - generic [ref=e3161]: 수정일
+                - generic [ref=e3162]: 2024-07-12
+              - paragraph [ref=e3163]:
+                - generic [ref=e3164]: 조회수
+                - generic [ref=e3165]: "383"
+              - paragraph [ref=e3166]:
+                - generic [ref=e3167]: 활용신청
+                - generic [ref=e3168]: "17"
+              - paragraph [ref=e3169]:
+                - generic [ref=e3170]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_회기정보 바로가기" [ref=e3172] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3173]: 국회 국회사무처_회기정보
+              - text: 바로가기
+          - listitem [ref=e3175]:
+            - link "국회 국회사무처_의안 접수목록 미리보기" [ref=e3176] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3177]: 국회 국회사무처_의안 접수목록
+              - text: 미리보기
+            - paragraph [ref=e3178]:
+              - generic [ref=e3179]: 공공행정
+              - generic [ref=e3180]: 입법기관
+              - generic [ref=e3181]: 국가중점
+            - generic [ref=e3182]:
+              - term [ref=e3183]:
+                - link "XML 국회 국회사무처_의안 접수목록" [ref=e3184] [cursor=pointer]:
+                  - /url: /data/15126094/openapi.do
+                  - generic [ref=e3185]: XML
+                  - generic [ref=e3186]: 국회 국회사무처_의안 접수목록
+              - definition [ref=e3187]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3188]:
+              - paragraph [ref=e3189]:
+                - generic [ref=e3190]: 제공기관
+                - generic [ref=e3191]: 국회 국회사무처
+              - paragraph [ref=e3192]:
+                - generic [ref=e3193]: 수정일
+                - generic [ref=e3194]: 2024-07-12
+              - paragraph [ref=e3195]:
+                - generic [ref=e3196]: 조회수
+                - generic [ref=e3197]: "329"
+              - paragraph [ref=e3198]:
+                - generic [ref=e3199]: 활용신청
+                - generic [ref=e3200]: "19"
+              - paragraph [ref=e3201]:
+                - generic [ref=e3202]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_의안 접수목록 바로가기" [ref=e3204] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3205]: 국회 국회사무처_의안 접수목록
+              - text: 바로가기
+          - listitem [ref=e3207]:
+            - link "국회 국회사무처_제안설명서 목록 미리보기" [ref=e3208] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3209]: 국회 국회사무처_제안설명서 목록
+              - text: 미리보기
+            - paragraph [ref=e3210]:
+              - generic [ref=e3211]: 공공행정
+              - generic [ref=e3212]: 입법기관
+              - generic [ref=e3213]: 국가중점
+            - generic [ref=e3214]:
+              - term [ref=e3215]:
+                - link "XML 국회 국회사무처_제안설명서 목록" [ref=e3216] [cursor=pointer]:
+                  - /url: /data/15126158/openapi.do
+                  - generic [ref=e3217]: XML
+                  - generic [ref=e3218]: 국회 국회사무처_제안설명서 목록
+              - definition [ref=e3219]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3220]:
+              - paragraph [ref=e3221]:
+                - generic [ref=e3222]: 제공기관
+                - generic [ref=e3223]: 국회 국회사무처
+              - paragraph [ref=e3224]:
+                - generic [ref=e3225]: 수정일
+                - generic [ref=e3226]: 2024-07-12
+              - paragraph [ref=e3227]:
+                - generic [ref=e3228]: 조회수
+                - generic [ref=e3229]: "498"
+              - paragraph [ref=e3230]:
+                - generic [ref=e3231]: 활용신청
+                - generic [ref=e3232]: "19"
+              - paragraph [ref=e3233]:
+                - generic [ref=e3234]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_제안설명서 목록 바로가기" [ref=e3236] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3237]: 국회 국회사무처_제안설명서 목록
+              - text: 바로가기
+          - listitem [ref=e3239]:
+            - link "국회 국회사무처_실시간 의사중계 현황 미리보기" [ref=e3240] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3241]: 국회 국회사무처_실시간 의사중계 현황
+              - text: 미리보기
+            - paragraph [ref=e3242]:
+              - generic [ref=e3243]: 공공행정
+              - generic [ref=e3244]: 입법기관
+              - generic [ref=e3245]: 국가중점
+            - generic [ref=e3246]:
+              - term [ref=e3247]:
+                - link "XML 국회 국회사무처_실시간 의사중계 현황" [ref=e3248] [cursor=pointer]:
+                  - /url: /data/15126123/openapi.do
+                  - generic [ref=e3249]: XML
+                  - generic [ref=e3250]: 국회 국회사무처_실시간 의사중계 현황
+              - definition [ref=e3251]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3252]:
+              - paragraph [ref=e3253]:
+                - generic [ref=e3254]: 제공기관
+                - generic [ref=e3255]: 국회 국회사무처
+              - paragraph [ref=e3256]:
+                - generic [ref=e3257]: 수정일
+                - generic [ref=e3258]: 2024-07-12
+              - paragraph [ref=e3259]:
+                - generic [ref=e3260]: 조회수
+                - generic [ref=e3261]: "1134"
+              - paragraph [ref=e3262]:
+                - generic [ref=e3263]: 활용신청
+                - generic [ref=e3264]: "22"
+              - paragraph [ref=e3265]:
+                - generic [ref=e3266]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_실시간 의사중계 현황 바로가기" [ref=e3268] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3269]: 국회 국회사무처_실시간 의사중계 현황
+              - text: 바로가기
+          - listitem [ref=e3271]:
+            - link "국회 국회사무처_위원회별 일정 미리보기" [ref=e3272] [cursor=pointer]:
+              - /url: "#layer_openapi_preview"
+              - generic [ref=e3273]: 국회 국회사무처_위원회별 일정
+              - text: 미리보기
+            - paragraph [ref=e3274]:
+              - generic [ref=e3275]: 공공행정
+              - generic [ref=e3276]: 입법기관
+              - generic [ref=e3277]: 국가중점
+            - generic [ref=e3278]:
+              - term [ref=e3279]:
+                - link "XML 국회 국회사무처_위원회별 일정" [ref=e3280] [cursor=pointer]:
+                  - /url: /data/15126041/openapi.do
+                  - generic [ref=e3281]: XML
+                  - generic [ref=e3282]: 국회 국회사무처_위원회별 일정
+              - definition [ref=e3283]: 국회 의정활동 정보는 국회가 보유·관리하는 각종 정보와 국회 회의록을 체계적·효과적으로 등록·공개·제공을 통해 국민의 알권리 및 국회 정보 이용권을 보장하기 위한 정보입니다
+            - generic [ref=e3284]:
+              - paragraph [ref=e3285]:
+                - generic [ref=e3286]: 제공기관
+                - generic [ref=e3287]: 국회 국회사무처
+              - paragraph [ref=e3288]:
+                - generic [ref=e3289]: 수정일
+                - generic [ref=e3290]: 2024-07-12
+              - paragraph [ref=e3291]:
+                - generic [ref=e3292]: 조회수
+                - generic [ref=e3293]: "603"
+              - paragraph [ref=e3294]:
+                - generic [ref=e3295]: 활용신청
+                - generic [ref=e3296]: "16"
+              - paragraph [ref=e3297]:
+                - generic [ref=e3298]: 키워드
+                - text: 국회,입법,의안
+            - link "국회 국회사무처_위원회별 일정 바로가기" [ref=e3300] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e3301]: 국회 국회사무처_위원회별 일정
+              - text: 바로가기
+        - navigation [ref=e3303]:
+          - strong [ref=e3304]:
+            - text: "1"
+            - generic [ref=e3305]: 현재 페이지
+          - link "2" [ref=e3306] [cursor=pointer]:
+            - /url: "#"
+          - link "3" [ref=e3307] [cursor=pointer]:
+            - /url: "#"
+        - link "민원서비스 게시판" [ref=e3309] [cursor=pointer]:
+          - /url: javascript:fn_callForm('dataList')
+          - generic [ref=e3311]:
+            - text: 민원서비스
+            - text: 게시판
+        - link "민원서비스 게시판" [ref=e3313] [cursor=pointer]:
+          - /url: javascript:fn_callForm('dataList')
+    - complementary [ref=e3314]:
+      - link "상단가기" [ref=e3315] [cursor=pointer]:
+        - /url: "#top"
+    - contentinfo [ref=e3316]:
+      - generic [ref=e3317]:
+        - generic [ref=e3318]:
+          - generic [ref=e3319]:
+            - strong [ref=e3321]: 공공데이터 개방문의
+            - link "1566-0025" [ref=e3322] [cursor=pointer]:
+              - /url: tel:1566-0025
+          - link "운영자 메일상담" [ref=e3324] [cursor=pointer]:
+            - /url: mailto:opendata_help@nia.or.kr
+            - text: 운영자 메일상담
+          - generic [ref=e3326]:
+            - link "페이스북 공유" [ref=e3327] [cursor=pointer]:
+              - /url: http://www.facebook.com/koreadataportal
+              - generic [ref=e3328]: 페이스북 공유
+            - link "트위터 공유" [ref=e3329] [cursor=pointer]:
+              - /url: https://twitter.com/koreadataportal
+              - generic [ref=e3330]: 트위터 공유
+            - link "블로그 공유" [ref=e3331] [cursor=pointer]:
+              - /url: http://blog.naver.com/nia_korea
+              - generic [ref=e3332]: 블로그 공유
+        - generic [ref=e3333]:
+          - list [ref=e3334]:
+            - listitem [ref=e3335]:
+              - link "이용약관" [ref=e3336] [cursor=pointer]:
+                - /url: /ugs/selectPortalPolicyView.do#use_stplat
+            - listitem [ref=e3337]:
+              - link "개인정보처리방침" [ref=e3338] [cursor=pointer]:
+                - /url: /ugs/selectPortalPolicyView.do#indvdlinfo_process
+            - listitem [ref=e3339]:
+              - link "공공데이터포털 소개" [ref=e3340] [cursor=pointer]:
+                - /url: /ugs/selectPortalInfoView.do#portal_info
+            - listitem [ref=e3341]:
+              - link "분쟁조정신청" [ref=e3342] [cursor=pointer]:
+                - /url: /tcs/dor/insertTrublMdatReqstProcssView.do
+          - generic [ref=e3343]:
+            - combobox "관련사이트 선택" [ref=e3344]:
+              - option "행정안전부" [selected]
+              - option "공공데이터전략위원회"
+              - option "공공데이터분쟁조정위원회"
+              - option "오픈데이터포럼"
+              - option "오픈스퀘어-D"
+            - button "이동" [ref=e3345] [cursor=pointer]
+        - generic:
+          - link "행정안전부" [ref=e3347] [cursor=pointer]:
+            - /url: https://www.mois.go.kr/
+            - img "행정안전부" [ref=e3348]
+          - generic [ref=e3349]:
+            - generic [ref=e3350]:
+              - paragraph [ref=e3351]: (30112) 세종특별자치시 도움6로 42(어진동)
+              - paragraph [ref=e3352]:
+                - text: "대표번호 :"
+                - link "1566-0025" [ref=e3353] [cursor=pointer]:
+                  - /url: tel:1566-0025
+              - paragraph [ref=e3354]: "문의시간 : 09:00~18:00 (월~금)"
+            - paragraph [ref=e3356]: ⓒ행정안전부. All rights reserved.
+  - log [ref=e3357]

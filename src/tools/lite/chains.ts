@@ -233,22 +233,27 @@ export function registerLiteChainTools(
 
         const bills = billsResult.rows.map(extractBillSummary);
 
-        // Step 3: 종합 보고서 생성 (pure JSON)
+        // Step 3: 종합 보고서 생성 (pure JSON, items는 항상 배열)
+        const billItems = Array.isArray(bills) ? bills : [];
+        const voteItems = Array.isArray(votesResult.rows)
+          ? votesResult.rows.map((row) => ({
+              billNo: String(row.BILL_NO ?? row.BILL_ID ?? ""),
+              billName: String(row.BILL_NAME ?? row.BILL_NM ?? ""),
+              result: String(row.RESULT ?? row.PROC_RESULT ?? ""),
+            }))
+          : [];
+
         return {
           content: [{ type: "text" as const, text: JSON.stringify({
             member: memberInfo,
             bills: {
-              total: billsResult.totalCount,
-              items: bills,
+              total: billsResult.totalCount ?? 0,
+              items: billItems,
             },
             votes: {
-              total: votesResult.totalCount,
+              total: votesResult.totalCount ?? 0,
               age,
-              items: votesResult.rows.map((row) => ({
-                billNo: String(row.BILL_NO ?? row.BILL_ID ?? ""),
-                billName: String(row.BILL_NAME ?? row.BILL_NM ?? ""),
-                result: String(row.RESULT ?? row.PROC_RESULT ?? ""),
-              })),
+              items: voteItems,
             },
           }) }],
         };

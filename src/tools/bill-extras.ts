@@ -187,7 +187,27 @@ export function registerBillExtraTools(
           queryParams,
         );
 
-        const formatted = result.rows.map((row) => ({
+        // API가 BILL_ID/BILL_NM 필터를 무시할 수 있으므로 클라이언트에서 필터링
+        let filteredRows = result.rows;
+        if (params.bill_id) {
+          filteredRows = filteredRows.filter(
+            (row) => String(row.BILL_ID ?? "") === params.bill_id,
+          );
+        }
+        if (params.bill_name && filteredRows.length === 0) {
+          // bill_id 필터 결과가 없으면 bill_name 부분 일치로 재시도
+          const nameLower = params.bill_name.toLowerCase();
+          filteredRows = result.rows.filter(
+            (row) => String(row.BILL_NM ?? "").toLowerCase().includes(nameLower),
+          );
+        } else if (params.bill_name && !params.bill_id) {
+          const nameLower = params.bill_name.toLowerCase();
+          filteredRows = filteredRows.filter(
+            (row) => String(row.BILL_NM ?? "").toLowerCase().includes(nameLower),
+          );
+        }
+
+        const formatted = filteredRows.map((row) => ({
           의안번호: row.BILL_NO,
           의안명: row.BILL_NM,
           제안자구분: row.PPSR_KIND,
@@ -198,7 +218,13 @@ export function registerBillExtraTools(
         return {
           content: [{
             type: "text" as const,
-            text: JSON.stringify({ total: result.totalCount, items: formatted }),
+            text: JSON.stringify({
+              total: formatted.length,
+              items: formatted,
+              note: formatted.length === 0 && result.rows.length > 0
+                ? "API 결과에서 해당 의안을 찾지 못했습니다. bill_id 또는 bill_name을 확인해 주세요."
+                : undefined,
+            }),
           }],
         };
       } catch (err: unknown) {
@@ -331,7 +357,21 @@ export function registerBillExtraTools(
           queryParams,
         );
 
-        const formatted = result.rows.map((row) => ({
+        // API가 BILL_NO/BILL_NM 필터를 무시할 수 있으므로 클라이언트에서 필터링
+        let filteredRows = result.rows;
+        if (params.bill_no) {
+          filteredRows = filteredRows.filter(
+            (row) => String(row.BILL_NO ?? "") === params.bill_no,
+          );
+        }
+        if (params.bill_name) {
+          const nameLower = params.bill_name.toLowerCase();
+          filteredRows = filteredRows.filter(
+            (row) => String(row.BILL_NM ?? "").toLowerCase().includes(nameLower),
+          );
+        }
+
+        const formatted = filteredRows.map((row) => ({
           의안번호: row.BILL_NO,
           의안명: row.BILL_NM,
           의안종류: row.BILL_KIND,
@@ -344,7 +384,7 @@ export function registerBillExtraTools(
         return {
           content: [{
             type: "text" as const,
-            text: JSON.stringify({ total: result.totalCount, items: formatted }),
+            text: JSON.stringify({ total: formatted.length, items: formatted }),
           }],
         };
       } catch (err: unknown) {

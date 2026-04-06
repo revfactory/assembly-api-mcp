@@ -18,6 +18,7 @@ import { type AppConfig } from "./config.js";
 import { registerLiteTools } from "./tools/lite/index.js";
 import { registerLiteRecordTools } from "./tools/lite/records.js";
 import { registerLiteChainTools } from "./tools/lite/chains.js";
+import { registerLiteMemberTools } from "./tools/lite/members.js";
 import { registerMemberTools } from "./tools/members.js";
 import { registerBillTools } from "./tools/bills.js";
 import { registerScheduleTools } from "./tools/schedule.js";
@@ -69,6 +70,7 @@ function buildMcpServer(config: AppConfig): McpServer {
     // discover_apis/query_assembly도 이미 등록됨
     registerLiteRecordTools(server, config);
     registerLiteChainTools(server, config);
+    registerLiteMemberTools(server, config);
   } else {
     // Lite 프로필 (기본): 7개 도구
     registerLiteTools(server, config);
