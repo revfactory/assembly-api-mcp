@@ -60,9 +60,11 @@ npx tsx src/cli.ts test
 
 ---
 
-## 4단계: Claude Desktop 연동
+## 4단계: AI 클라이언트 연동
 
-### macOS
+### Claude Desktop
+
+#### macOS
 
 설정 파일 위치: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
@@ -71,7 +73,7 @@ npx tsx src/cli.ts test
   "mcpServers": {
     "assembly-api": {
       "command": "node",
-      "args": ["/Users/YOUR_USERNAME/git/assembly-api/dist/index.js"],
+      "args": ["/Users/YOUR_USERNAME/git/assembly-api-mcp/dist/index.js"],
       "env": {
         "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
       }
@@ -80,7 +82,7 @@ npx tsx src/cli.ts test
 }
 ```
 
-### Windows
+#### Windows
 
 설정 파일 위치: `%APPDATA%\Claude\claude_desktop_config.json`
 
@@ -89,7 +91,7 @@ npx tsx src/cli.ts test
   "mcpServers": {
     "assembly-api": {
       "command": "node",
-      "args": ["C:\\Users\\YOUR_USERNAME\\git\\assembly-api\\dist\\index.js"],
+      "args": ["C:\\Users\\YOUR_USERNAME\\git\\assembly-api-mcp\\dist\\index.js"],
       "env": {
         "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
       }
@@ -98,20 +100,127 @@ npx tsx src/cli.ts test
 }
 ```
 
-### 적용
+#### 적용
 
 1. `args`의 경로를 실제 설치 경로로 수정
 2. `ASSEMBLY_API_KEY`에 발급받은 키 입력
 3. **Claude Desktop 완전 종료** (트레이 아이콘까지 닫기)
 4. Claude Desktop 재시작
 
+### Claude Code (CLI)
+
+```bash
+claude mcp add assembly-api -- node /absolute/path/to/assembly-api-mcp/dist/index.js
+```
+
+또는 프로젝트 루트에 `.mcp.json` 파일을 생성합니다:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
+      }
+    }
+  }
+}
+```
+
+### Gemini CLI
+
+`~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
+      }
+    }
+  }
+}
+```
+
+### VS Code (GitHub Copilot / Claude Extension)
+
+프로젝트 루트에 `.vscode/mcp.json` 파일을 생성합니다:
+
+```json
+{
+  "servers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["${workspaceFolder}/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
+      }
+    }
+  }
+}
+```
+
+### Cursor IDE
+
+`~/.cursor/mcp.json` 또는 프로젝트 루트 `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
+      }
+    }
+  }
+}
+```
+
+### Windsurf
+
+`~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "여기에_발급받은_키_입력"
+      }
+    }
+  }
+}
+```
+
+### 연동 지원 현황
+
+| 클라이언트 | Transport | MCP 지원 |
+|-----------|-----------|----------|
+| Claude Desktop | stdio | ✅ 네이티브 |
+| Claude Code (CLI) | stdio | ✅ 네이티브 |
+| Gemini CLI | stdio | ✅ 네이티브 |
+| VS Code (Copilot/Claude) | stdio | ✅ 네이티브 |
+| Cursor | stdio | ✅ 네이티브 |
+| Windsurf | stdio | ✅ 네이티브 |
+| ChatGPT (GPTs) | HTTP | ⚠️ Actions에서 REST 변환 필요 |
+| Docker / 원격 서버 | HTTP | ✅ Streamable HTTP |
+
 ---
 
 ## 5단계: 사용해 보기
 
-### Claude Desktop에서
+### AI 클라이언트에서
 
-Claude에게 다음과 같이 질문하면 됩니다:
+연동한 AI에게 다음과 같이 질문하면 됩니다:
 
 - "현재 국회의원 목록을 보여줘"
 - "교육 관련 의안을 검색해줘"

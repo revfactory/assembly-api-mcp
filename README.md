@@ -32,7 +32,11 @@ cp .env.example .env
 npx tsx src/cli.ts test
 ```
 
-## Claude Desktop 연동
+## AI 클라이언트 연동
+
+> 상세한 설정 가이드는 [QUICK_START.md](QUICK_START.md)를 참조하세요.
+
+### Claude Desktop (stdio)
 
 `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
 
@@ -41,7 +45,7 @@ npx tsx src/cli.ts test
   "mcpServers": {
     "assembly-api": {
       "command": "node",
-      "args": ["/absolute/path/to/assembly-api/dist/index.js"],
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
       "env": {
         "ASSEMBLY_API_KEY": "your-api-key-here",
         "MCP_PROFILE": "lite"
@@ -52,6 +56,129 @@ npx tsx src/cli.ts test
 ```
 
 > Claude Desktop을 완전히 종료(트레이 포함)한 후 재시작해야 설정이 적용됩니다.
+
+### Claude Code (CLI)
+
+```bash
+claude mcp add assembly-api -- node /absolute/path/to/assembly-api-mcp/dist/index.js
+```
+
+또는 프로젝트 루트에 `.mcp.json` 파일을 생성합니다:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### Gemini CLI
+
+`~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### VS Code (GitHub Copilot / Claude Extension)
+
+프로젝트 루트에 `.vscode/mcp.json` 파일을 생성합니다:
+
+```json
+{
+  "servers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["${workspaceFolder}/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### Cursor IDE
+
+`~/.cursor/mcp.json` 또는 프로젝트 루트 `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### Windsurf
+
+`~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "assembly-api": {
+      "command": "node",
+      "args": ["/absolute/path/to/assembly-api-mcp/dist/index.js"],
+      "env": {
+        "ASSEMBLY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### HTTP 모드 (원격 클라이언트용)
+
+stdio를 지원하지 않는 클라이언트는 HTTP 모드로 서버를 실행하여 연결할 수 있습니다:
+
+```bash
+ASSEMBLY_API_KEY=your-api-key MCP_TRANSPORT=http MCP_PORT=3000 npm start
+# → MCP 엔드포인트: http://localhost:3000/mcp
+# → 상태 확인: http://localhost:3000/health
+```
+
+외부에서 접근하려면 ngrok 등 터널링 도구를 사용하세요:
+
+```bash
+ngrok http 3000
+```
+
+### 연동 지원 현황
+
+| 클라이언트 | Transport | MCP 지원 |
+|-----------|-----------|----------|
+| Claude Desktop | stdio | ✅ 네이티브 |
+| Claude Code (CLI) | stdio | ✅ 네이티브 |
+| Gemini CLI | stdio | ✅ 네이티브 |
+| VS Code (Copilot/Claude) | stdio | ✅ 네이티브 |
+| Cursor | stdio | ✅ 네이티브 |
+| Windsurf | stdio | ✅ 네이티브 |
+| ChatGPT (GPTs) | HTTP | ⚠️ Actions에서 REST 변환 필요 |
+| Docker / 원격 서버 | HTTP | ✅ Streamable HTTP |
 
 ## MCP 도구 목록
 
