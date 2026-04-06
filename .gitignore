@@ -11,3 +11,5 @@ coverage/
 .mcp.json
 .playwright-mcp/
 _workspace/
+docs/test-scenarios.md
+.remember/
