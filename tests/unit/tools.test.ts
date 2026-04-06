@@ -189,9 +189,11 @@ describe("MCP Tool Registration", () => {
       const content = (result as { content: Array<{ text: string }> }).content;
 
       expect(content).toHaveLength(1);
-      expect(content[0].text).toContain("총 1건");
-      expect(content[0].text).toContain("홍길동");
-      expect(content[0].text).toContain("테스트당");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items).toHaveLength(1);
+      expect(parsed.items[0].이름).toBe("홍길동");
+      expect(parsed.items[0].정당).toBe("테스트당");
     });
 
     it("API 에러를 올바르게 처리한다", async () => {
@@ -240,8 +242,10 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("의원 상세정보");
-      expect(content[0].text).toContain("김철수");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.item).toBeDefined();
+      expect(parsed.item.HG_NM).toBe("김철수");
     });
 
     it("의원을 찾을 수 없으면 안내 메시지를 반환한다", async () => {
@@ -255,7 +259,10 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("찾을 수 없습니다");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(0);
+      expect(parsed.items).toEqual([]);
+      expect(parsed.query.name).toBe("없는사람");
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -304,9 +311,11 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("총 1건");
-      expect(content[0].text).toContain("테스트법률안");
-      expect(content[0].text).toContain("계류");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items).toHaveLength(1);
+      expect(parsed.items[0].의안명).toBe("테스트법률안");
+      expect(parsed.items[0].처리상태).toBe("계류");
     });
 
     it("API 에러를 올바르게 처리한다", async () => {
@@ -360,8 +369,10 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("의안 상세정보");
-      expect(content[0].text).toContain("PRC_B2E2A0K9");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items).toHaveLength(1);
+      expect(parsed.items[0].BILL_ID).toBe("PRC_B2E2A0K9");
     });
 
     it("의안을 찾을 수 없으면 안내 메시지를 반환한다", async () => {
@@ -375,7 +386,10 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("찾을 수 없습니다");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(0);
+      expect(parsed.items).toEqual([]);
+      expect(parsed.query.bill_id).toBe("NONEXISTENT");
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -420,8 +434,10 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("총 1건");
-      expect(content[0].text).toContain("법제사법위원회");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items).toHaveLength(1);
+      expect(parsed.items[0].위원회).toBe("법제사법위원회");
     });
 
     it("통합 일정 API (ALLSCHEDULE)를 사용한다", async () => {
@@ -492,8 +508,10 @@ describe("MCP Tool Registration", () => {
       );
       const content = (result as { content: Array<{ text: string }> }).content;
 
-      expect(content[0].text).toContain("총 1건");
-      expect(content[0].text).toContain("법률안 심사");
+      const parsed = JSON.parse(content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items).toHaveLength(1);
+      expect(parsed.items[0].회의명).toBe("법률안 심사");
     });
 
     it("본회의 회의록을 요청하면 올바른 API 코드를 사용한다", async () => {

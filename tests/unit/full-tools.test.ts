@@ -129,9 +129,9 @@ describe("Full-mode MCP Tools", () => {
         const tools = getRegisteredTools(server);
         const result = await tools.get_pending_bills.handler({}, {} as never) as ToolResult;
 
-        expect(result.content[0].text).toContain("계류의안 조회 결과");
-        expect(result.content[0].text).toContain("총 1건");
-        expect(result.content[0].text).toContain("테스트법");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "테스트법" });
       });
 
       it("bill_name 필터로 검색한다", async () => {
@@ -146,7 +146,8 @@ describe("Full-mode MCP Tools", () => {
           {} as never,
         ) as ToolResult;
 
-        expect(result.content[0].text).toContain("교육기본법");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "교육기본법" });
 
         const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0]?.[0] as string;
         expect(calledUrl).toContain("BILL_NAME");
@@ -178,9 +179,9 @@ describe("Full-mode MCP Tools", () => {
           {} as never,
         ) as ToolResult;
 
-        expect(result.content[0].text).toContain("처리의안 조회 결과");
-        expect(result.content[0].text).toContain("총 1건");
-        expect(result.content[0].text).toContain("처리법안");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "처리법안" });
       });
     });
 
@@ -195,8 +196,9 @@ describe("Full-mode MCP Tools", () => {
         const tools = getRegisteredTools(server);
         const result = await tools.get_recent_bills.handler({}, {} as never) as ToolResult;
 
-        expect(result.content[0].text).toContain("최근 본회의 처리의안");
-        expect(result.content[0].text).toContain("최근법안");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "최근법안" });
       });
     });
 
@@ -214,9 +216,9 @@ describe("Full-mode MCP Tools", () => {
           {} as never,
         ) as ToolResult;
 
-        expect(result.content[0].text).toContain("의안 심사정보");
-        expect(result.content[0].text).toContain("심사법안");
-        expect(result.content[0].text).toContain("법제사법위원회");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "심사법안", 소관위원회: "법제사법위원회" });
       });
     });
 
@@ -231,9 +233,9 @@ describe("Full-mode MCP Tools", () => {
         const tools = getRegisteredTools(server);
         const result = await tools.get_plenary_votes.handler({}, {} as never) as ToolResult;
 
-        expect(result.content[0].text).toContain("본회의 표결정보");
-        expect(result.content[0].text).toContain("표결법안");
-        expect(result.content[0].text).toContain("교육위원회");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "표결법안", 소관위원회: "교육위원회" });
       });
     });
 
@@ -251,8 +253,9 @@ describe("Full-mode MCP Tools", () => {
           {} as never,
         ) as ToolResult;
 
-        expect(result.content[0].text).toContain("의안 통합검색 결과");
-        expect(result.content[0].text).toContain("통합검색법안");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "통합검색법안" });
       });
     });
 
@@ -270,9 +273,9 @@ describe("Full-mode MCP Tools", () => {
           {} as never,
         ) as ToolResult;
 
-        expect(result.content[0].text).toContain("의안 접수/처리 이력");
-        expect(result.content[0].text).toContain("이력법안");
-        expect(result.content[0].text).toContain("가결");
+        const parsed = JSON.parse(result.content[0].text);
+        expect(parsed.total).toBe(1);
+        expect(parsed.items[0]).toMatchObject({ 의안명: "이력법안", 처리결과: "가결" });
       });
 
       it("네트워크 오류를 처리한다", async () => {
@@ -314,9 +317,9 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("예산정책처 분석 자료");
-      expect(result.content[0].text).toContain("총 1건");
-      expect(result.content[0].text).toContain("2024 경제전망");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ 제목: "2024 경제전망" });
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -351,10 +354,9 @@ describe("Full-mode MCP Tools", () => {
       const tools = getRegisteredTools(server);
       const result = await tools.get_committees.handler({}, {} as never) as ToolResult;
 
-      expect(result.content[0].text).toContain("위원회 목록");
-      expect(result.content[0].text).toContain("총 1건");
-      expect(result.content[0].text).toContain("법제사법위원회");
-      expect(result.content[0].text).toContain("상임위원회");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ 위원회명: "법제사법위원회", 위원회구분: "상임위원회" });
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -392,9 +394,9 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("입법예고 목록");
-      expect(result.content[0].text).toContain("교육법개정안");
-      expect(result.content[0].text).toContain("교육위원회");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ 법안명: "교육법개정안", 소관위원회: "교육위원회" });
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -432,9 +434,9 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("국회도서관 자료 검색 결과");
-      expect(result.content[0].text).toContain("헌법학개론");
-      expect(result.content[0].text).toContain("김헌법");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ 제목: "헌법학개론", 저자: "김헌법" });
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -475,9 +477,9 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("청원 검색 결과");
-      expect(result.content[0].text).toContain("환경보호청원");
-      expect(result.content[0].text).toContain("환경노동위원회");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ 청원명: "환경보호청원", 소관위원회: "환경노동위원회" });
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -515,9 +517,9 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("입법조사처 보고서 검색 결과");
-      expect(result.content[0].text).toContain("AI 규제 동향");
-      expect(result.content[0].text).toContain("이슈와논점");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ 제목: "AI 규제 동향", 카테고리: "이슈와논점" });
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -566,13 +568,13 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      const text = result.content[0].text;
-      expect(text).toContain("테스트의원");
-      expect(text).toContain("더불어민주당");
-      expect(text).toContain("발의 법안");
-      expect(text).toContain("교육법");
-      expect(text).toContain("본회의 표결");
-      expect(text).toContain("환경법");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(2);
+      expect(parsed.member).toMatchObject({ name: "테스트의원", party: "더불어민주당" });
+      expect(parsed.items).toEqual(expect.arrayContaining([
+        expect.objectContaining({ type: "bill", billName: "교육법" }),
+        expect.objectContaining({ type: "vote", billName: "환경법" }),
+      ]));
     });
 
     it("의원을 찾을 수 없으면 안내 메시지를 반환한다", async () => {
@@ -585,7 +587,9 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("찾을 수 없습니다");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(0);
+      expect(parsed.items).toEqual([]);
     });
 
     it("activity_type=bills이면 발의법안만 반환한다", async () => {
@@ -605,10 +609,10 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      const text = result.content[0].text;
-      expect(text).toContain("발의 법안");
-      expect(text).toContain("국방법");
-      expect(text).not.toContain("본회의 표결");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ type: "bill", billName: "국방법" });
+      expect(parsed.items.every((i: { type: string }) => i.type === "bill")).toBe(true);
     });
 
     it("activity_type=votes이면 표결참여만 반환한다", async () => {
@@ -628,10 +632,10 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      const text = result.content[0].text;
-      expect(text).not.toContain("발의 법안");
-      expect(text).toContain("본회의 표결");
-      expect(text).toContain("노동법");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(1);
+      expect(parsed.items[0]).toMatchObject({ type: "vote", billName: "노동법" });
+      expect(parsed.items.every((i: { type: string }) => i.type === "vote")).toBe(true);
     });
 
     it("네트워크 오류를 처리한다", async () => {
@@ -673,11 +677,12 @@ describe("Full-mode MCP Tools", () => {
         {} as never,
       ) as ToolResult;
 
-      expect(result.content[0].text).toContain("표결 결과");
-      expect(result.content[0].text).toContain("총 2건");
-      expect(result.content[0].text).toContain("홍길동");
-      expect(result.content[0].text).toContain("찬성");
-      expect(result.content[0].text).toContain("반대");
+      const parsed = JSON.parse(result.content[0].text);
+      expect(parsed.total).toBe(2);
+      expect(parsed.items).toEqual(expect.arrayContaining([
+        expect.objectContaining({ 의원명: "홍길동", 표결결과: "찬성" }),
+        expect.objectContaining({ 의원명: "김철수", 표결결과: "반대" }),
+      ]));
     });
 
     it("네트워크 오류를 처리한다", async () => {

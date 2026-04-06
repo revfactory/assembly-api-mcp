@@ -203,7 +203,7 @@ describe("createServer (HTTP 통합)", () => {
     expect(Object.keys(prompts)).toHaveLength(3);
   });
 
-  it("Full 프로필로 23개 도구를 등록한다", async () => {
+  it("Full 프로필로 27개 도구를 등록한다", async () => {
     const { createServer } = await import("../../src/server.js");
     const config = createTestConfig({
       server: { transport: "http", port: 0, logLevel: "info" },
@@ -213,8 +213,8 @@ describe("createServer (HTTP 통합)", () => {
     const mcpServer = await createServer(config);
     const tools = getRegisteredTools(mcpServer);
 
-    // Full 프로필: 23개 도구
-    expect(Object.keys(tools)).toHaveLength(23);
+    // Full 프로필: 27개 도구
+    expect(Object.keys(tools)).toHaveLength(27);
     // Full 전용 도구 확인
     expect(tools["get_members"]).toBeDefined();
     expect(tools["get_member_detail"]).toBeDefined();

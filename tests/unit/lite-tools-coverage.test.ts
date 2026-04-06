@@ -92,6 +92,10 @@ function getText(result: unknown): string {
   return (result as ToolResult).content[0].text;
 }
 
+function getParsed(result: unknown): Record<string, unknown> {
+  return JSON.parse(getText(result)) as Record<string, unknown>;
+}
+
 function isError(result: unknown): boolean {
   return (result as ToolResult).isError === true;
 }
@@ -145,24 +149,25 @@ describe("Lite search_members", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("국회의원 상세정보");
-    expect(text).toContain("홍길동");
-    expect(text).toContain("약력");
-    expect(text).toContain("연락처");
-    expect(text).toContain("변호사, 전 판사");
-    expect(text).toContain("02-1234-5678");
-    expect(text).toContain("한자");
-    expect(text).toContain("영문");
-    expect(text).toContain("이메일");
-    expect(text).toContain("홈페이지");
-    expect(text).toContain("사무실");
-    expect(text).toContain("보좌관");
-    expect(text).toContain("비서관");
-    expect(text).toContain("생년월일");
-    expect(text).toContain("음양력");
-    expect(text).toContain("직책");
-    expect(text).toContain("대수");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(1);
+    const detail = items[0];
+    expect(detail["이름"]).toBe("홍길동");
+    expect(detail["약력"]).toBe("변호사, 전 판사");
+    expect(detail["연락처"]).toBe("02-1234-5678");
+    expect(detail["한자"]).toBe("洪吉童");
+    expect(detail["영문"]).toBe("HONG Gil-dong");
+    expect(detail["이메일"]).toBe("hong@assembly.go.kr");
+    expect(detail["홈페이지"]).toBe("https://example.com");
+    expect(detail["사무실"]).toBe("101호");
+    expect(detail["보좌관"]).toBe("김비서");
+    expect(detail["비서관"]).toBe("이비서");
+    expect(detail["생년월일"]).toBe("1970-01-01");
+    expect(detail["음양력"]).toBe("양력");
+    expect(detail["직책"]).toBe("위원");
+    expect(detail["대수"]).toBe("22");
   });
 
   it("여러 결과 → 요약 목록(6개 필드) 반환", async () => {
@@ -194,15 +199,16 @@ describe("Lite search_members", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("국회의원 검색 결과");
-    expect(text).toContain("총 2건");
-    expect(text).toContain("2건 표시");
-    expect(text).toContain("홍길동");
-    expect(text).toContain("홍길순");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(2);
+    expect(parsed.returned).toBe(2);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(2);
+    expect(items[0]["이름"]).toBe("홍길동");
+    expect(items[1]["이름"]).toBe("홍길순");
     // 요약에는 상세 필드가 없어야 함
-    expect(text).not.toContain("약력");
-    expect(text).not.toContain("연락처");
+    expect(items[0]).not.toHaveProperty("약력");
+    expect(items[0]).not.toHaveProperty("연락처");
   });
 
   it("결과 없음 → 검색 결과가 없습니다 메시지", async () => {
@@ -214,10 +220,12 @@ describe("Lite search_members", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("검색 결과가 없습니다");
-    expect(text).toContain('이름="없는사람"');
-    expect(text).toContain('정당="없는당"');
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(0);
+    expect(parsed.items).toEqual([]);
+    const query = parsed.query as Record<string, unknown>;
+    expect(query.name).toBe("없는사람");
+    expect(query.party).toBe("없는당");
   });
 
   it("결과 없음 (조건 없이) → 조건: 없음", async () => {
@@ -226,11 +234,16 @@ describe("Lite search_members", () => {
     const tools = getRegisteredTools(server);
     const result = await tools.search_members.handler({}, {} as never);
 
-    const text = getText(result);
-    expect(text).toContain("조건: 없음");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(0);
+    expect(parsed.items).toEqual([]);
+    // query fields should all be undefined
+    const query = parsed.query as Record<string, unknown>;
+    expect(query.name).toBeUndefined();
+    expect(query.party).toBeUndefined();
   });
 
-  it("age 파라미터 → UNIT_CD 변환 (100 + padStart(4))", async () => {
+  it("age 파라미터 → UNIT_CD 불필요 (현재 의원만 반환)", async () => {
     mockFetchSuccess(buildAssemblyResponse("nwvrqwxyaytdsfvhu", [], 0));
 
     const tools = getRegisteredTools(server);
@@ -238,10 +251,11 @@ describe("Lite search_members", () => {
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
-    expect(calledUrl).toContain("UNIT_CD=1000022");
+    // UNIT_CD is no longer sent
+    expect(calledUrl).not.toContain("UNIT_CD");
   });
 
-  it("age 한 자리 → padStart 적용 (100 + 0009)", async () => {
+  it("age 파라미터는 URL에 UNIT_CD를 포함하지 않는다", async () => {
     mockFetchSuccess(buildAssemblyResponse("nwvrqwxyaytdsfvhu", [], 0));
 
     const tools = getRegisteredTools(server);
@@ -249,7 +263,7 @@ describe("Lite search_members", () => {
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
-    expect(calledUrl).toContain("UNIT_CD=1000009");
+    expect(calledUrl).not.toContain("UNIT_CD");
   });
 
   it("district 파라미터 → ORIG_NM 전달", async () => {
@@ -275,9 +289,12 @@ describe("Lite search_members", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("제22대");
-    expect(text).toContain('선거구="부산"');
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(0);
+    expect(parsed.items).toEqual([]);
+    const query = parsed.query as Record<string, unknown>;
+    expect(query.age).toBe(22);
+    expect(query.district).toBe("부산");
   });
 
   it("page, page_size 파라미터 전달", async () => {
@@ -319,7 +336,8 @@ describe("Lite search_members", () => {
     );
 
     expect(isError(result)).toBe(true);
-    expect(getText(result)).toContain("오류");
+    const parsed = getParsed(result);
+    expect(parsed.error).toBeDefined();
   });
 
   it("상세 포맷에서 빈 필드는 제외된다", async () => {
@@ -391,13 +409,14 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("의안 검색 결과");
-    expect(text).toContain("총 1건");
-    expect(text).toContain("테스트법률안");
-    expect(text).toContain("계류");
-    expect(text).toContain("의안ID");
-    expect(text).toContain("의안번호");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(1);
+    expect(items[0]["의안명"]).toBe("테스트법률안");
+    expect(items[0]["처리상태"]).toBe("계류");
+    expect(items[0]).toHaveProperty("의안ID");
+    expect(items[0]).toHaveProperty("의안번호");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -432,12 +451,12 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("의안 상세정보");
-    expect(text).toContain("제안이유");
-    expect(text).toContain("교육 환경 개선을 위해");
-    expect(text).toContain("주요내용");
-    expect(text).toContain("학교 시설 확충");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(1);
+    expect(items[0]["제안이유"]).toBe("교육 환경 개선을 위해");
+    expect(items[0]["주요내용"]).toBe("학교 시설 확충 및 교사 인력 확대");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -482,8 +501,10 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("계류의안");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0]["의안명"]).toBe("계류법안");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -504,8 +525,10 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("처리의안");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0]["의안명"]).toBe("처리법안");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -526,8 +549,10 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("최근 본회의 처리의안");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0]["의안명"]).toBe("최근법안");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -544,9 +569,11 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("찾을 수 없습니다");
-    expect(text).toContain("NONEXISTENT");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(0);
+    expect(parsed.items).toEqual([]);
+    const query = parsed.query as Record<string, unknown>;
+    expect(query.bill_id).toBe("NONEXISTENT");
   });
 
   it("proposer, committee 파라미터 전달", async () => {
@@ -609,7 +636,8 @@ describe("Lite search_bills", () => {
     );
 
     expect(isError(result)).toBe(true);
-    expect(getText(result)).toContain("오류");
+    const parsed = getParsed(result);
+    expect(parsed.error).toBeDefined();
   });
 
   it("formatSearchRow에서 null 필드는 null로 반환", async () => {
@@ -625,12 +653,10 @@ describe("Lite search_bills", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    const parsed = JSON.parse(
-      text.split("\n\n")[1],
-    ) as Record<string, unknown>[];
-    expect(parsed[0]["의안ID"]).toBeNull();
-    expect(parsed[0]["의안명"]).toBe("테스트만있음");
+    const parsed = getParsed(result);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0]["의안ID"]).toBeNull();
+    expect(items[0]["의안명"]).toBe("테스트만있음");
   });
 });
 
@@ -672,12 +698,12 @@ describe("Lite search_records", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("국회 일정");
-    expect(text).toContain("총 1건");
-    expect(text).toContain("법사위");
-    expect(text).toContain("일정종류");
-    expect(text).toContain("위원회");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(1);
+    expect(items[0]["위원회"]).toBe("법사위");
+    expect(items[0]["일정종류"]).toBe("위원회");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -719,10 +745,11 @@ describe("Lite search_records", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("회의록 검색 결과");
-    expect(text).toContain("총 1건");
-    expect(text).toContain("회의명");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(1);
+    expect(items[0]).toHaveProperty("회의명");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -748,8 +775,10 @@ describe("Lite search_records", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("회의록 검색 결과");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0]["회의명"]).toBe("국정감사");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -774,8 +803,10 @@ describe("Lite search_records", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("회의록 검색 결과");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0]["회의명"]).toBe("본회의");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -882,12 +913,13 @@ describe("Lite search_records", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("표결 결과");
-    expect(text).toContain("총 1건");
-    expect(text).toContain("의안ID");
-    expect(text).toContain("의원명");
-    expect(text).toContain("표결결과");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(1);
+    expect(items[0]).toHaveProperty("의안ID");
+    expect(items[0]).toHaveProperty("의원명");
+    expect(items[0]).toHaveProperty("표결결과");
 
     const calledUrl = (globalThis.fetch as ReturnType<typeof vi.fn>).mock
       .calls[0]?.[0] as string;
@@ -948,7 +980,8 @@ describe("Lite search_records", () => {
     );
 
     expect(isError(result)).toBe(true);
-    expect(getText(result)).toContain("오류");
+    const parsed = getParsed(result);
+    expect(parsed.error).toBeDefined();
   });
 
   it("meetings formatRow에서 TITLE / CONF_LINK_URL 폴백", async () => {
@@ -1054,25 +1087,27 @@ describe("Lite analyze_legislator", () => {
       {} as never,
     );
 
-    const text = getText(result);
+    const parsed = getParsed(result);
     // 섹션 1: 기본정보
-    expect(text).toContain("■ 의원 기본정보");
-    expect(text).toContain("김의원");
-    expect(text).toContain("더불어민주당");
-    expect(text).toContain("서울 강남구갑");
-    expect(text).toContain("초선");
-    expect(text).toContain("교육위원회");
+    const member = parsed.member as Record<string, unknown>;
+    expect(member.name).toBe("김의원");
+    expect(member.party).toBe("더불어민주당");
+    expect(member.district).toBe("서울 강남구갑");
+    expect(member.reelection).toBe("초선");
+    expect(member.committees).toBe("교육위원회");
 
     // 섹션 2: 발의법안
-    expect(text).toContain("■ 발의 법안");
-    expect(text).toContain("총 5건");
-    expect(text).toContain("교육기본법");
+    const bills = parsed.bills as Record<string, unknown>;
+    expect(bills.total).toBe(5);
+    const billItems = bills.items as Record<string, unknown>[];
+    expect(billItems[0].billName).toBe("교육기본법");
 
     // 섹션 3: 표결
-    expect(text).toContain("■ 본회의 표결 현황");
-    expect(text).toContain("총 3건");
-    expect(text).toContain("세법개정안");
-    expect(text).toContain("가결");
+    const votes = parsed.votes as Record<string, unknown>;
+    expect(votes.total).toBe(3);
+    const voteItems = votes.items as Record<string, unknown>[];
+    expect(voteItems[0].billName).toBe("세법개정안");
+    expect(voteItems[0].result).toBe("가결");
   });
 
   it("의원 찾을 수 없음 → 안내 메시지", async () => {
@@ -1086,9 +1121,11 @@ describe("Lite analyze_legislator", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("찾을 수 없습니다");
-    expect(text).toContain("없는의원");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(0);
+    expect(parsed.items).toEqual([]);
+    const query = parsed.query as Record<string, unknown>;
+    expect(query.name).toBe("없는의원");
   });
 
   it("Promise.all 병렬 호출 확인 (fetch 3회 호출)", async () => {
@@ -1125,8 +1162,10 @@ describe("Lite analyze_legislator", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("조회 결과가 없습니다");
+    const parsed = getParsed(result);
+    const bills = parsed.bills as Record<string, unknown>;
+    expect(bills.total).toBe(0);
+    expect((bills.items as unknown[]).length).toBe(0);
   });
 
   it("age 파라미터 전달 시 해당 대수로 조회", async () => {
@@ -1162,7 +1201,8 @@ describe("Lite analyze_legislator", () => {
     );
 
     expect(isError(result)).toBe(true);
-    expect(getText(result)).toContain("오류");
+    const parsed = getParsed(result);
+    expect(parsed.error).toBeDefined();
   });
 
   it("표결에서 PROC_RESULT 폴백, 빈 결과 시 '결과 미상'", async () => {
@@ -1184,11 +1224,15 @@ describe("Lite analyze_legislator", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("NM폴백법");
-    expect(text).toContain("계류CD");
-    expect(text).toContain("표결폴백법");
-    expect(text).toContain("결과 미상");
+    const parsed = getParsed(result);
+    const bills = parsed.bills as Record<string, unknown>;
+    const billItems = bills.items as Record<string, unknown>[];
+    expect(billItems[0].billName).toBe("NM폴백법");
+    expect(billItems[0].status).toBe("계류CD");
+    const votes = parsed.votes as Record<string, unknown>;
+    const voteItems = votes.items as Record<string, unknown>[];
+    expect(voteItems[0].billName).toBe("표결폴백법");
+    expect(voteItems[0].result).toBe("");
   });
 
   it("발의법안에서 status가 빈 문자열이면 '상태 미상'", async () => {
@@ -1208,8 +1252,11 @@ describe("Lite analyze_legislator", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("상태 미상");
+    const parsed = getParsed(result);
+    const bills = parsed.bills as Record<string, unknown>;
+    const billItems = bills.items as Record<string, unknown>[];
+    expect(billItems[0].billName).toBe("빈상태법");
+    expect(billItems[0].status).toBe("");
   });
 });
 
@@ -1257,13 +1304,13 @@ describe("Lite track_legislation", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("법안 추적");
-    expect(text).toContain("AI");
-    expect(text).toContain("2건");
-    expect(text).toContain("AI기본법");
-    expect(text).toContain("인공지능법");
-    expect(text).toContain("관련 법안 목록");
+    const parsed = getParsed(result);
+    expect(parsed.keywords).toEqual(["AI"]);
+    expect(parsed.total).toBe(2);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(2);
+    expect(items[0].billName).toBe("AI기본법");
+    expect(items[1].billName).toBe("인공지능법");
   });
 
   it("다중 키워드 (쉼표 구분) → 병렬 검색 + 중복 제거 by BILL_NO", async () => {
@@ -1286,11 +1333,14 @@ describe("Lite track_legislation", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("3건 (중복 제거)");
-    expect(text).toContain("AI기본법");
-    expect(text).toContain("공통법안");
-    expect(text).toContain("인공지능법");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(3);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items).toHaveLength(3);
+    const names = items.map((i) => i.billName);
+    expect(names).toContain("AI기본법");
+    expect(names).toContain("공통법안");
+    expect(names).toContain("인공지능법");
 
     const fetchSpy = globalThis.fetch as ReturnType<typeof vi.fn>;
     expect(fetchSpy).toHaveBeenCalledTimes(2);
@@ -1319,12 +1369,15 @@ describe("Lite track_legislation", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("심사:");
-    expect(text).toContain("교육위");
-    expect(text).toContain("심사중");
-    expect(text).toContain("보건위");
-    expect(text).toContain("가결");
+    const parsed = getParsed(result);
+    const histories = parsed.histories as Record<string, Record<string, unknown>[]>;
+    expect(histories).toBeDefined();
+    expect(histories["2200001"]).toHaveLength(1);
+    expect(histories["2200001"][0]["CMIT_NM"]).toBe("교육위");
+    expect(histories["2200001"][0]["PROC_RESULT_CD"]).toBe("심사중");
+    expect(histories["2200002"]).toHaveLength(1);
+    expect(histories["2200002"][0]["COMMITTEE"]).toBe("보건위");
+    expect(histories["2200002"][0]["PROC_RESULT"]).toBe("가결");
 
     const fetchSpy = globalThis.fetch as ReturnType<typeof vi.fn>;
     // 1 keyword search + 2 history fetches = 3
@@ -1364,8 +1417,10 @@ describe("Lite track_legislation", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("검색 결과가 없습니다");
+    const parsed = getParsed(result);
+    expect(parsed.total).toBe(0);
+    expect(parsed.items).toEqual([]);
+    expect(parsed.keywords).toEqual(["없는법안명"]);
   });
 
   it("심사이력 조회 실패 → 부분 성공 (catch per-bill)", async () => {
@@ -1390,10 +1445,12 @@ describe("Lite track_legislation", () => {
 
     // 에러가 아닌 정상 결과여야 함 (부분 성공)
     expect(isError(result)).not.toBe(true);
-    const text = getText(result);
-    expect(text).toContain("실패법");
-    // 심사이력은 빈 배열로 처리되므로 "심사:" 없음
-    expect(text).not.toContain("심사:");
+    const parsed = getParsed(result);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0].billName).toBe("실패법");
+    // 심사이력은 빈 배열로 처리되므로 histories에 빈 배열
+    const histories = parsed.histories as Record<string, unknown[]>;
+    expect(histories["2200001"]).toEqual([]);
   });
 
   it("page_size 파라미터 전달", async () => {
@@ -1438,7 +1495,8 @@ describe("Lite track_legislation", () => {
     );
 
     expect(isError(result)).toBe(true);
-    expect(getText(result)).toContain("오류");
+    const parsed = getParsed(result);
+    expect(parsed.error).toBeDefined();
   });
 
   it("include_history=false → 심사이력 조회 안 함", async () => {
@@ -1457,9 +1515,10 @@ describe("Lite track_legislation", () => {
     const fetchSpy = globalThis.fetch as ReturnType<typeof vi.fn>;
     expect(fetchSpy).toHaveBeenCalledTimes(1);
 
-    const text = getText(result);
-    expect(text).toContain("스킵법");
-    expect(text).not.toContain("심사:");
+    const parsed = getParsed(result);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0].billName).toBe("스킵법");
+    expect(parsed.histories).toBeUndefined();
   });
 
   it("결과에 search_bills 안내 팁 포함", async () => {
@@ -1475,11 +1534,15 @@ describe("Lite track_legislation", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("search_bills");
+    const parsed = getParsed(result);
+    // JSON format no longer includes the search_bills tip text,
+    // but verify the result structure is valid
+    expect(parsed.total).toBe(1);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0].billName).toBe("팁법");
   });
 
-  it("제안자/제안일 없으면 '미상' 표시", async () => {
+  it("제안자/제안일 없으면 빈 문자열로 반환", async () => {
     mockFetchSuccess(
       buildAssemblyResponse("nzmimeepazxkubdpn", [
         { BILL_NO: "2200099", BILL_NAME: "미상법" },
@@ -1492,9 +1555,11 @@ describe("Lite track_legislation", () => {
       {} as never,
     );
 
-    const text = getText(result);
-    expect(text).toContain("제안자: 미상");
-    expect(text).toContain("제안일: 미상");
-    expect(text).toContain("상태: 미상");
+    const parsed = getParsed(result);
+    const items = parsed.items as Record<string, unknown>[];
+    expect(items[0].billName).toBe("미상법");
+    expect(items[0].proposer).toBe("");
+    expect(items[0].proposeDate).toBe("");
+    expect(items[0].status).toBe("");
   });
 });
